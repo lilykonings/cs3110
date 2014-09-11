@@ -1,0 +1,30 @@
+1.
+(a) int = 42
+(b) int = 42
+(c) n/a, list should be of uniform type but a float was given when an int is being expected,therefore not well-typed
+(d) int list = [2;4;6;8;10]
+(e) (string * string) list = [("zar","doz")]
+(f) unit = ()
+(g) int option = Some 3110
+(h) int = 1764
+(i) n/a, function "f" is declared to have an inconsistent number of arguments, having 1 in (f x = x + 1) but 2 in (f f 10)
+(j) int = 12
+
+2.
+(a) 42
+(b) ["Charlie"; "Lily"]
+(c) let f lst = match lst with [] -> 0.1 | h::t -> h +. h
+(d) let f x = match x with None -> 0 | Some y -> y
+(e) let f x y = match x with [] -> [1] | h::t -> (h+h)::y
+(f) let f x = (x[1;2])@[3;4]
+(g) let f x = (fun a b -> match a with [] -> a@b | h::t -> (h+h)::b) x
+(h) let f x = match x with (a,b) -> match b with [] -> [(a+a, 'a')] | h::t -> [(a+a, h)]
+(i) {hour=10; minute=10; am_pm="am"}
+(j) let f x = x.hour
+
+3.
+let rec merge ((a:int list), (b:int list)) =
+  match a, b with
+  | [], _ -> b
+  | _, [] -> a
+  | h1::t1, h2::t2 -> if h1 < h2 then h1::merge (t1,b) else h2::merge (a,t2)
