@@ -1,20 +1,14 @@
+(* EXERCISE 1 *)
 (* Checks if the int list is monotonically increasing. *)
 (* requires: integer list *)
 (* returns: true if list is monotonically increasing, false otherwise *)
-(* let rec is_mon_inc (lst:int list) =
-	match lst with
-	 | [] -> true
- 	 | h::t -> match t with
- 	  | [] -> true
- 	  | h2::t2 -> (h <= h2) && is_mon_inc (t) *)
-
 let rec is_mon_inc (lst:int list) =
 	match lst with
 	 | [] -> true
 	 | _::[] -> true
  	 | h1::(h2::t) -> (h1 <= h2) && is_mon_inc (h2::t)
 
-(* Exercise 2 *)
+(* EXERCISE 2 *)
 let rec is_mon_dec (lst: int list) = 
 	is_mon_inc (List.rev lst)
 
@@ -32,7 +26,7 @@ let rec is_unimodal (lst: int list) =
 		  h::t -> increasing t h
 		  | _ -> true
 
-(* Exercise 3 *)
+(* EXERCISE 3 *)
 let rec powerset lst =
 	match lst with
 	| [] -> [[]]
@@ -44,7 +38,7 @@ let rec powerset lst =
 				| h::t -> funct h::powerset_helper funct t in
 					(powerset_helper (fun tail -> h::tail) p) @ p
 
-(* Exercise 4 *)
+(* EXERCISE 4 *)
 let rev_int i =
 	let rec reverse i r =
 		if i = 0 then r
@@ -52,16 +46,16 @@ let rev_int i =
 			if i<0 then -1*(reverse (-1*i) 0)
 			else reverse i 0
 
-(* Exercise 5 *)
+(* EXERCISE 5 *)
 let unflatten k lst =
 	if k<=0 then None
 	else let rec unflatten_helper i a b = function
   	| [] -> []
-  	| [x] -> (List.rev(x::a))::b
+  	| [x] -> (List.rev (x::a))::b
   	| h::t ->
-	  	if i<=1 then unflatten_helper k [] ((List.rev(h::a))::b) t
+	  	if i<=1 then unflatten_helper k [] ((List.rev (h::a))::b) t
 		  else unflatten_helper (i-1) (h::a) b t in
-		  	Some(List.rev(unflatten_helper k [] [] lst))
+		  	Some(List.rev (unflatten_helper k [] [] lst))
 
-
+(* EXERCISE 6 *)
 

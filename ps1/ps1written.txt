@@ -28,3 +28,6 @@ let rec merge ((a:int list), (b:int list)) =
   | [], _ -> b
   | _, [] -> a
   | h1::t1, h2::t2 -> if h1 < h2 then h1::merge (t1,b) else h2::merge (a,t2)
+
+7.
+The problem set was clear for the most part and Piazza helped any confusion if there were any. As for the work divison in this problem set, each partner definitely had a chance to try each exercise, whether together or individually. This way, the best of each answer was discussed and included on the final submission.

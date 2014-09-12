@@ -17,26 +17,49 @@ TEST_UNIT "is_mon_ic_test11" = assert_true ((is_mon_ic [10000]) = true)
 
 (* EXERCISE 2 *)
 (* Given test cases *)
+TEST_UNIT "is_unimodal_test1" = assert_true ((is_unimodal [1;2;3;6;9;5;4]) = true)
+TEST_UNIT "is_unimodal_test2" = assert_true ((is_unimodal [1;3;5;7;5;6]) = false)
+TEST_UNIT "is_unimodal_test3" = assert_true ((is_unimodal [1;1;2;3;4;4;3;2;2;-1]) = true)
+TEST_UNIT "is_unimodal_test4" = assert_true ((is_unimodal []) = true)
+TEST_UNIT "is_unimodal_test5" = assert_true ((is_unimodal [1;1;1]) = true)
+TEST_UNIT "is_unimodal_test6" = assert_true ((is_unimodal [1;2]) = true)
+TEST_UNIT "is_unimodal_test7" = assert_true ((is_unimodal [2;1]) = true)
 (* New test cases *)
 
 (* EXERCISE 3 *)
 (* Given test cases *)
+TEST_UNIT "powerset_test1" = assert_true ((powerset [1;2;3]) = [[];[1];[2];[3];[1;2];[1;3];[2;3];[1;2;3]])
+TEST_UNIT "powerset_test2" = assert_true ((powerset []) = [[]])
 (* New test cases *)
 
 (* EXERCISE 4 *)
 (* Given test cases *)
+TEST_UNIT "rev_int_test1" = assert_true ((rev_int 1234) = 4321)
+TEST_UNIT "rev_int_test2" = assert_true ((rev_int 4) = 4)
+TEST_UNIT "rev_int_test3" = assert_true ((rev_int (-1234)) = (-4321))
+TEST_UNIT "rev_int_test4" = assert_true ((rev_int (-10)) = (-1))
+TEST_UNIT "rev_int_test5" = assert_true ((rev_int 1111111111) = 1111111111)
 (* New test cases *)
 
 (* EXERCISE 5 *)
 (* Given test cases *)
 TEST_UNIT "unflatten_test1" = assert_true ((unflatten (-1) []) = None)
 TEST_UNIT "unflatten_test2" = assert_true ((unflatten 0 []) = None)
-TEST_UNIT "unflatten_test3" = assert_true ((unflatten 2 []) = Some [[1;2]; [3;4]; [5;6]])
-TEST_UNIT "unflatten_test4" = assert_true ((unflatten 3 []) = Some [[1;2;3]; [4;5;6]; [7;8]])
+TEST_UNIT "unflatten_test3" = assert_true ((unflatten 2 []) = Some [[1;2];[3;4];[5;6]])
+TEST_UNIT "unflatten_test4" = assert_true ((unflatten 3 []) = Some [[1;2;3];[4;5;6];[7;8]])
 TEST_UNIT "unflatten_test5" = assert_true ((unflatten 6 []) = Some [[1;2;3;4;5;6]])
 TEST_UNIT "unflatten_test6" = assert_true ((unflatten 7 []) = Some [[1;2;3;4;5;6]])
 (* New test cases *)
 
+
 (* EXERCISE 6 *)
 (* Given test cases *)
+TEST_UNIT "int_of_roman_test1" = assert_true ((int_of_roman [I;I;I]) = 3)
+TEST_UNIT "int_of_roman_test2" = assert_true ((int_of_roman [X;L;I;I]) = 42)
+TEST_UNIT "int_of_roman_test3" = assert_true ((int_of_roman [M;C;M;X;C;I;X]) = 1999)
 (* New test cases *)
+
+
+
+
+
