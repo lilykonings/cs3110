@@ -26,6 +26,12 @@ TEST_UNIT "is_unimodal_test5" = assert_true ((is_unimodal [1;1;1]) = true)
 TEST_UNIT "is_unimodal_test6" = assert_true ((is_unimodal [1;2]) = true)
 TEST_UNIT "is_unimodal_test7" = assert_true ((is_unimodal [2;1]) = true)
 (* New test cases *)
+TEST_UNIT "is_unimodal_test9" = assert_true ((is_unimodal [0]) = true)
+TEST_UNIT "is_unimodal_test10" = assert_true ((is_unimodal [0;0;0]) = true)
+TEST_UNIT "is_unimodal_test11" = assert_true ((is_unimodal [-4;-3;-4]) = true)
+TEST_UNIT "is_unimodal_test12" = assert_true ((is_unimodal [-3;-2;-1;0]) = true)
+TEST_UNIT "is_unimodal_test13" = assert_true ((is_unimodal [-2;0;2;-3]) = true)
+TEST_UNIT "is_unimodal_test14" = assert_true ((is_unimodal [0;1;2;1;0;1]) = false)
 
 
 (* EXERCISE 3 *)
@@ -78,6 +84,11 @@ TEST_UNIT "int_of_roman_test1" = assert_true ((int_of_roman [I;I;I]) = 3)
 TEST_UNIT "int_of_roman_test2" = assert_true ((int_of_roman [X;L;I;I]) = 42)
 TEST_UNIT "int_of_roman_test3" = assert_true ((int_of_roman [M;C;M;X;C;I;X]) = 1999)
 (* New test cases *)
+TEST_UNIT "int_of_roman_test4" = assert_true ((int_of_roman []) = 0)
+TEST_UNIT "int_of_roman_test5" = assert_true ((int_of_roman [V;I;I]) = 7)
+TEST_UNIT "int_of_roman_test6" = assert_true ((int_of_roman [M]) = 1000)
+TEST_UNIT "int_of_roman_test7" = assert_true ((int_of_roman [X;I;V]) = 14)
+TEST_UNIT "int_of_roman_test8" = assert_true ((int_of_roman [C;C;C;X;L;I;X]) = 349)
 
 
 

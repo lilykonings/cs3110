@@ -1,17 +1,17 @@
-(* EXERCISE 1 *)
-(* Checks if an integer list is monotonically increasing. *)
-(* requires: int list *)
-(* returns: bool - true if list is monotonically increasing, false otherwise *)
+(* Exercise 1:
+ * Checks if an integer list is monotonically increasing.
+ * requires: int list
+ * returns: bool - true if list is monotonically increasing, false otherwise *)
 let rec is_mon_inc (lst:int list) =
 	match lst with
 	 | [] -> true
 	 | _::[] -> true
  	 | h1::(h2::t) -> (h1 <= h2) && is_mon_inc (h2::t)
 
-(* EXERCISE 2 *)
-(* Checks if an integer list is unimodal. *)
-(* requires: int list *)
-(* returns: bool - true if list is unimodal, false otherwise *)
+(* Exercise 2:
+ * Checks if an integer list is unimodal.
+ * requires: int list
+ * returns: bool - true if list is unimodal, false otherwise *)
 let rec is_mon_dec (lst: int list) = 
 	is_mon_inc (List.rev lst)
 
@@ -29,10 +29,10 @@ let rec is_unimodal (lst: int list) =
 		  h::t -> increasing t h
 		  | _ -> true
 
-(* EXERCISE 3 *)
-(* Returns the set of all subsets of a given list *)
-(* requires: 'a list *)
-(* returns: 'a list list - the powerset of the given list *)
+(* Exercise 3:
+ * Returns the set of all subsets of a given list
+ * requires: 'a list
+ * returns: 'a list list - the powerset of the given list *)
 let rec powerset lst =
 	match lst with
 	| [] -> [[]]
@@ -44,10 +44,10 @@ let rec powerset lst =
 				| h::t -> funct h::powerset_helper funct t in
 					(powerset_helper (fun tail -> h::tail) p) @ p
 
-(* EXERCISE 4 *)
-(* Reverses the digits of an integer. The sign is unchanged *)
-(* requires: int *)
-(* returns: int - int whose digits are reversed from the given int *)
+(* Exercise 4:
+ * Reverses the digits of an integer. The sign is unchanged
+ * requires: int
+ * returns: int - int whose digits are reversed from the given int *)
 let rev_int i =
 	let rec reverse i r =
 		if i = 0 then r
@@ -55,11 +55,11 @@ let rev_int i =
 			if i<0 then -1*(reverse (-1*i) 0)
 			else reverse i 0
 
-(* EXERCISE 5 *)
-(* Turns a list into a list of sublists, each of a given size.
-The last sublist may be smaller than the given size. *)
-(* requires: int - size of each sublist. 'a list - original flat list  *)
-(* returns: 'a list list option - a list of sublists, each of a given size *)
+(* Exercise 5:
+ * Turns a list into a list of sublists, each of a given size.
+The last sublist may be smaller than the given size.
+ * requires: int - size of each sublist. 'a list - original flat list 
+ * returns: 'a list list option - a list of sublists, each of a given size *)
 let unflatten k lst =
 	if k<=0 then None
 	else let rec unflatten_helper i a b = function
@@ -70,7 +70,10 @@ let unflatten k lst =
 		  else unflatten_helper (i-1) (h::a) b t in
 		  	Some(List.rev (unflatten_helper k [] [] lst))
 
-(* EXERCISE 6 *)
+(* Exercise 6:
+ * Converts the input roman numeral into a integer.
+ * requires: valid roman numeral
+ * returns: integer corresponding to roman numeral *)
 type numeral = I | V | X | L | C | D | M
 type roman = numeral list
 
