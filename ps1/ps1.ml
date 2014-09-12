@@ -58,4 +58,21 @@ let unflatten k lst =
 		  	Some(List.rev (unflatten_helper k [] [] lst))
 
 (* EXERCISE 6 *)
+type numeral = I | V | X | L | C | D | M
+type roman = numeral list
 
+let rec int_of_roman (r : roman) : int =
+	let int_of_numeral = function
+	  | I -> 1
+	  | V -> 5
+	  | X -> 10
+	  | L -> 50
+	  | C -> 100
+	  | D -> 500
+	  | M -> 1000 in
+	match r with
+	  [] -> 0
+	  | a::[] -> int_of_numeral a 
+	  | h::(h2::t) -> if (int_of_numeral h) >= (int_of_numeral h2) then
+	  (int_of_numeral h) + (int_of_roman (h2::t)) else
+	  		(int_of_numeral h2) - (int_of_numeral h) + (int_of_roman t)
