@@ -1,15 +1,42 @@
 open Assertions
 
-(* Exercise 1 *)
-let a = [1;2;3]
-let b = [1;10;3]
-let c = [5;4;3;2;1]
-let d = []
-let e = [10000]
+(* EXERCISE 1 *)
+(* Given test cases *)
+TEST_UNIT "is_mon_ic_test1" = assert_true ((is_mon_ic [1;2;3;6;9]) = true)
+TEST_UNIT "is_mon_ic_test2" = assert_true ((is_mon_ic [1;3;5;7;5;9]) = false)
+TEST_UNIT "is_mon_ic_test3" = assert_true ((is_mon_ic [1;1;2;3;4;4]) = true)
+(* New test cases *)
+TEST_UNIT "is_mon_ic_test4" = assert_true ((is_mon_ic [1]) = true)
+TEST_UNIT "is_mon_ic_test5" = assert_true ((is_mon_ic [42;5]) = false)
+TEST_UNIT "is_mon_ic_test6" = assert_true ((is_mon_ic [5;42]) = true)
+TEST_UNIT "is_mon_ic_test7" = assert_true ((is_mon_ic [13;13]) = true)
+TEST_UNIT "is_mon_ic_test8" = assert_true ((is_mon_ic [1;10;3]) = false)
+TEST_UNIT "is_mon_ic_test9" = assert_true ((is_mon_ic [5;4;3;2;1]) = false)
+TEST_UNIT "is_mon_ic_test10" = assert_true ((is_mon_ic []) = true)
+TEST_UNIT "is_mon_ic_test11" = assert_true ((is_mon_ic [10000]) = true)
 
-TEST_UNIT "is_mon_ic_test1" = assert_true ((is_mon_ic a) = true)
-TEST_UNIT "is_mon_ic_test2" = assert_true ((is_mon_ic b) = false)
-TEST_UNIT "is_mon_ic_test3" = assert_true ((is_mon_ic c) = false)
-TEST_UNIT "is_mon_ic_test4" = assert_true ((is_mon_ic d) = true)
-TEST_UNIT "is_mon_ic_test5" = assert_true ((is_mon_ic e) = true)
+(* EXERCISE 2 *)
+(* Given test cases *)
+(* New test cases *)
 
+(* EXERCISE 3 *)
+(* Given test cases *)
+(* New test cases *)
+
+(* EXERCISE 4 *)
+(* Given test cases *)
+(* New test cases *)
+
+(* EXERCISE 5 *)
+(* Given test cases *)
+TEST_UNIT "unflatten_test1" = assert_true ((unflatten (-1) []) = None)
+TEST_UNIT "unflatten_test2" = assert_true ((unflatten 0 []) = None)
+TEST_UNIT "unflatten_test3" = assert_true ((unflatten 2 []) = Some [[1;2]; [3;4]; [5;6]])
+TEST_UNIT "unflatten_test4" = assert_true ((unflatten 3 []) = Some [[1;2;3]; [4;5;6]; [7;8]])
+TEST_UNIT "unflatten_test5" = assert_true ((unflatten 6 []) = Some [[1;2;3;4;5;6]])
+TEST_UNIT "unflatten_test6" = assert_true ((unflatten 7 []) = Some [[1;2;3;4;5;6]])
+(* New test cases *)
+
+(* EXERCISE 6 *)
+(* Given test cases *)
+(* New test cases *)
