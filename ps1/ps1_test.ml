@@ -15,6 +15,7 @@ TEST_UNIT "is_mon_ic_test9" = assert_true ((is_mon_ic [5;4;3;2;1]) = false)
 TEST_UNIT "is_mon_ic_test10" = assert_true ((is_mon_ic []) = true)
 TEST_UNIT "is_mon_ic_test11" = assert_true ((is_mon_ic [10000]) = true)
 
+
 (* EXERCISE 2 *)
 (* Given test cases *)
 TEST_UNIT "is_unimodal_test1" = assert_true ((is_unimodal [1;2;3;6;9;5;4]) = true)
@@ -38,6 +39,7 @@ TEST_UNIT "powerset_test5" = assert_true ((powerset [10;9;8;7]) = [[10;9;8;7];[1
 TEST_UNIT "powerset_test6" = assert_true ((powerset [1;1;1]) = [[1;1;1];[1;1];[1;1];[1];[1;1];[1];[1];[]] )
 TEST_UNIT "powerset_test7" = assert_true ((powerset [4;2;6;2;6;4]) = [[4;2;6;2;6;4];[4;2;6;2;6];[4;2;6;2;4];[4;2;6;2];[4;2;6;6;4];[4;2;6;6];[4;2;6;4];[4;2;6];[4;2;2;6;4];[4;2;2;6];[4;2;2;4];[4;2;2];[4;2;6;4];[4;2;6];[4;2;4];[4;2];[4;6;2;6;4];[4;6;2;6];[4;6;2;4];[4;6;2];[4;6;6;4];[4;6;6];[4;6;4];[4;6];[4;2;6;4];[4;2;6];[4;2;4];[4;2];[4;6;4];[4;6];[4;4];[4];[2;6;2;6;4];[2;6;2;6];[2;6;2;4];[2;6;2];[2;6;6;4];[2;6;6];[2;6;4];[2;6];[2;2;6;4];[2;2;6];[2;2;4];[2;2];[2;6;4];[2;6];[2;4];[2];[6;2;6;4];[6;2;6];[6;2;4];[6;2];[6;6;4];[6;6];[6;4];[6];[2;6;4];[2;6];[2;4];[2];[6;4];[6];[4];[]])
 
+
 (* EXERCISE 4 *)
 (* Given test cases *)
 TEST_UNIT "rev_int_test1" = assert_true ((rev_int 1234) = 4321)
@@ -52,15 +54,22 @@ TEST_UNIT "rev_int_test8" = assert_true ((rev_int 1000) = 1)
 TEST_UNIT "rev_int_test9" = assert_true ((rev_int (-0001)) = (-1))
 TEST_UNIT "rev_int_test10" = assert_true ((rev_int (-1000)) = (-1))
 
+
 (* EXERCISE 5 *)
 (* Given test cases *)
 TEST_UNIT "unflatten_test1" = assert_true ((unflatten (-1) []) = None)
-TEST_UNIT "unflatten_test2" = assert_true ((unflatten 0 []) = None)
-TEST_UNIT "unflatten_test3" = assert_true ((unflatten 2 []) = Some [[1;2];[3;4];[5;6]])
-TEST_UNIT "unflatten_test4" = assert_true ((unflatten 3 []) = Some [[1;2;3];[4;5;6];[7;8]])
-TEST_UNIT "unflatten_test5" = assert_true ((unflatten 6 []) = Some [[1;2;3;4;5;6]])
-TEST_UNIT "unflatten_test6" = assert_true ((unflatten 7 []) = Some [[1;2;3;4;5;6]])
+TEST_UNIT "unflatten_test2" = assert_true ((unflatten 0 [1;2;3;4;5;6]) = None)
+TEST_UNIT "unflatten_test3" = assert_true ((unflatten 2 [1;2;3;4;5;6]) = Some [[1;2];[3;4];[5;6]])
+TEST_UNIT "unflatten_test4" = assert_true ((unflatten 3 [1;2;3;4;5;6;7;8]) = Some [[1;2;3];[4;5;6];[7;8]])
+TEST_UNIT "unflatten_test5" = assert_true ((unflatten 6 [1;2;3;4;5;6]) = Some [[1;2;3;4;5;6]])
+TEST_UNIT "unflatten_test6" = assert_true ((unflatten 7 [1;2;3;4;5;6]) = Some [[1;2;3;4;5;6]])
 (* New test cases *)
+TEST_UNIT "unflatten_test7" = assert_true ((unflatten 1000 ['c';'s';'3';'1';'1';'0']) = Some [['c';'s';'3';'1';'1';'0']])
+TEST_UNIT "unflatten_test8" = assert_true ((unflatten 2 ['c';'s';'3';'1';'1';'0']) = Some [['c';'s'];['3';'1'];['1';'0']])
+TEST_UNIT "unflatten_test9" = assert_true ((unflatten 3 ['c';'s';'3';'1';'1';'0']) = Some [['c';'s';'3'];['1';'1';'0']])
+TEST_UNIT "unflatten_test10" = assert_true ((unflatten 4 ['c';'s';'3';'1';'1';'0']) = Some [['c';'s';'3';'1'];['1';'0']])
+TEST_UNIT "unflatten_test11" = assert_true ((unflatten 5 [true;false;true;true;false;false;false;true]) = Some [[true;false;true;true;false];[false;false;true]] )
+TEST_UNIT "unflatten_test12" = assert_true ((unflatten 1 ["panda";"eats";"shoots";"and";"leaves"]) = Some [["panda"];["shoots"];["eats"];["and"];["leaves"]])
 
 
 (* EXERCISE 6 *)

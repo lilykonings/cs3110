@@ -1,7 +1,7 @@
 (* EXERCISE 1 *)
-(* Checks if the int list is monotonically increasing. *)
-(* requires: integer list *)
-(* returns: true if list is monotonically increasing, false otherwise *)
+(* Checks if an integer list is monotonically increasing. *)
+(* requires: int list *)
+(* returns: bool - true if list is monotonically increasing, false otherwise *)
 let rec is_mon_inc (lst:int list) =
 	match lst with
 	 | [] -> true
@@ -9,6 +9,9 @@ let rec is_mon_inc (lst:int list) =
  	 | h1::(h2::t) -> (h1 <= h2) && is_mon_inc (h2::t)
 
 (* EXERCISE 2 *)
+(* Checks if an integer list is unimodal. *)
+(* requires: int list *)
+(* returns: bool - true if list is unimodal, false otherwise *)
 let rec is_mon_dec (lst: int list) = 
 	is_mon_inc (List.rev lst)
 
@@ -16,17 +19,20 @@ let rec is_unimodal (lst: int list) =
 	if (is_mon_inc lst) || (is_mon_dec lst) then true else
 		let rec decreasing lst last = (match lst with
 		  h::t -> if h <= last then decreasing t h
-				 	else false
+			 	else false
 		  | [] -> true) in
 		let rec increasing lst last = (match lst with
 		  h::t -> if h >= last then increasing t h
-					else decreasing t h
+				else decreasing t h
 		  | [] -> true) in 
 		match lst with
 		  h::t -> increasing t h
 		  | _ -> true
 
 (* EXERCISE 3 *)
+(* Returns the set of all subsets of a given list *)
+(* requires: 'a list *)
+(* returns: 'a list list - the powerset of the given list *)
 let rec powerset lst =
 	match lst with
 	| [] -> [[]]
@@ -39,6 +45,9 @@ let rec powerset lst =
 					(powerset_helper (fun tail -> h::tail) p) @ p
 
 (* EXERCISE 4 *)
+(* Reverses the digits of an integer. The sign is unchanged *)
+(* requires: int *)
+(* returns: int - int whose digits are reversed from the given int *)
 let rev_int i =
 	let rec reverse i r =
 		if i = 0 then r
@@ -47,6 +56,10 @@ let rev_int i =
 			else reverse i 0
 
 (* EXERCISE 5 *)
+(* Turns a list into a list of sublists, each of a given size.
+The last sublist may be smaller than the given size. *)
+(* requires: int - size of each sublist. 'a list - original flat list  *)
+(* returns: 'a list list option - a list of sublists, each of a given size *)
 let unflatten k lst =
 	if k<=0 then None
 	else let rec unflatten_helper i a b = function
