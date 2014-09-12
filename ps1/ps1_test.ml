@@ -75,7 +75,7 @@ TEST_UNIT "unflatten_test8" = assert_true ((unflatten 2 ['c';'s';'3';'1';'1';'0'
 TEST_UNIT "unflatten_test9" = assert_true ((unflatten 3 ['c';'s';'3';'1';'1';'0']) = Some [['c';'s';'3'];['1';'1';'0']])
 TEST_UNIT "unflatten_test10" = assert_true ((unflatten 4 ['c';'s';'3';'1';'1';'0']) = Some [['c';'s';'3';'1'];['1';'0']])
 TEST_UNIT "unflatten_test11" = assert_true ((unflatten 5 [true;false;true;true;false;false;false;true]) = Some [[true;false;true;true;false];[false;false;true]] )
-TEST_UNIT "unflatten_test12" = assert_true ((unflatten 1 ["panda";"eats";"shoots";"and";"leaves"]) = Some [["panda"];["shoots"];["eats"];["and"];["leaves"]])
+TEST_UNIT "unflatten_test12" = assert_true ((unflatten 1 ["panda";"eats";"shoots";"and";"leaves"]) = Some [["panda"];["eats"];["shoots"];["and"];["leaves"]])
 
 
 (* EXERCISE 6 *)
