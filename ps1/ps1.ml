@@ -61,7 +61,11 @@ let unflatten k lst =
   	| h::t ->
 	  	if i<=1 then unflatten_helper k [] ((h::a)::b) t
 		  else unflatten_helper (i-1) (h::a) b t in
+<<<<<<< HEAD
 		  	Some(List.rev(unflatten_helper k [] [] lst))
+=======
+		  	Some(List.rev(unflatten_helper k [] [] (List.rev(lst))))
+>>>>>>> 9d2e07ccaade7c81055c806c80008b6c1ee4dfa4
 
 
 
