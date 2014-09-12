@@ -1,3 +1,6 @@
+(* Lillian Chen (qc53) and Charles Tark (cyt25) *)
+(* September 11, 2014 *)
+
 (* Exercise 1:
  * Checks if an integer list is monotonically increasing.
  * requires: int list
