@@ -11,7 +11,7 @@ type 'a exprTree =
 (*returns the number of function app in an exprTree*)
 (*requires: 'a exprTree*)
 (*returns: int*)
-let rec count_ops (et : 'a exprTree) : int = function
+let rec count_ops = function
 	| Val(a) -> 0
 	| Unop(_, a) -> 1 + (count_ops a)
 	| Binop(_, a, b) -> 1 + (count_ops a) + (count_ops b)
@@ -55,8 +55,8 @@ let concat_right (lst : string list) : string =
   List.fold_right (fun x acc -> x ^ acc) lst ""
 
 (* Exercise 3a *)
-(*performs function f on lst where the index is the first argument*)
-(*and the element is the second*)
+(*performs function f on lst where the index is the first argument
+  and the element is the second*)
 (*requires: int -> 'a -> 'b function, and 'a list*)
 (*returns: 'b list*)
 let mapi_lst (f: (int -> 'a -> 'b)) (lst: 'a list) : 'b list =
@@ -83,7 +83,7 @@ let scan_left (f: 'a -> 'b -> 'a) (acc: 'a) (lst: 'b list) : 'a list =
   List.rev (List.fold_left ((fun f a x -> (f (List.hd a) x)::a) f) [acc] lst)
 
 (* Exercise 4b *)
-(*re*)
+(* NEED DESCRIPTION ========================== *)
 (*requires: n >= 1*)
 (*returns: the list [1;2;...;n]*)
 let countup (n:int) : int list =
@@ -96,14 +96,13 @@ let countup (n:int) : int list =
   in countup' n []
 
 (* Exercise 4b:
- * Returns an int list containing the factorial for all numbers up to an int  n
+ * Returns an int list containing the factorial for all numbers up to an int n
  * requires: int n >= 1
  * returns: an int list [1!; 2!; ... ; (n-1)!; n!] *)
 let fact_list (n: int) : int list =
   List.tl (scan_left (fun x y -> x * y) 1 (countup n))
 
 (* PART 3: MATRICES *)
-
 type vector = int list
 type matrix = vector list
 
@@ -127,7 +126,7 @@ let show (m : matrix) : unit =
 (*returns: matrix *)
 let insert_col (m : matrix) (c : vector) : matrix = 
 	try
-		List.fold_left2 (fun a x1 x2 -> (x1 @ [x2])::a) [] m c
+		List.rev (List.fold_left2 (fun a x1 x2 -> (x1 @ [x2])::a) [] m c)
 	with
 		Invalid_argument _ -> raise (MatrixFailure "Sizes of matrix and vector do not match!")
 
@@ -136,24 +135,38 @@ let insert_col (m : matrix) (c : vector) : matrix =
 (*requires: matrix*)
 (*returns: matrix *)
 let transpose (m : matrix) : matrix = 
-  List.length (List.hd m)
-
-	List.fold_left (fun a x -> (insert_col a x)) base m
+  let base = function
+    | [] -> []
+    | h::_ -> List.fold_left (fun a x -> []::a) [] h in
+	List.fold_left (fun a x -> insert_col a x) (base m) m
 
 (* Exercise 4 *)
 (*adds two matrices*)
 (*requires: two matrices*)
 (*returns: matrix *)
 let add_matrices (m1 : matrix) (m2 : matrix) : matrix = 
-	let add l1 l2 =
-    List.fold_left2 (fun a x1 x2 -> ((x1+x2)::a)) [] l1 l2 in
-  List.fold_left2 (fun a x1 x2 -> List.rev(List.rev(add x1 x2)::a)) [] m1 m2
+	try
+		List.map2 (fun x1 x2 ->
+			List.rev (List.fold_left2 (fun a i1 i2 ->
+				((i1+i2)::a)
+			) [] x1 x2)
+		) m1 m2
+	with
+		Invalid_argument _ -> raise (MatrixFailure "Sizes of matrix and vector do not match!")
 
 (* Exercise 5 *)
 (*multiplies two matrices*)
 (*requires: two matrices*)
 (*returns: matrix *)
-let multiply_matrices (m1 : matrix) (m2 : matrix) : matrix = 
+let multiply_matrices (m1 : matrix) (m2 : matrix) : matrix =
+	try
+		List.map ((fun x1 ->
+			List.map (fun x2 ->
+				List.fold_left (+) 0 (List.map2 ( * ) x1 x2)
+			) (transpose m2))
+		) m1
+	with
+		Invalid_argument _ -> raise (MatrixFailure "Sizes of matrix and vector do not match!")
 
 (* PART 4: PATTERN MATCHING *)
 

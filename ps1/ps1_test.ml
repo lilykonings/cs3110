@@ -6,20 +6,6 @@ open Ps1
 
 (* EXERCISE 1 *)
 (* Given test cases *)
-<<<<<<< HEAD
-TEST_UNIT "is_mon_ic_test1" = assert_true ((is_mon_inc [1;2;3;6;9]) = true)
-TEST_UNIT "is_mon_ic_test2" = assert_true ((is_mon_inc [1;3;5;7;5;9]) = false)
-TEST_UNIT "is_mon_ic_test3" = assert_true ((is_mon_inc [1;1;2;3;4;4]) = true)
-(* New test cases *)
-TEST_UNIT "is_mon_ic_test4" = assert_true ((is_mon_inc [1]) = true)
-TEST_UNIT "is_mon_ic_test5" = assert_true ((is_mon_inc [42;5]) = false)
-TEST_UNIT "is_mon_ic_test6" = assert_true ((is_mon_inc [5;42]) = true)
-TEST_UNIT "is_mon_ic_test7" = assert_true ((is_mon_inc [13;13]) = true)
-TEST_UNIT "is_mon_ic_test8" = assert_true ((is_mon_inc [1;10;3]) = false)
-TEST_UNIT "is_mon_ic_test9" = assert_true ((is_mon_inc [5;4;3;2;1]) = false)
-TEST_UNIT "is_mon_ic_test10" = assert_true ((is_mon_inc []) = true)
-TEST_UNIT "is_mon_ic_test11" = assert_true ((is_mon_inc [10000]) = true)
-=======
 TEST_UNIT "is_mon_inc_test1" = assert_true ((is_mon_inc [1;2;3;6;9]) = true)
 TEST_UNIT "is_mon_inc_test2" = assert_true ((is_mon_inc [1;3;5;7;5;9]) = false)
 TEST_UNIT "is_mon_inc_test3" = assert_true ((is_mon_inc [1;1;2;3;4;4]) = true)
@@ -32,7 +18,6 @@ TEST_UNIT "is_mon_inc_test8" = assert_true ((is_mon_inc [1;10;3]) = false)
 TEST_UNIT "is_mon_inc_test9" = assert_true ((is_mon_inc [5;4;3;2;1]) = false)
 TEST_UNIT "is_mon_inc_test10" = assert_true ((is_mon_inc []) = true)
 TEST_UNIT "is_mon_inc_test11" = assert_true ((is_mon_inc [10000]) = true)
->>>>>>> cb4bd942feb8a523b76c1b8696ef569c19851708
 
 
 (* EXERCISE 2 *)
