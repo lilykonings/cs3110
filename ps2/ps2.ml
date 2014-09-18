@@ -1,3 +1,5 @@
+(* Charles Tark (cyt25) and Lillian Chen (qc53) *)
+(* September 18, 2014 *)
 
 (* PART 1: EXPRESSION TREES *)
 type 'a exprTree = 
@@ -34,61 +36,61 @@ let rec eval : 'a = function
 
 (* PART 2: FOLDING*)
 
-(* Exercise 1:
- * Returns the product of elements of a float list. 
- * The product of an empty list is 1.0.
- * requires: float list
- * returns: float of product *)
+(* Exercise 1*)
+(*returns the product of elements of a float list*)
+(*the product of an empty list is 1.0*)
+(*requires: float list*)
+(*returns: float of product *)
 let product (lst : float list) : float =
   List.fold_left (fun acc x -> acc *. x) 1.0 lst
 
-(* Exercise 2:
- * Returns in-order concatenation of all strings in input list. 
- * requires: string list
- * returns: string concatenation of string elements *)
+(* Exercise 2 *)
+(*returns in-order concatenation of all strings in input list*)
+(*requires: string list*)
+(*returns: string concatenation of string elements *)
 let concat_left (lst : string list) : string = 
   List.fold_left (fun acc x -> acc ^ x) "" lst
 
 let concat_right (lst : string list) : string = 
   List.fold_right (fun x acc -> x ^ acc) lst ""
 
-(* Exercise 3a:
- * Performs function f on lst where the index is the first argument
- * and the element is the second.
- * requires: int -> 'a -> 'b function, and 'a list
- * returns: 'b list *)
+(* Exercise 3a *)
+(*performs function f on lst where the index is the first argument*)
+(*and the element is the second*)
+(*requires: int -> 'a -> 'b function, and 'a list*)
+(*returns: 'b list*)
 let mapi_lst (f: (int -> 'a -> 'b)) (lst: 'a list) : 'b list =
   List.fold_left ((fun f acc x -> acc@[f (List.length acc) x]) f) [] lst
 
-(* Exercise 3b:
- * Produces numbered outline from strings.
- * requires: string list
- * returns: string list with number, period and space prepended to each element *)
+(* Exercise 3b *)
+(*produces numbered outline from strings*)
+(*requires: string list*)
+(*returns: string list with number, period and space prepended to each element*)
 let outline (lst: string list) : string list =
   mapi_lst (fun i a -> (string_of_int (i + 1)) ^ ". " ^ a) lst
 
-(* Exercise 4a: 
- * Returns list for each value taken by the accumulator during processing fold.
- * requires: function 'a -> 'b -> 'b, 'a list, and accumulator 'b
- * returns: 'b list of all accumulator values taken *)      
+(* Exercise 4a *)
+(*returns list for each value taken by the accumulator during processing fold.*)
+(*requires: function 'a -> 'b -> 'b, 'a list, and accumulator 'b*)
+(*returns: 'b list of all accumulator values taken*)      
 let scan_right (f: 'a -> 'b -> 'b) (lst: 'a list) (acc: 'b) : 'b list =
   List.rev (List.fold_right ((fun f x a -> (f x (List.hd a))::a) f) lst [acc])
 
-(* Returns list for each value taken by the accumulator during processing fold.
- * requires: function 'a -> 'b -> 'a, accumulator 'a, and 'b list
- * returns: 'a list of all accumulator values taken *)        
+(*returns list for each value taken by the accumulator during processing fold.*)
+(*requires: function 'a -> 'b -> 'a, accumulator 'a, and 'b list*)
+(*returns: 'a list of all accumulator values taken*)        
 let scan_left (f: 'a -> 'b -> 'a) (acc: 'a) (lst: 'b list) : 'a list =
   List.rev (List.fold_left ((fun f a x -> (f (List.hd a) x)::a) f) [acc] lst)
 
 
-(* Exercise 4b:
- * Re*)
-(* requires: n >= 1 
-   returns: the list [1;2;...;n] *)
+(* Exercise 4b *)
+(*re*)
+(*requires: n >= 1*)
+(*returns: the list [1;2;...;n]*)
 let countup (n:int) : int list =
   (* tail-recursive helper function for countup:  
-       accumulate the answer in l, 
-       starting from n and working down *)
+  	accumulate the answer in l, 
+  	starting from n and working down *)
   let rec countup' i l =
     if i<=0 then l
     else countup' (i-1) (i::l)
@@ -121,10 +123,8 @@ let show (m : matrix) : unit =
 (*requires: matrix and vector*)
 (*returns: matrix *)
 let insert_col (m : matrix) (c : vector) : matrix = 
-	let insert e lst =
-		List.fold_right (fun a x -> if (x=[]) then a::e::x else a::x) lst [] in
-	try 
-		List.fold_left2 (fun a x1 x2 -> List.rev((insert x1 x2)::a)) [] c m
+	try
+		List.fold_left2 (fun a x1 x2 -> (x1 @ [x2])::a) [] m c
 	with
 		Invalid_argument _ -> raise (MatrixFailure "Sizes of matrix and vector do not match!")
 
@@ -133,6 +133,9 @@ let insert_col (m : matrix) (c : vector) : matrix =
 (*requires: matrix*)
 (*returns: matrix *)
 let transpose (m : matrix) : matrix = 
+  List.length (List.hd m)
+
+	List.fold_left (fun a x -> (insert_col a x)) base m
 
 (* Exercise 4 *)
 (*adds two matrices*)
