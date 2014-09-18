@@ -1,3 +1,5 @@
+(* Lillian Chen (qc53) and Charles Tark (cyt25) *)
+(* September 18, 2014 *)
 
 (* PART 1: EXPRESSION TREES *)
 type 'a exprTree = 
