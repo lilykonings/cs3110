@@ -80,9 +80,6 @@ let scan_right (f: 'a -> 'b -> 'b) (lst: 'a list) (acc: 'b) : 'b list =
 let scan_left (f: 'a -> 'b -> 'a) (acc: 'a) (lst: 'b list) : 'a list =
   List.rev (List.fold_left ((fun f a x -> (f (List.hd a) x)::a) f) [acc] lst)
 
-
-(* Exercise 4b:
- * Re*)
 (* requires: n >= 1 
    returns: the list [1;2;...;n] *)
 let countup (n:int) : int list =
@@ -94,8 +91,12 @@ let countup (n:int) : int list =
     else countup' (i-1) (i::l)
   in countup' n []
 
+(* Exercise 4b:
+ * Returns an int list containing the factorial for all numbers up to an int  n
+ * requires: int n >= 1
+ * returns: an int list [1!; 2!; ... ; (n-1)!; n!] *)
 let fact_list (n: int) : int list =
-  failwith "I do not like the cone of shame."
+  List.tl (scan_left (fun x y -> x * y) 1 (countup n))
 
 (* PART 3: MATRICES *)
 
