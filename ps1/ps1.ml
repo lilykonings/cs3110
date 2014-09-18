@@ -60,7 +60,7 @@ let rev_int i =
 
 (* Exercise 5:
  * Turns a list into a list of sublists, each of a given size.
-The last sublist may be smaller than the given size.
+ * The last sublist may be smaller than the given size.
  * requires: int - size of each sublist. 'a list - original flat list 
  * returns: 'a list list option - a list of sublists, each of a given size *)
 let unflatten k lst =

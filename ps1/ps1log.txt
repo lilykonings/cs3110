@@ -1,0 +1,200 @@
+commit 572be8b9f6c24ac3e4130370d7995f4d2265bd39
+Author: Lily <lilyc5459@gmail.com>
+Date:   Thu Sep 11 22:32:23 2014 -0400
+
+    final compilable test file
+
+ ps1/ps1.ml      |  3 +++
+ ps1/ps1_test.ml | 37 ++++++++++++++++++-------------------
+ 2 files changed, 21 insertions(+), 19 deletions(-)
+
+commit 722e9fb85128856637ca775ada5b4c8b6b86e908
+Author: Lily <lilyc5459@gmail.com>
+Date:   Thu Sep 11 22:03:55 2014 -0400
+
+    ps1written pdf
+
+ ps1/.DS_Store      | Bin 0 -> 6148 bytes
+ ps1/ps1.ml         |   2 +-
+ ps1/ps1written.pdf | Bin 0 -> 14534 bytes
+ ps1/ps1written.txt |   4 ++++
+ 4 files changed, 5 insertions(+), 1 deletion(-)
+
+commit 641188ef1501ca220f8141f2f979437fdf7b3894
+Author: Lily <lilyc5459@gmail.com>
+Date:   Thu Sep 11 22:00:24 2014 -0400
+
+    typo
+
+ ps1/ps1_test.ml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 3ab60ab4084495cd8a7a970b95479d5110f70111
+Merge: ad33c5c c53607a
+Author: Lily <lilyc5459@gmail.com>
+Date:   Thu Sep 11 21:59:58 2014 -0400
+
+    Merge branch 'master' of https://github.com/lilyc5459/cs3110
+    
+    Conflicts:
+    	ps1/ps1.ml
+
+commit ad33c5cfa7a436eabede996e279bd884077252a0
+Author: Lily <lilyc5459@gmail.com>
+Date:   Thu Sep 11 21:58:08 2014 -0400
+
+    function pre and postconditions
+
+ ps1/ps1.ml      | 25 +++++++++++++++++++------
+ ps1/ps1_test.ml | 19 ++++++++++++++-----
+ 2 files changed, 33 insertions(+), 11 deletions(-)
+
+commit c53607a2666c07d46aabc97f63e493748644c8b4
+Merge: 11bfb19 d82db07
+Author: Charlie Tark <cyt25@cornell.edu>
+Date:   Thu Sep 11 21:53:49 2014 -0400
+
+    Merge branch 'master' of https://github.com/lilyc5459/cs3110
+
+commit 11bfb1983b9f8b773b95c0f97cdbbb86fe80e94e
+Author: Charlie Tark <cyt25@cornell.edu>
+Date:   Thu Sep 11 21:53:09 2014 -0400
+
+    Test cases finished
+
+ ps1/ps1.ml      | 24 +++++++++++++-----------
+ ps1/ps1_test.ml | 11 +++++++++++
+ 2 files changed, 24 insertions(+), 11 deletions(-)
+
+commit d82db079813aa15769c89a69636d8bf4a291b807
+Author: Lily <lilyc5459@gmail.com>
+Date:   Thu Sep 11 21:29:44 2014 -0400
+
+    more test cases
+
+ ps1/ps1_test.ml | 15 +++++++++++++--
+ 1 file changed, 13 insertions(+), 2 deletions(-)
+
+commit 47ef25d740e68925e1504b99e34a3c6b1fcd45d6
+Author: Charlie Tark <cyt25@cornell.edu>
+Date:   Thu Sep 11 21:29:08 2014 -0400
+
+    Added Exercise 6 - int_of_roman
+
+ ps1/ps1.ml | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+
+commit 03007a3c01ff794fb555ab31406efe3dbbdb118e
+Author: Lily <lilyc5459@gmail.com>
+Date:   Thu Sep 11 21:11:47 2014 -0400
+
+    ex7 and given test cases
+
+ ps1/ps1.ml         | 24 +++++++++---------------
+ ps1/ps1_test.ml    | 29 ++++++++++++++++++++++++++---
+ ps1/ps1written.txt |  5 ++++-
+ 3 files changed, 39 insertions(+), 19 deletions(-)
+
+commit 99fa41486575d140f42871cc808f00ed5960de95
+Merge: c7c40ea 564f6e0
+Author: Lily <lilyc5459@gmail.com>
+Date:   Thu Sep 11 20:55:48 2014 -0400
+
+    fixed conflicts
+
+commit c7c40ea9c7a4793ad76695b25087713f77b343c7
+Author: Lily <lilyc5459@gmail.com>
+Date:   Thu Sep 11 20:54:54 2014 -0400
+
+    writing test cases
+
+ ps1/ps1.ml      |  6 +++---
+ ps1/ps1_test.ml | 51 +++++++++++++++++++++++++++++++++++++++------------
+ 2 files changed, 42 insertions(+), 15 deletions(-)
+
+commit 564f6e040ec753506d40450ade7ae4fdecef56ab
+Merge: 3eecee4 9d2e07c
+Author: Charlie Tark <cyt25@cornell.edu>
+Date:   Thu Sep 11 20:29:18 2014 -0400
+
+    Adding Exercise 2 - is_unimodal
+
+commit 3eecee4ed32e516f1252458970669ffd51d6d91d
+Author: Charlie Tark <cyt25@cornell.edu>
+Date:   Thu Sep 11 20:28:08 2014 -0400
+
+    Adding Exercise 2 - is_unimodal
+
+ ps1/ps1.ml | 29 +++++++++++++++++++++++++++--
+ 1 file changed, 27 insertions(+), 2 deletions(-)
+
+commit 9d2e07ccaade7c81055c806c80008b6c1ee4dfa4
+Merge: 7e21d80 a92e832
+Author: Lily <lilyc5459@gmail.com>
+Date:   Thu Sep 11 20:27:12 2014 -0400
+
+    Merge branch 'master' of https://github.com/lilyc5459/cs3110
+    
+    Conflicts:
+    	ps1/ps1.ml
+
+commit 7e21d804444ccc9a5c7c8e265c5d42e9ad59dfd9
+Author: Lily <lilyc5459@gmail.com>
+Date:   Thu Sep 11 20:27:01 2014 -0400
+
+    reversing unflatten
+
+ ps1/ps1.ml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit a92e832a7516c371e5ec22b30e132127156d594a
+Merge: a32ad7a ebc4fdf
+Author: Charlie Tark <cyt25@cornell.edu>
+Date:   Thu Sep 11 20:23:07 2014 -0400
+
+    Adding Exercise 2
+
+commit a32ad7a2bdfd832152663cd54a117952d538b090
+Author: Charlie Tark <cyt25@cornell.edu>
+Date:   Thu Sep 11 20:21:28 2014 -0400
+
+    Adding Exercise 2
+
+ ps1/ps1.ml | 19 ++++++++++++++++---
+ 1 file changed, 16 insertions(+), 3 deletions(-)
+
+commit ebc4fdf0750830e92eb35089987656475de6cb53
+Author: Lily <lilyc5459@gmail.com>
+Date:   Thu Sep 11 20:15:45 2014 -0400
+
+    directory cleanup
+
+ .DS_Store      | Bin 0 -> 6148 bytes
+ ps1.ml         |  53 -----------------------------------------------------
+ ps1/ps1.ml     |  20 +++++++++++++++++---
+ ps1_test.ml    |  15 ---------------
+ ps1written.txt |  30 ------------------------------
+ 5 files changed, 17 insertions(+), 101 deletions(-)
+
+commit 9bcd4e3b0160e6e79754c62936a5e5d72f4b5428
+Author: Lily <lilyc5459@gmail.com>
+Date:   Thu Sep 11 19:48:38 2014 -0400
+
+    unflatten still not working...
+
+ ps1.ml         | 53 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ ps1_test.ml    | 15 +++++++++++++++
+ ps1written.txt | 30 ++++++++++++++++++++++++++++++
+ 3 files changed, 98 insertions(+)
+
+commit 8814ad714a032cc3b7bdf85f5654188a0f6b641d
+Author: Lily <lilyc5459@gmail.com>
+Date:   Thu Sep 11 14:34:41 2014 -0400
+
+    initial push
+
+ ps1/ps1.ml         |  39 +++++++++++++++++++++++++++++++++++++++
+ ps1/ps1.pdf        | Bin 0 -> 123187 bytes
+ ps1/ps1_test.ml    |  15 +++++++++++++++
+ ps1/ps1written.txt |  30 ++++++++++++++++++++++++++++++
+ 4 files changed, 84 insertions(+)

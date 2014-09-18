@@ -1,3 +1,7 @@
+Charlie Tark (cyt25) and Lillian Chen (qc53)
+cs3110, Fall 2014
+PS1, Written
+
 1.
 (a) int = 42
 (b) int = 42
