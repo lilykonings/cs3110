@@ -198,25 +198,32 @@ let rec z f1 f2 p =
 		| StructorPat (_,Some p) -> r p
 		| _ -> 0
 
+(* Exercise 1 *)
 (*counts the number of wildcards that occur in a pattern*)
+(*requires: pat*)
+(*returns: int*)
 let count_wcs (p: pat) : int =
 	z (fun u -> 1) (fun s -> 0) p
 
 (*counts the number of wildcards in a pattern, and adds that quantity to the sum
 of the lengths of the variable names used in the pattern*)
+(*requires: pat*)
+(*returns: int*)
 let count_wcs_and_var_lengths (p: pat) : int = 
 	z (fun u -> 1) (fun s -> String.length(s)) p
 
 (*counts how oftern a variable occurs in a pattern*)
+(*requires: string variable name and pat*)
+(*returns: int*)
 let count_var (var_name: string) (p: pat) : int = 
 	z (fun u -> 0) (fun s -> if (s = var_name) then 1 else 0) p
 
 (*2. *************************************************************************)
 
-(* Exercise 2: 
- * Produces list of variable names occurring in pattern, includes copies 
- * requires: pat p
- * returns: string list of variable names *)
+(* Exercise 2 *)
+(*Produces list of variable names occurring in pattern, includes copies*)
+(*requires: pat p*)
+(*returns: string list of variable names*)
 let rec extract_names (p: pat) : string list = 
   match p with 
   	WCPat -> []
@@ -244,7 +251,9 @@ let all_vars_unique (p: pat) : bool =
 
 (*3. *************************************************************************)
 
-(*applies the function argument to every element of the list argument*)
+(* Exercise 3 *)
+(*applies the function argument to every element of the list argument
+	but returns None if the function ever returns None on one of the arguments*)
 (*requires: function: 'a -> 'b list option and list: 'a list*)
 (*returns: 'b list option*)
 let all_answers (f: 'a -> 'b list option) (l: 'a list) : 'b list option =
@@ -257,10 +266,14 @@ let all_answers (f: 'a -> 'b list option) (l: 'a list) : 'b list option =
 		| None -> []
 		| Some e -> e in
 		Some (List.concat (List.map no_option r))
-		
 
 (*4. *************************************************************************)
 
+(* Exercise 4 *)
+(*checks whether a value matches a pattern, if so, then returns bindings
+	produced by the match. Otherwise, return None*)
+(*requires: a tuple of a value and a pattern: (value,pat)*)
+(*returns: bindings*)
 let rec match_pat ((v:value),(p:pat)) : bindings =
 	match p,v with
 		| WCPat, _ -> Some []
@@ -278,11 +291,11 @@ let rec match_pat ((v:value),(p:pat)) : bindings =
 (*5. *************************************************************************)
 exception NoAnswer
 
-(* Exercise 5: 
- * Applies function f to elements of l until it returns Some v, in which case,
- * first_answer will return v.
- * requires: function 'a -> 'b option and l of type 'a list
- * returns: value of type 'b *)
+(* Exercise 5 *)
+(*applies function f to elements of l until it returns Some v, in which case,
+	first_answer will return v*)
+(*requires: function 'a -> 'b option and l of type 'a list*)
+(*returns: value of type 'b*)
 let rec first_answer (f: 'a -> 'b option) (l: 'a list) : 'b =
   match l with
   [] -> raise NoAnswer
@@ -292,18 +305,15 @@ let rec first_answer (f: 'a -> 'b option) (l: 'a list) : 'b =
 
 (*6. *************************************************************************)
 
-(* Exercise 6:
- * Checks whether v matches any of the patterns in ps 
- * requires: v of type value, ps of type pat list 
- * returns: bindings *)
+(* Exercise 6 *)
+(*checks whether v matches any of the patterns in ps
+	If match found, returns Some b, where b is the list of bindings.
+	Otherwise, returns None*)
+(*requires: v of type value, ps of type pat list*)
+(*returns: bindings*)
 let rec match_pats ((v: value), (ps: pat list)) : bindings =
   match ps with 
   [] -> None
   | h::t -> match (match_pat (v,h)) with
-  	None -> match_pats v t
+  	None -> match_pats (v,t)
 	| Some b -> Some b
-
-(*
-let match_pats2 ((v: value), (ps: pat list)) : bindings =
-  Some (first_answer (match_pat v) ps)
-*)

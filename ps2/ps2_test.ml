@@ -149,8 +149,8 @@ TEST_UNIT "match_pat_test6" = assert_true ((match_pat (TupleVal [ConstVal 1; Con
 TEST_UNIT "match_pat_test7" = assert_true ((match_pat (TupleVal [ConstVal 1; ConstVal 2; ConstVal 3],TuplePat [ConstPat 4;VarPat "hello";ConstPat 3])) = Some [("hello", ConstVal 2)])
 TEST_UNIT "match_pat_test8" = assert_true ((match_pat (TupleVal [ConstVal 1; ConstVal 2; ConstVal 3],TuplePat [ConstPat 4;VarPat "hello";VarPat "world"])) = Some [("world", ConstVal 3); ("hello", ConstVal 2)])
 TEST_UNIT "match_pat_test9" = assert_true ((match_pat (TupleVal [ConstVal 3], TuplePat [UnitPat])) = None)
-TEST_UNIT "match_pat_test10" = assert_true (() =)
-TEST_UNIT "match_pat_test11" = assert_true (() =)
+TEST_UNIT "match_pat_test10" = assert_true ((match_pat (StructorVal ("hello",Some (ConstVal 3)),StructorPat ("world",Some WCPat))) = Some [])
+TEST_UNIT "match_pat_test11" = assert_true ((match_pat (StructorVal ("hello",Some (ConstVal 3)),StructorPat ("world",Some (VarPat "again")))) = Some [("again", ConstVal 3)])
 
 (* Exercise 5 *)
 TEST_UNIT "first_answer_test1" = assert_true ((first_answer (fun x -> if x = 1 then Some "hello" else None) [2;3;4;5;1;2;3]) = "hello")
