@@ -199,78 +199,54 @@ let rec z f1 f2 p =
 		| _ -> 0
 
 (*counts the number of wildcards that occur in a pattern*)
-let count_wcs (p: pat) : int = 
-	failwith "Listen Ness. I'm going to tell you something very important. You may
-	want to take notes. Ready? ......You're the chosen one." 
-
-																					(*-Talking Rock, in the Underworld*)
+let count_wcs (p: pat) : int =
+	z (fun u -> 1) (fun s -> 0) p
 
 (*counts the number of wildcards in a pattern, and adds that quantity to the sum
 of the lengths of the variable names used in the pattern*)
 let count_wcs_and_var_lengths (p: pat) : int = 
-	failwith "I have fake teeth, so I like soft foods. Not like rocks or stones. 
-	They're too hard." 
-
-																					(*-Old Lady at Summer's Restaurant*)
+	z (fun u -> 1) (fun s -> String.length(s)) p
 
 (*counts how oftern a variable occurs in a pattern*)
 let count_var (var_name: string) (p: pat) : int = 
-	failwith "Kidnapping is wrong! I'll be careful not to kidnap anyone!"
-
-												 (*- Mr T guy in front of Department Store in Twoson*)
+	z (fun u -> 0) (fun s -> if (s = var_name) then 1 else 0) p
 
 (*2. *************************************************************************)
 
 let rec extract_names (p: pat) : string list = 
-	failwith "We offer a special discount on tombstones for those that have passed
-	away in our hospital."
-
-																											(*-Onett Hospital Sign*)
+	
 
 let has_dups (l: 'a list) : bool = 
-	failwith "If you stay here too long, you'll end up frying your brain. Yes, you
-	will. No, you will...not. Yesno you will won't." 
-
-																												 (*- Guy in Moonside*)
+	
 
 let all_vars_unique (p: pat) : bool = 
-	failwith "I've come up with another wacky invention that I think has real 
-	potential. Maybe you won't, but anyway...It's called the 'Gourmet Yogurt 
-	Machine.' It makes many different flavors of yogurt. The only problem is, 
-	right now, it can only make trout-flavored yogurt..."
+	
 
-																																(*-Apple Kid*)
 (*3. *************************************************************************)
 
+(*applies the function argument to every element of the list argument*)
+(*requires: function: 'a -> 'b list option and list: 'a list*)
+(*returns: 'b list option*)
 let all_answers (f: 'a -> 'b list option) (l: 'a list) : 'b list option =
-	failwith "Oh yes, yes. My co-worker, Big Foot, dislikes violence. He's such a 
-	nice guy, and he loves people. He often shares his beef jerky with me..." 
-
-																														 (*-Dr. Andonuts*)
+	let extract = function
+		| None -> []
+		| Some e -> e in
+	Some (List.rev (List.fold_left (fun a x -> List.rev(extract (f x))@a) [] l))
 
 (*4. *************************************************************************)
 
 let rec match_pat ((v:value),(p:pat)) : bindings =
-	failwith "If they break their contract, they'll be in deep doodoo with the 
-	police. The police would probably say, 'Hey you guys!' or something like 
-	that..." 
-
-																									(*-Topolla Theater Manager*)
+	match p,v with
+		| WCPat, _ -> Some []
+		| 
 
 (*5. *************************************************************************)
 exception NoAnswer
 
 let rec first_answer (f: 'a -> 'b option) (l: 'a list) : 'b =
-	failwith "Didactically speaking, seminal evidence seems to explicate the fact
-	that your repudiation of entropy supports my theory of space-time synthesis. 
-	Of this, I am irrefutably confident." 
-
-																							(*-Wordy guy at the Stoic Club*)
+	
 
 (*6. *************************************************************************)
 
 let match_pats ((v: value), (ps: pat list)) : bindings =
-	failwith "My dad really got after me. He said I get no dessert for the rest of
-	the decade..." 
-
-																																		(*-Pokey*) 
+	
