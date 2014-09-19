@@ -118,6 +118,18 @@ TEST_UNIT "multiply_matrices_test5" = assert_true ((multiply_matrices [[2];[5];[
 (* PROBLEM 4 *)
 (* Exercise 1 *)
 TEST_UNIT "count_wcs_test1" = assert_true ((count_wcs (TuplePat [WCPat;VarPat "whoa";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "well";WCPat];StructorPat ("hello",Some WCPat)])) = 4)
+TEST_UNIT "count_wcs_test2" = assert_true ((count_wcs (WCPat)) = 1)
+TEST_UNIT "count_wcs_test3" = assert_true ((count_wcs (TuplePat [ConstPat 4;VarPat "hello";VarPat "world"])) = 0)
+
+TEST_UNIT "count_wcs_and_var_lengths_test1" = assert_true ((count_wcs_and_var_lengths (TuplePat [WCPat;VarPat "whoa";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "well";WCPat];StructorPat ("hello",Some WCPat)])) = 12)
+TEST_UNIT "count_wcs_and_var_lengths_test2" = assert_true ((count_wcs_and_var_lengths (WCPat)) = 1)
+TEST_UNIT "count_wcs_and_var_lengths_test3" = assert_true ((count_wcs_and_var_lengths (TuplePat [VarPat "hello";UnitPat;VarPat "world"])) = 10)
+
+TEST_UNIT "count_var_test1" = assert_true ((count_var "whoa" (TuplePat [WCPat;VarPat "whoa";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "well";WCPat];StructorPat ("whoa",Some WCPat)])) = 1)
+TEST_UNIT "count_var_test2" = assert_true ((count_var "whoa" (TuplePat [WCPat;VarPat "whoa";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "whoa";WCPat];StructorPat ("well",Some WCPat)])) = 2)
+TEST_UNIT "count_var_test2" = assert_true ((count_var "" (TuplePat [WCPat;VarPat "whoa";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "whoa";WCPat];StructorPat ("well",Some WCPat)])) = 0)
+TEST_UNIT "count_var_test1" = assert_true ((count_var "whoa" (TuplePat [WCPat;VarPat "hello";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "world";WCPat];StructorPat ("again",Some WCPat)])) = 0)
+TEST_UNIT "count_var_test3" = assert_true ((count_var WCPat) = 0)
 
 (* Exercise 2 *)
 TEST_UNIT "extract_names_test1" = assert_true ((extract_names (TuplePat([VarPat("hello");UnitPat;ConstPat 1337;VarPat("world");TuplePat([VarPat("!")])]))) = ["hello";"world";"!"])
@@ -148,7 +160,12 @@ TEST_UNIT "match_pat_test6" = assert_true ((match_pat (TupleVal [ConstVal 1; Con
 TEST_UNIT "match_pat_test7" = assert_true ((match_pat (TupleVal [ConstVal 1; ConstVal 2; ConstVal 3],TuplePat [ConstPat 4;VarPat "hello";ConstPat 3])) = Some [("hello", ConstVal 2)])
 TEST_UNIT "match_pat_test8" = assert_true ((match_pat (TupleVal [ConstVal 1; ConstVal 2; ConstVal 3],TuplePat [ConstPat 4;VarPat "hello";VarPat "world"])) = Some [("world", ConstVal 3); ("hello", ConstVal 2)])
 TEST_UNIT "match_pat_test9" = assert_true ((match_pat (TupleVal [ConstVal 3], TuplePat [UnitPat])) = None)
+<<<<<<< HEAD
 
+=======
+TEST_UNIT "match_pat_test10" = assert_true ((match_pat (StructorVal ("hello",Some (ConstVal 3)),StructorPat ("world",Some WCPat))) = Some [])
+TEST_UNIT "match_pat_test11" = assert_true ((match_pat (StructorVal ("hello",Some (ConstVal 3)),StructorPat ("world",Some (VarPat "again")))) = Some [("again", ConstVal 3)])
+>>>>>>> 17418a0fc866776e6f9d35731c7b31316183aac5
 
 (* Exercise 5 *)
 TEST_UNIT "first_answer_test1" = assert_true ((first_answer (fun x -> if x = 1 then Some "hello" else None) [2;3;4;5;1;2;3]) = "hello")
