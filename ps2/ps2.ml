@@ -253,12 +253,33 @@ let all_answers (f: 'a -> 'b list option) (l: 'a list) : 'b list option =
 		| Some e -> e in
 	Some (List.rev (List.fold_left (fun a x -> List.rev(extract (f x))@a) [] l))
 
+let all_answers (f: 'a -> 'b list option) (l: 'a list) : 'b list option =
+	let rec no_none = function
+		| [] -> true
+		| h::t -> if h = None then false else (no_none t) in
+	let r = List.map f l in
+	if (no_none r = false) then None
+	else let no_option = function
+		| None -> []
+		| Some e -> e in
+		Some (List.concat (List.map no_option r))
+		
+
 (*4. *************************************************************************)
 
 let rec match_pat ((v:value),(p:pat)) : bindings =
 	match p,v with
 		| WCPat, _ -> Some []
-		| 
+		| VarPat s, (_ as x) -> Some [(s,x)]
+		| UnitPat, UnitVal -> Some []
+		| ConstPat x1, ConstVal x2 -> Some []
+		| TuplePat pats, TupleVal vals ->
+			if (List.length pats = List.length vals) then
+				all_answers match_pat (List.fold_left2 (fun a x1 x2 -> (x1,x2)::a) [] vals pats)
+			else None
+		| StructorPat (s1, Some pats), StructorVal (s2, Some vals) ->
+			match_pat ((vals,pats))
+		| _, _ -> None
 
 (*5. *************************************************************************)
 exception NoAnswer
