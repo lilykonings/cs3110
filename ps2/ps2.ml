@@ -83,7 +83,7 @@ let scan_left (f: 'a -> 'b -> 'a) (acc: 'a) (lst: 'b list) : 'a list =
   List.rev (List.fold_left ((fun f a x -> (f (List.hd a) x)::a) f) [acc] lst)
 
 (* Exercise 4b *)
-(* NEED DESCRIPTION ========================== *)
+(* Creates a list that contains integers up to and including n *)
 (*requires: n >= 1*)
 (*returns: the list [1;2;...;n]*)
 let countup (n:int) : int list =
@@ -247,12 +247,6 @@ let all_vars_unique (p: pat) : bool =
 (*applies the function argument to every element of the list argument*)
 (*requires: function: 'a -> 'b list option and list: 'a list*)
 (*returns: 'b list option*)
-let all_answers (f: 'a -> 'b list option) (l: 'a list) : 'b list option =
-	let extract = function
-		| None -> []
-		| Some e -> e in
-	Some (List.rev (List.fold_left (fun a x -> List.rev(extract (f x))@a) [] l))
-
 let all_answers (f: 'a -> 'b list option) (l: 'a list) : 'b list option =
 	let rec no_none = function
 		| [] -> true
