@@ -118,6 +118,18 @@ TEST_UNIT "multiply_matrices_test5" = assert_true ((multiply_matrices [[2];[5];[
 (* PROBLEM 4 *)
 (* Exercise 1 *)
 TEST_UNIT "count_wcs_test1" = assert_true ((count_wcs (TuplePat [WCPat;VarPat "whoa";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "well";WCPat];StructorPat ("hello",Some WCPat)])) = 4)
+TEST_UNIT "count_wcs_test2" = assert_true ((count_wcs (WCPat)) = 1)
+TEST_UNIT "count_wcs_test3" = assert_true ((count_wcs (TuplePat [ConstPat 4;VarPat "hello";VarPat "world"])) = 0)
+
+TEST_UNIT "count_wcs_and_var_lengths_test1" = assert_true ((count_wcs_and_var_lengths (TuplePat [WCPat;VarPat "whoa";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "well";WCPat];StructorPat ("hello",Some WCPat)])) = 12)
+TEST_UNIT "count_wcs_and_var_lengths_test2" = assert_true ((count_wcs_and_var_lengths (WCPat)) = 1)
+TEST_UNIT "count_wcs_and_var_lengths_test3" = assert_true ((count_wcs_and_var_lengths (TuplePat [VarPat "hello";UnitPat;VarPat "world"])) = 10)
+
+TEST_UNIT "count_var_test1" = assert_true ((count_var "whoa" (TuplePat [WCPat;VarPat "whoa";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "well";WCPat];StructorPat ("whoa",Some WCPat)])) = 1)
+TEST_UNIT "count_var_test2" = assert_true ((count_var "whoa" (TuplePat [WCPat;VarPat "whoa";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "whoa";WCPat];StructorPat ("well",Some WCPat)])) = 2)
+TEST_UNIT "count_var_test2" = assert_true ((count_var "" (TuplePat [WCPat;VarPat "whoa";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "whoa";WCPat];StructorPat ("well",Some WCPat)])) = 0)
+TEST_UNIT "count_var_test1" = assert_true ((count_var "whoa" (TuplePat [WCPat;VarPat "hello";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "world";WCPat];StructorPat ("again",Some WCPat)])) = 0)
+TEST_UNIT "count_var_test3" = assert_true ((count_var WCPat) = 0)
 
 (* Exercise 2 *)
 TEST_UNIT "extract_names_test1" = assert_true ((extract_names (TuplePat([VarPat("hello");UnitPat;ConstPat 1337;VarPat("world");TuplePat([VarPat("!")])]))) = ["hello";"world";"!"])
