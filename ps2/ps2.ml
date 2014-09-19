@@ -224,7 +224,7 @@ let rec extract_names (p: pat) : string list =
 	| UnitPat -> []
 	| ConstPat i -> []
 	| TuplePat tp -> List.fold_right (fun x acc -> (extract_names x)@acc) tp []
-	| StructorPat (s, Some p) -> [s]
+	| StructorPat (s, Some p) -> extract_names p
 	| _ -> []
 
 (* Checks whether duplicates exist in a list of values
@@ -263,10 +263,32 @@ let rec match_pat ((v:value),(p:pat)) : bindings =
 (*5. *************************************************************************)
 exception NoAnswer
 
+(* Exercise 5: 
+ * Applies function f to elements of l until it returns Some v, in which case,
+ * first_answer will return v.
+ * requires: function 'a -> 'b option and l of type 'a list
+ * returns: value of type 'b *)
 let rec first_answer (f: 'a -> 'b option) (l: 'a list) : 'b =
-	
+  match l with
+  [] -> raise NoAnswer
+  | h::t -> match f h with
+  	Some v -> v
+  	| _ -> first_answer f t
 
 (*6. *************************************************************************)
 
-let match_pats ((v: value), (ps: pat list)) : bindings =
-	
+(* Exercise 6:
+ * Checks whether v matches any of the patterns in ps 
+ * requires: v of type value, ps of type pat list 
+ * returns: bindings *)
+let rec match_pats ((v: value), (ps: pat list)) : bindings =
+  match ps with 
+  [] -> None
+  | h::t -> match (match_pat (v,h)) with
+  	None -> match_pats v t
+	| Some b -> Some b
+
+(*
+let match_pats2 ((v: value), (ps: pat list)) : bindings =
+  Some (first_answer (match_pat v) ps)
+*)

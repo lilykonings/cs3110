@@ -119,21 +119,34 @@ TEST_UNIT "multiply_matrices_test5" = assert_true ((multiply_matrices [[2];[5];[
 (* Exercise 1 *)
 TEST_UNIT "count_wcs_test1" = assert_true ((count_wcs (TuplePat [WCPat;VarPat "whoa";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "well";WCPat];StructorPat ("hello",Some WCPat)])) = 4)
 (* Exercise 2 *)
+TEST_UNIT "extract_names_test1" = assert_true ((extract_names (TuplePat([VarPat("hello");UnitPat;ConstPat 1337;VarPat("world");TuplePat([VarPat("!")])]))) = ["hello";"world";"!"])
+TEST_UNIT "extract_names_test2" = assert_true ((extract_names UnitPat) = [])
+TEST_UNIT "extract_names_test3" = assert_true ((extract_names (TuplePat([UnitPat;UnitPat;UnitPat;UnitPat]))) = [])
+TEST_UNIT "extract_names_test4" = assert_true ((extract_names (StructorPat("string", Some (VarPat("notstring"))))) = ["notstring"])
+
+TEST_UNIT "has_dups_test1" = assert_true ((has_dups [1;2;3;12;31;3;1233;1;3]) = true)
+TEST_UNIT "has_dups_test2" = assert_true ((has_dups ["hello";"poop";"sup";"sup"]) = true)
+TEST_UNIT "has_dups_test3" = assert_true ((has_dups [1.;2.;3.]) = false)
+TEST_UNIT "has_dups_test4" = assert_true ((has_dups []) = false)
+
+TEST_UNIT "all_vars_unique_test1" = assert_true ((all_vars_unique []) = false)
+TEST_UNIT "all_vars_unique_test2" = assert_true ((all_vars_unique (TuplePat([VarPat("hello");UnitPat;VarPat("world");TuplePat([VarPat("!")])]))) = true)
+TEST_UNIT "all_vars_unique_test3" = assert_true ((all_vars_unique UnitPat) = true)
+TEST_UNIT "all_vars_unique_test4" = assert_true ((all_vars_unique (StructorPat("string", Some (VarPat("notstring"))))) = true)
 (* Exercise 3 *)
 TEST_UNIT "all_answers_test1" = assert_true ((all_answers (fun x -> (Some ([x+1;x+2]))) []) = Some [])
 TEST_UNIT "all_answers_test2" = assert_true ((all_answers (fun x -> (Some ([x+1;x+2]))) [1;2;3]) = Some [2;3;3;4;4;5])
 (* Exercise 4 *)
 (* Exercise 5 *)
+TEST_UNIT "first_answer_test1" = assert_true ((first_answer (fun x -> if x = 1 then Some "hello" else None) [2;3;4;5;1;2;3]) = "hello")
+TEST_UNIT "first_answer_test2" = assert_raises (Some NoAnswer) (first_answer (fun x -> if x = 1 then Some "hello" else None) [2;3;4;5;6;2])
+TEST_UNIT "first_answer_test3" = assert_true ((first_answer (fun x -> if x = "hello" then Some 1 else None) ["world";"goodbye";"hello";"burr"]) = 1)
+TEST_UNIT "first_answer_test4" = assert_raises (Some NoAnswer) (first_answer (fun x -> if x = "hello" then Some 1 else None) ["world";"goodbye";"burr"])
 (* Exercise 6 *)
-
-
-
-
-
-
-
-
-
-
-
-
+let x1 = (TuplePat([VarPat("hello");UnitPat;ConstPat 1337;VarPat("world");TuplePat([VarPat("!")])]))
+let x2 = [(StructorPat("string", Some (VarPat("notstring"))));UnitPat;VarPat("world");x1]
+TEST_UNIT "match_pats_test1" = assert_true ((match_pats (UnitVal, x2) = Some [])
+TEST_UNIT "match_pats_test2" = assert_true ((match_pats (ConstVal(1), x2)) = Some [("world", ConstVal(1))])
+TEST_UNIT "match_pats_test3" = assert_true ((match_pats (TupleVal([ConstVal(2);UnitVal;ConstVal(1);ConstVal(5);TupleVal([ConstVal(1)])]), x2)) = Some([("hello", ConstVal(2)); ("world", ConstVal(5)); ("!", ConstVal(1))]))
+TEST_UNIT "match_pats_test4" = assert_true ((match_pats (StructorVal("string", Some (ConstVal(2))), x2)) = Some ([("notstring", ConstVal(2))]))
+TEST_UNIT "match_pats_test5" = assert_true ((match_pats (ConstVal(2), [UnitVal])) = None)
