@@ -117,8 +117,23 @@ TEST_UNIT "multiply_matrices_test5" = assert_true ((multiply_matrices [[2];[5];[
 
 (* PROBLEM 4 *)
 (* Exercise 1 *)
+TEST_UNIT "count_wcs_test1" = assert_true ((count_wcs (TuplePat [WCPat;VarPat "whoa";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "well";WCPat];StructorPat ("hello",Some WCPat)])) = 4)
 (* Exercise 2 *)
 (* Exercise 3 *)
+TEST_UNIT "all_answers_test1" = assert_true ((all_answers (fun x -> (Some ([x+1;x+2]))) []) = Some [])
+TEST_UNIT "all_answers_test2" = assert_true ((all_answers (fun x -> (Some ([x+1;x+2]))) [1;2;3]) = Some [2;3;3;4;4;5])
 (* Exercise 4 *)
 (* Exercise 5 *)
 (* Exercise 6 *)
+
+
+
+
+
+
+
+
+
+
+
+
