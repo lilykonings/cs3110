@@ -221,25 +221,35 @@ let count_var (var_name: string) (p: pat) : int =
 
 (*2. *************************************************************************)
 
+(* Exercise 2: 
+ * Produces list of variable names occurring in pattern, includes copies 
+ * requires: pat p
+ * returns: string list of variable names *)
 let rec extract_names (p: pat) : string list = 
-	failwith "We offer a special discount on tombstones for those that have passed
-	away in our hospital."
+  match p with 
+  	WCPat -> []
+	| VarPat vs -> [vs]
+	| UnitPat -> []
+	| ConstPat i -> []
+	| TuplePat tp -> List.fold_right (fun x acc -> (extract_names x)@acc) tp []
+	| StructorPat (s, Some p) -> [s]
+	| _ -> []
 
-																											(*-Onett Hospital Sign*)
+(* Checks whether duplicates exist in a list of values
+ * requires: 'a list
+ * returns: true if duplicates exist, false otherwise *)
+let rec has_dups (l: 'a list) : bool = 
+  match l with
+  [] -> false
+  | h::[] -> false
+  | h::t1::t2 -> if (h = t1) then true else has_dups (h::t2) || has_dups (t1::t2)
 
-let has_dups (l: 'a list) : bool = 
-	failwith "If you stay here too long, you'll end up frying your brain. Yes, you
-	will. No, you will...not. Yesno you will won't." 
-
-																												 (*- Guy in Moonside*)
-
+(* Determines whether all variables in the pattern have unique names.
+ * requires: pat p
+ * returns: true if unique list of names, false otherwise *)
 let all_vars_unique (p: pat) : bool = 
-	failwith "I've come up with another wacky invention that I think has real 
-	potential. Maybe you won't, but anyway...It's called the 'Gourmet Yogurt 
-	Machine.' It makes many different flavors of yogurt. The only problem is, 
-	right now, it can only make trout-flavored yogurt..."
+	(has_dups (extract_names p)) = false
 
-																																(*-Apple Kid*)
 (*3. *************************************************************************)
 
 let all_answers (f: 'a -> 'b list option) (l: 'a list) : 'b list option =
