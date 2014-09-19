@@ -38,7 +38,7 @@ TEST_UNIT "eval_test7" = assert_true ((eval (Unop ((~-.), Binop ((/.), Val 1., U
 
 (* PROBLEM 2 *)
 (* Exercise 1 *)
-TEST_UNIT "product_test1" = assert_true ((product [777.5;4]) = 3110.)
+TEST_UNIT "product_test1" = assert_true ((product [777.5;4.]) = 3110.)
 TEST_UNIT "product_test2" = assert_true ((product []) = 1.)
 TEST_UNIT "product_test3" = assert_true ((product [0.0;0.0]) = 0.0)
 TEST_UNIT "product_test4" = assert_true ((product [1.0;1.0;2.0;3.0]) = 6.)
@@ -56,7 +56,7 @@ TEST_UNIT "concat_right_test4" = assert_true ((concat_right ["hello";"world";"!"
 
 (* Exercise 3a *)
 TEST_UNIT "mapi_lst_test1" = assert_true ((mapi_lst (+) [3;0;-1;-3]) = [3;1;1;0])
-TEST_UNIT "mapi_lst_test2" = assert_true ((mapi_lst (-) [2;1;3]) = [2;0;1])
+TEST_UNIT "mapi_lst_test2" = assert_true ((mapi_lst (-) [2;1;3]) = [-2;0;-1])
 TEST_UNIT "mapi_lst_test3" = assert_true ((mapi_lst (+) []) = [])
 TEST_UNIT "mapi_lst_test4" = assert_true ((mapi_lst (fun i a -> (float_of_int i) +. (float_of_int a)) [2;1;3]) = [2.;2.;5.])
 
@@ -86,7 +86,7 @@ TEST_UNIT "show_test2" = assert_true ((show [[5;3;2];[1;5;6]]) = ())
 
 (* Exercise 2 *)
 TEST_UNIT "insert_col_test1" = assert_true ((insert_col [[1;2;3];[42;41;40]] [6;7]) = [[1;2;3;6];[42;41;40;7]])
-TEST_UNIT "insert_col_test2" = assert_raises (Some MatrixFailure) (insert_col [[1;2;3];[42;41;40]] [42;42;42])
+TEST_UNIT "insert_col_test2" = assert_raises (Some (MatrixFailure "Sizes of matrix and vector do not match!")) (insert_col [[1;2;3];[42;41;40]]) ([42;42;42])
 TEST_UNIT "insert_col_test3" = assert_true ((insert_col [[1;2;3;4];[7;8;9;10]] [5;11]) = [[1;2;3;4;5];[7;8;9;10;11]])
 TEST_UNIT "insert_col_test4" = assert_true ((insert_col [[];[]] [1;2]) = [[1];[2]])
 
@@ -99,20 +99,20 @@ TEST_UNIT "transpose_test5" = assert_true ((transpose [[1;2;3;4;5]]) = [[1];[2];
 TEST_UNIT "transpose_test6" = assert_true ((transpose (transpose [[1];[2];[3];[4];[5]])) = [[1];[2];[3];[4];[5]])
 TEST_UNIT "transpose_test7" = assert_true ((transpose [[1;1;1];[2;2;2];[3;3;3];[4;4;4]]) = [[1;2;3;4];[1;2;3;4];[1;2;3;4]])
 TEST_UNIT "transpose_test8" = assert_true ((transpose (insert_col [[1;2;3;4];[7;8;9;10]] [5;11])) = [[1;7];[2;8];[3;9];[4;10];[5;11]])
-TEST_UNIT "transpose_test9" = assert_raises (Some MatrixFailure) (transpose [[1;2];[3]])
+TEST_UNIT "transpose_test9" = assert_raises (Some (MatrixFailure "Sizes of matrix and vector do not match!")) (transpose) ([[1;2];[3]])
 
 (* Exercise 4 *)
 TEST_UNIT "add_matrices_test1" = assert_true ((add_matrices [[1;2;3];[4;5;6]] [[42;42;42];[43;43;43]]) = [[43;44;45];[47;48;49]])
 TEST_UNIT "add_matrices_test2" = assert_true ((add_matrices [] []) = [])
-TEST_UNIT "add_matrices_test3" = assert_raises (Some MatrixFailure) (add_matrices [] [[1]])
-TEST_UNIT "add_matrices_test4" = assert_raises (Some MatrixFailure) (add_matrices [[5];[2]] [[1]])
+TEST_UNIT "add_matrices_test3" = assert_raises (Some (MatrixFailure "Sizes of matrix and vector do not match!")) (add_matrices []) ([[1]])
+TEST_UNIT "add_matrices_test4" = assert_raises (Some (MatrixFailure "Sizes of matrix and vector do not match!")) (add_matrices [[5];[2]]) ([[1]])
 TEST_UNIT "add_matrices_test5" = assert_true ((add_matrices [[1];[2];[3];[4];[5]] [[9];[8];[7];[6];[5]]) = [[10];[10];[10];[10];[10]])
 
 (* Exercise 5 *)
 TEST_UNIT "multiply_matrices_test1" = assert_true ((multiply_matrices [[1;2;3];[4;5;6]] [[7;8];[9;10];[11;12]]) = [[58;64];[139;154]])
 TEST_UNIT "multiply_matrices_test2" = assert_true ((multiply_matrices [] []) = [])
 TEST_UNIT "multiply_matrices_test3" = assert_true ((multiply_matrices [[1;1;1];[2;2;2];[1;1;1]] [[2;2;2];[1;1;1];[2;2;2]]) = [[5;5;5];[10;10;10];[5;5;5]])
-TEST_UNIT "multiply_matrices_test4" = assert_raises (Some MatrixFailure) (multiply_matrices [[1;2;3];[4;5;6]] [[7;8;9];[10;11;12]])
+TEST_UNIT "multiply_matrices_test4" = assert_raises (Some (MatrixFailure "Sizes of matrix and vector do not match!")) (multiply_matrices [[1;2;3];[4;5;6]]) ([[7;8;9];[10;11;12]])
 TEST_UNIT "multiply_matrices_test5" = assert_true ((multiply_matrices [[2];[5];[1]] [[4;2;6]]) = [[8;4;12];[20;10;30];[4;2;6]])
 
 (* PROBLEM 4 *)
@@ -130,10 +130,9 @@ TEST_UNIT "has_dups_test2" = assert_true ((has_dups ["hello";"poop";"sup";"sup"]
 TEST_UNIT "has_dups_test3" = assert_true ((has_dups [1.;2.;3.]) = false)
 TEST_UNIT "has_dups_test4" = assert_true ((has_dups []) = false)
 
-TEST_UNIT "all_vars_unique_test1" = assert_true ((all_vars_unique []) = false)
-TEST_UNIT "all_vars_unique_test2" = assert_true ((all_vars_unique (TuplePat([VarPat("hello");UnitPat;VarPat("world");TuplePat([VarPat("!")])]))) = true)
-TEST_UNIT "all_vars_unique_test3" = assert_true ((all_vars_unique UnitPat) = true)
-TEST_UNIT "all_vars_unique_test4" = assert_true ((all_vars_unique (StructorPat("string", Some (VarPat("notstring"))))) = true)
+TEST_UNIT "all_vars_unique_test1" = assert_true ((all_vars_unique (TuplePat([VarPat("hello");UnitPat;VarPat("world");TuplePat([VarPat("!")])]))) = true)
+TEST_UNIT "all_vars_unique_test2" = assert_true ((all_vars_unique UnitPat) = true)
+TEST_UNIT "all_vars_unique_test3" = assert_true ((all_vars_unique (StructorPat("string", Some (VarPat("notstring"))))) = true)
 
 (* Exercise 3 *)
 TEST_UNIT "all_answers_test1" = assert_true ((all_answers (fun x -> (Some ([x+1;x+2]))) []) = Some [])
@@ -149,20 +148,19 @@ TEST_UNIT "match_pat_test6" = assert_true ((match_pat (TupleVal [ConstVal 1; Con
 TEST_UNIT "match_pat_test7" = assert_true ((match_pat (TupleVal [ConstVal 1; ConstVal 2; ConstVal 3],TuplePat [ConstPat 4;VarPat "hello";ConstPat 3])) = Some [("hello", ConstVal 2)])
 TEST_UNIT "match_pat_test8" = assert_true ((match_pat (TupleVal [ConstVal 1; ConstVal 2; ConstVal 3],TuplePat [ConstPat 4;VarPat "hello";VarPat "world"])) = Some [("world", ConstVal 3); ("hello", ConstVal 2)])
 TEST_UNIT "match_pat_test9" = assert_true ((match_pat (TupleVal [ConstVal 3], TuplePat [UnitPat])) = None)
-TEST_UNIT "match_pat_test10" = assert_true (() =)
-TEST_UNIT "match_pat_test11" = assert_true (() =)
+
 
 (* Exercise 5 *)
 TEST_UNIT "first_answer_test1" = assert_true ((first_answer (fun x -> if x = 1 then Some "hello" else None) [2;3;4;5;1;2;3]) = "hello")
-TEST_UNIT "first_answer_test2" = assert_raises (Some NoAnswer) (first_answer (fun x -> if x = 1 then Some "hello" else None) [2;3;4;5;6;2])
+TEST_UNIT "first_answer_test2" = assert_raises (Some NoAnswer) (first_answer (fun x -> if x = 1 then Some "hello" else None)) ([2;3;4;5;6;2])
 TEST_UNIT "first_answer_test3" = assert_true ((first_answer (fun x -> if x = "hello" then Some 1 else None) ["world";"goodbye";"hello";"burr"]) = 1)
-TEST_UNIT "first_answer_test4" = assert_raises (Some NoAnswer) (first_answer (fun x -> if x = "hello" then Some 1 else None) ["world";"goodbye";"burr"])
+TEST_UNIT "first_answer_test4" = assert_raises (Some NoAnswer) (first_answer (fun x -> if x = "hello" then Some 1 else None)) (["world";"goodbye";"burr"])
 
 (* Exercise 6 *)
 let x1 = (TuplePat([VarPat("hello");UnitPat;ConstPat 1337;VarPat("world");TuplePat([VarPat("!")])]))
 let x2 = [(StructorPat("string", Some (VarPat("notstring"))));UnitPat;VarPat("world");x1]
-TEST_UNIT "match_pats_test1" = assert_true ((match_pats (UnitVal, x2) = Some [])
+TEST_UNIT "match_pats_test1" = assert_true ((match_pats (UnitVal, x2) = Some []))
 TEST_UNIT "match_pats_test2" = assert_true ((match_pats (ConstVal(1), x2)) = Some [("world", ConstVal(1))])
-TEST_UNIT "match_pats_test3" = assert_true ((match_pats (TupleVal([ConstVal(2);UnitVal;ConstVal(1);ConstVal(5);TupleVal([ConstVal(1)])]), x2)) = Some([("hello", ConstVal(2)); ("world", ConstVal(5)); ("!", ConstVal(1))]))
+TEST_UNIT "match_pats_test3" = assert_true ((match_pats (TupleVal([UnitVal; ConstVal(1)]),[(TuplePat([UnitPat;VarPat("v")]))]) = Some(["v", ConstVal 1])))
 TEST_UNIT "match_pats_test4" = assert_true ((match_pats (StructorVal("string", Some (ConstVal(2))), x2)) = Some ([("notstring", ConstVal(2))]))
-TEST_UNIT "match_pats_test5" = assert_true ((match_pats (ConstVal(2), [UnitVal])) = None)
+TEST_UNIT "match_pats_test5" = assert_true ((match_pats (ConstVal(2), [UnitPat])) = None)

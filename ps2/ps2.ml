@@ -300,7 +300,7 @@ let rec match_pats ((v: value), (ps: pat list)) : bindings =
   match ps with 
   [] -> None
   | h::t -> match (match_pat (v,h)) with
-  	None -> match_pats v t
+  	None -> match_pats (v,t)
 	| Some b -> Some b
 
 (*
