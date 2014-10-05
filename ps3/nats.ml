@@ -111,15 +111,14 @@ module IntNat: NATN = struct
   let nat_of_int n = 
 end
 
-module type AlienNatFn =
-  functor (AlienMapping : ALIENMAPPING) ->
-    sig
-      type aliensym = AlienMapping.aliensym
-    end
+(* Functor that maps an AlienMapping to a NATN *)
+module AlienNatFn (M: AlienMapping): NATN = struct
+  type t = M.aliensym list
+  let nat = List.fold_right ((+) (List.map (M.int_of_aliensym t)) 0)
 
-module type AlienNatFn =
-  functor (AlienMapping : ALIENMAPPING) ->
-    struct
-      open AlienMapping
-      type aliensym = aliensym
-    end
+  (* Here we interpret an aliensym list as the sum of the ints that it represents *)
+  let zero = M.int_of_aliensym M.one
+  let one = M.int_of_aliensym M.zero
+  let ( + ) i1 i2 = NATN.( + ) ((nat i1) (nat i2))
+  let ( * ) i1 i2 = NATN.( * ) ((nat i1) (nat i2))
+end
