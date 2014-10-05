@@ -129,7 +129,6 @@ TEST_UNIT "count_var_test1" = assert_true ((count_var "whoa" (TuplePat [WCPat;Va
 TEST_UNIT "count_var_test2" = assert_true ((count_var "whoa" (TuplePat [WCPat;VarPat "whoa";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "whoa";WCPat];StructorPat ("well",Some WCPat)])) = 2)
 TEST_UNIT "count_var_test2" = assert_true ((count_var "" (TuplePat [WCPat;VarPat "whoa";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "whoa";WCPat];StructorPat ("well",Some WCPat)])) = 0)
 TEST_UNIT "count_var_test1" = assert_true ((count_var "whoa" (TuplePat [WCPat;VarPat "hello";UnitPat;WCPat;ConstPat 3;TuplePat [VarPat "world";WCPat];StructorPat ("again",Some WCPat)])) = 0)
-TEST_UNIT "count_var_test3" = assert_true ((count_var WCPat) = 0)
 
 (* Exercise 2 *)
 TEST_UNIT "extract_names_test1" = assert_true ((extract_names (TuplePat([VarPat("hello");UnitPat;ConstPat 1337;VarPat("world");TuplePat([VarPat("!")])]))) = ["hello";"world";"!"])
