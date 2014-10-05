@@ -71,8 +71,7 @@ let sum_overflows (i1:int) (i2:int) : bool =
 (* END: DO NOT CHANGE THIS CODE *)
 
 (* EXERCISE 2 *)
-module IntNat: NATN = struct
-  exception Unrepresentable
+module IntNat (M: NATN) = struct
   type t = int
   let zero = 0
   let one = 1
@@ -109,13 +108,12 @@ module IntNat: NATN = struct
 
   let nat_of_int n =
     match n with
-    | Postive -> n
+    | Positive -> n
     | Negative -> raise Unrepresentable
 end
 
 (* EXERCISE 3 *)
-module ListNat: NATN = struct
-  exception Unrepresentable
+module ListNat (M: NATN) = struct
   (* The list [a1; ...; an] represents the
    * natural number n. That is, the list lst represents
    * length(lst). The empty list represents 0. The values of * the list elements are irrelevant. *)
