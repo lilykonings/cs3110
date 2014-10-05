@@ -4,5 +4,15 @@
 open Assertions
 open Parser
 open Quadtree
-open City Search
+open City_search
 
+TEST_UNIT "load_city_data_test1" = assert_true ((load_city_data "") = Leaf (((-90., -180.), (90., 180.)), []))
+TEST_UNIT "load_city_data_test2" = assert_true ((load_city_data "test_cases.csv") =
+	Node (((-90., -180.), (90., 180.)),
+		Leaf (((0., 0.), (90., 180.)), [((65.2904242, 29.042249), "World")]),            
+	 Leaf (((-90., 0.), (0., 180.)), []),
+	 Leaf (((-90., -180.), (0., 0.)), [((-19.9024224, -76.2428242), "Hello")]),
+	 Leaf (((0., -180.), (90., 0.)), [((29.4920242, -22.4924404), "OCaml")]))
+)
+
+TEST_UNIT "city_search_test1" = assert_true ((city_search ) = )
