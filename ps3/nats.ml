@@ -70,10 +70,9 @@ let sum_overflows (i1:int) (i2:int) : bool =
   sign_int i1 = sign_int i2 && sign_int(i1 + i2) <> sign_int i1
 (* END: DO NOT CHANGE THIS CODE *)
 
-(* Add your solution here for IntNat, ListNat, NatConvertFn, 
-   and AlienNatFn, being careful to use the declarations and
-   types specified in the problem set. *)
+(* EXERCISE 2 *)
 module IntNat: NATN = struct
+  exception Unrepresentable
   type t = int
   let zero = 0
   let one = 1
@@ -103,12 +102,20 @@ module IntNat: NATN = struct
       else (i1 * i2)
 
   let ( < ) i1 i2 = i1 < i2
+
   let ( === ) i1 i2 = i1 = i2
+
   let int_of_nat n = n
-  let nat_of_int n = n
+
+  let nat_of_int n =
+    match n with
+    | Postive -> n
+    | Negative -> raise Unrepresentable
 end
 
+(* EXERCISE 3 *)
 module ListNat: NATN = struct
+  exception Unrepresentable
   (* The list [a1; ...; an] represents the
    * natural number n. That is, the list lst represents
    * length(lst). The empty list represents 0. The values of * the list elements are irrelevant. *)
@@ -162,10 +169,17 @@ module ListNat: NATN = struct
     helper n []
 end
 
-(* Functor that maps an AlienMapping to a NATN *)
+(* EXERCISE 4 *)
+module NatConvertFn(N: NATN) = struct
+  (* let int_of_nat(n: N.t): int = 
+
+  let nat_of_int(n: int): N.t = *) 
+end
+
+(* EXERCISE 5 *)
 module AlienNatFn (M: AlienMapping): NATN = struct
   type t = M.aliensym list
-  let nat = List.fold_right ((+) (List.map (M.int_of_aliensym t)) 0)
+  let nat t = List.fold_right ((+) (List.map (M.int_of_aliensym t)) 0)
 
   (* Here we interpret an aliensym list as the sum of the ints that it represents *)
   let zero = M.int_of_aliensym M.one
