@@ -1,0 +1,29 @@
+(* Lily Chen (qc53) and Charles Tark (cyt25) *)
+
+Problem 1: Semantics
+--------------------
+
+/Exercise 1/
+OCaml if statements with int as guard:
+a.) Syntax: if e0 then e1 else e2
+Type-checking rule: if e0 has type int, and for some type t,
+	both e1 and e2 have type t,	then
+	(if e0 then e1 else e2) has type t
+b.) 'a -> 'a -> int
+c.) Evaluation rule:
+if env :: e0 --> v0 > 0 and if env :: e1 --> v1 then
+env :: (if e0 then e1 else e2) --> v1
+if env :: e0 --> v0 = 0 and if env :: e2 --> v2 then
+env :: (if e0 then e1 else e2) --> v2
+d.) match e0 > 0 with
+	  true -> e0
+	  | _ -> e2
+
+/Exercise 2/
+
+Problem 4: Summary
+------------------
+This problem set was the most challenging in terms of time resources. Due to the heavy load of other classes and exams, we found it especially difficult to dedicate the appropriate time. The problems were slightly more challenging but nothing impossible so if we were able to manage ourselves a little better, we probably would have fully finished everything.
+Problem 1: Charlie
+Problem 2: Lillian
+Problem 3: Both
