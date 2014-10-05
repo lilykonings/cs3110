@@ -12,7 +12,7 @@ TEST_UNIT "count_ops_test3" = assert_true ((count_ops (Unop ((~-), Val 2))) = 1)
 TEST_UNIT "count_ops_test4" = assert_true ((count_ops (Unop ((~-.), Binop ((/.), Val 1., Unop ((~-.), Binop ((+.), Val 3., Val 1.)))))) = 4)
 
 (* Exercise 2 *)
-(* TEST_UNIT "make_fact_tree_test1" = assert_true ((make_fact_tree 3) = Binop (( * ), Val 3, Binop (( * ), Val 2, Binop (( * ), Val 1, Val 1))))
+TEST_UNIT "make_fact_tree_test1" = assert_true ((make_fact_tree 3) = Binop (( * ), Val 3, Binop (( * ), Val 2, Binop (( * ), Val 1, Val 1))))
 TEST_UNIT "make_fact_tree_test2" = assert_true ((make_fact_tree 1) = Binop (( * ), Val 1, Val 1))
 TEST_UNIT "make_fact_tree_test3" = assert_true ((make_fact_tree 2) = Binop (( * ), Val 2, Binop (( * ), Val 1, Val 1)))
 TEST_UNIT "make_fact_tree_test4" = assert_true ((make_fact_tree 0) = Val 1)
@@ -25,7 +25,7 @@ TEST_UNIT "make_fact_tree_test5" = assert_true ((make_fact_tree 10) = Binop (( *
 	      Binop (( * ), Val 4,
 	       Binop (( * ), Val 3,
 	       	Binop (( * ), Val 2,
-	       		Binop (( * ), Val 1, Val 1))))))))))) *)
+	       		Binop (( * ), Val 1, Val 1)))))))))))
 
 (* Exercise 3 *)
 TEST_UNIT "eval_test1" = assert_true ((eval (Unop ((~-), Val 5))) = (-5))
