@@ -15,4 +15,7 @@ TEST_UNIT "load_city_data_test2" = assert_true ((load_city_data "test_cases.csv"
 	 Leaf (((0., -180.), (90., 0.)), [((29.4920242, -22.4924404), "OCaml")]))
 )
 
-TEST_UNIT "city_search_test1" = assert_true ((city_search ) = )
+let test = load_city_data "test_cases.csv"
+TEST_UNIT "city_search_test1" = assert_true ((city_search test (((-90.),(-180.)),(90.,180.))) = ["OCaml"; "Hello"; "World"])
+TEST_UNIT "city_search_test2" = assert_true ((city_search test ((0.,0.),(90.,180.))) = ["World"])
+TEST_UNIT "city_search_test2" = assert_true ((city_search test ((0.,0.),(2.,4.))) = [])
