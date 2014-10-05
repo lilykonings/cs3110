@@ -103,12 +103,63 @@ module IntNat: NATN = struct
       else (i1 * i2)
 
   let ( < ) i1 i2 = i1 < i2
-
   let ( === ) i1 i2 = i1 = i2
+  let int_of_nat n = n
+  let nat_of_int n = n
+end
 
-  let int_of_nat n =
+module ListNat: NATN = struct
+  (* The list [a1; ...; an] represents the
+   * natural number n. That is, the list lst represents
+   * length(lst). The empty list represents 0. The values of * the list elements are irrelevant. *)
+  type t = int list
+  
+  let zero = []
+  let one = []
+  let ( + ) l1 l2 =
+    List.fold_left2 (fun acc x1 x2 ->
+      if sum_overflows i1 i2 then
+        raise Unrepresentable
+      else (x1 + x2)::acc
+    ) 0 l1 l2
 
-  let nat_of_int n = 
+  let ( * ) l1 l2 = List.fold_left2 (fun acc x1 x2 ->
+    match sign_int x1,sign_int x2 with
+      | Positive, Positive ->
+        if (x1 > (max_int / x2)) then
+          raise Unrepresentable
+        else (x1 * x2)::acc
+      | Positive, Negative ->
+        if (x2 < (max_int / x1)) then
+          raise Unrepresentable
+        else (x1 * x2)::acc
+      | Negative, Positive ->
+        if (x1 < (max_int / x2)) then
+          raise Unrepresentable
+        else (x1 * x2)::acc
+      | Negative, Negative ->
+        if ((x1 != 0) && (x2 < (max_int / x1))) then
+          raise Unrepresentable
+        else (x1 * x2)::acc
+    ) 0 l1 l2
+
+  let ( < ) l1 l2 =
+    List.fold_left2 (fun acc x1 x2 ->
+      (x1 < x2) && acc
+    ) 0 l1 l2
+
+  let ( === ) l1 l2 =
+    List.fold_left2 (fun acc x1 x2 ->
+      (x1 = x2) && acc
+    ) 0 l1 l2
+
+  let int_of_nat l = List.length l
+
+  let nat_of_int n =
+    let rec helper n l =
+      if n > 0 then helper (n-1) (n::l)
+      else l in
+    helper n []
 end
 
 (* Functor that maps an AlienMapping to a NATN *)
