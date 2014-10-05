@@ -73,5 +73,40 @@ let sum_overflows (i1:int) (i2:int) : bool =
 (* Add your solution here for IntNat, ListNat, NatConvertFn, 
    and AlienNatFn, being careful to use the declarations and
    types specified in the problem set. *)
+module IntNat: NATN = struct
+  type t = int
+  let zero = 0
+  let one = 1
 
+  let ( + ) i1 i2 =
+    if sum_overflows i1 i2 then
+      raise Unrepresentable
+    else (i1 + i2)
 
+  let ( * ) i1 i2 =
+    match sign_int i1,sign_int i2 with
+    | Positive, Positive ->
+      if (i1 > (max_int / i2)) then
+        raise Unrepresentable
+      else (i1 * i2)
+    | Positive, Negative ->
+      if (i2 < (max_int / i1)) then
+        raise Unrepresentable
+      else (i1 * i2)
+    | Negative, Positive ->
+      if (i1 < (max_int / i2)) then
+        raise Unrepresentable
+      else (i1 * i2)
+    | Negative, Negative ->
+      if ((i1 != 0) && (i2 < (max_int / i1))) then
+        raise Unrepresentable
+      else (i1 * i2)
+
+  let ( < ) i1 i2 = i1 < i2
+
+  let ( === ) i1 i2 = i1 = i2
+
+  let int_of_nat n =
+
+  let nat_of_int n = 
+end
