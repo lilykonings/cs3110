@@ -33,6 +33,7 @@ TEST_UNIT "fold_left_imp_test1" = assert_true (fold_left_imp (+) 0 [1;2;3] = 6)
 TEST_UNIT "fold_left_imp_test2" = assert_true (fold_left_imp (fun x y -> x - y) 10 [1;2;3] = 4)
 TEST_UNIT "fold_left_imp_test3" = assert_true (fold_left_imp (@) [] [[1;2;3];[4;5];[6]] = [1;2;3;4;5;6])
 
-let lst2 = [1;1;1]
 TEST_UNIT "zardoz_test" = assert_true ((List.map zardoz (List.rev lst) = List.rev (List.map zardoz lst)) = false)
+type t = int
+let lst2 : t list = [1;1;1]
 TEST_UNIT "zardoz_test" = assert_true ((List.map zardoz (List.rev lst) = List.rev (List.map zardoz lst)) = false)
