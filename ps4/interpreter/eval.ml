@@ -16,14 +16,37 @@ and environment = value ref Environment.environment
 (* Parses a datum into an expression. *)
 let rec read_expression (input : datum) : expression =
   match input with
-  | Atom (Identifier id) when Identifier.is_valid_variable id ->
-  | Atom (Identifier id) -> ExprVariable id
+  | Atom (Identifier id) when Identifier.is_valid_variable id -> ExprVariable id
+  | Atom (Identifier id) -> failwith "Error: usage of keyword without arguments"
   | Atom (Boolean b) -> ExprSelfEvaluating (SEBoolean b)
   | Atom (Integer n) -> ExprSelfEvaluating (SEInteger n)
-  | Cons (datum1, datum2) ->
+  | Cons (datum, Nil) -> read_expression datum
+  | Cons (Atom (Identifier id), datum2) when Identifier.is_valid_variable id ->
 
-  | _ -> failwith "Error: datum does not match expression grammer"
+  | Cons (Atom (Identifier id), datum2) ->
+    match id, datum2 with
+    | "quote", _ as d -> ExprQuote d
+    | "if", Cons (d1, Cons (d2, d3)) ->
+      ExprIf (read_expression d1, read_expression d2, read_expression d3)
+    | "if", _ -> failwith "Error: invalid arguments for if keyword"
+    | "lambda", Cons (d1, d2) ->
+      ExprLambda (list_of_cons d1, List.map read_expression (list_of_cons d2))
+    | "lambda", _ -> failwith "Error: invalid arguments for lambda keyword"
+    | "set!", 
+    | "let",
+    | "let*",
+    | "letrec",
+  | Cons (_,_) -> failwith "Error: invalid cons arguments"
+  | _ -> failwith "Error: datum does not match expression grammar"
 
+(* Convert nested cons into a list *)
+(* Requires: datum should not be Atom and values stored in cons should all be same type *)
+(* Returns: a list of values in cons or an error if inputted an Atom *)
+let rec list_of_cons (d : datum) : 'a list =
+  match d with
+  | Atom _ -> failwith "Error: requires cons"
+  | Cons (h,t) -> h::(list_of_cons t)
+  | Nil -> []
 
 (* Parses a datum into a toplevel input. *)
 let read_toplevel (input : datum) : toplevel =
@@ -60,7 +83,7 @@ let eval (expression : expression) (env : environment) : value =
   | ExprProcCall _ ->
   | ExprIf (b, e1, e2) ->
     match eval b env with
-    | Bool b ->
+    | ExprSelfEvaluating (SEBoolean b) ->
       if b then eval e1 env
       else eval e2 env
     | _ -> failwith "Error: if statement does not have valid bool exp"
