@@ -1,3 +1,6 @@
+(* Charles Tark (cyt25) and Lillian Chen (qc53) *)
+(* October 23, 2014 *)
+
 module type ITERATOR = sig
   type 'a t
   exception NoResult
