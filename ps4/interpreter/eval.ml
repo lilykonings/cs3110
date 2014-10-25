@@ -17,14 +17,6 @@ and environment = value ref Environment.environment
 let rec read_expression (input : datum) : expression =
   match input with
   | Atom (Identifier id) when Identifier.is_valid_variable id ->
-    if (id = "quote") then
-    else if (id = "if") then
-    else if (id = "lambda") then
-    else if (id = "define") then
-    else if (id = "set!") then
-    else if (id = "let") then
-    else if (id = "let*") then
-    else if (id = "letrec") then
   | Atom (Identifier id) -> ExprVariable id
   | Atom (Boolean b) -> ExprSelfEvaluating (SEBoolean b)
   | Atom (Integer n) -> ExprSelfEvaluating (SEInteger n)
@@ -47,8 +39,8 @@ let initial_environment () : environment =
   ("cons",fun x y -> (x,y));
   ("+",);
   ("-",);
-  ("equal?",fun x y -> x = y);
-
+  ("equal?",fun x y -> );
+  ("eval",fun x y -> eval x y)]
 
 (* Evaluates an expression down to a value in a given environment. *)
 (* You may want to add helper functions to make this function more
@@ -57,16 +49,30 @@ let initial_environment () : environment =
    statement. *)
 let eval (expression : expression) (env : environment) : value =
   match expression with
-  | ExprSelfEvaluating _  ->
-  | ExprVariable _        ->
-  | ExprQuote _           ->
-  | ExprLambda (_, _)     ->
-  | ExprProcCall _        ->
-  | ExprIf (_, _, _)      ->
+  | ExprSelfEvaluating (SEBoolean b) -> ValDatum (Atom (Boolean b))
+  | ExprSelfEvaluating (SEInteger n) -> ValDatum (Atom (Integer n))
+  | ExprVariable var ->
+    match find var env with
+    | Some val -> ValDatum () (* FIX THIS LATER *)
+    | None -> failwith "Error: no binding found for " ^ var
+  | ExprQuote datum -> 
+  | ExprLambda (_, _) -> 
+  | ExprProcCall _ ->
+  | ExprIf (b, e1, e2) ->
+    match eval b env with
+    | Bool b ->
+      if b then eval e1 env
+      else eval e2 env
+    | _ -> failwith "Error: if statement does not have valid bool exp"
   | ExprAssignment (_, _) ->
-  | ExprLet (_, _)        ->
-  | ExprLetStar (_, _)    ->
-  | ExprLetRec (_, _)     ->
+  | ExprLet (_, _) ->
+  | ExprLetStar (_, _) ->
+  | ExprLetRec (_, _) ->
+
+(* Finds value of variable in env if exists, otherwise return None *)
+let find (var : variable) (env : environment) : value option =
+  try Some (List.assoc var env)
+  with Not_found -> None
 
 (* Evaluates a toplevel input down to a value and an output environment in a
    given environment. *)
