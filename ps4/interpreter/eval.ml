@@ -17,46 +17,56 @@ and environment = value ref Environment.environment
 let rec read_expression (input : datum) : expression =
   match input with
   | Atom (Identifier id) when Identifier.is_valid_variable id ->
-     failwith "Oh my God!  You are The Rower!"
-  | Atom (Identifier id) ->
-     (* Above match case didn't succeed, so id is not a valid variable. *)
-     failwith "I'm such a huge fan!"
-  | _ ->
-     failwith "Everything you do is just amazing!"
+    if (id = "quote") then
+    else if (id = "if") then
+    else if (id = "lambda") then
+    else if (id = "define") then
+    else if (id = "set!") then
+    else if (id = "let") then
+    else if (id = "let*") then
+    else if (id = "letrec") then
+  | Atom (Identifier id) -> ExprVariable id
+  | Atom (Boolean b) -> ExprSelfEvaluating (SEBoolean b)
+  | Atom (Integer n) -> ExprSelfEvaluating (SEInteger n)
+  | Cons (datum1, datum2) ->
+
+  | _ -> failwith "Error: datum does not match expression grammer"
+
 
 (* Parses a datum into a toplevel input. *)
 let read_toplevel (input : datum) : toplevel =
   match input with
-  | _ -> failwith "Sing the Rowing Song!"
+  | 
 
 (* This function returns an initial environment with any built-in
    bound variables. *)
-let rec initial_environment () : environment =
-  failwith "You know!"
+let initial_environment () : environment =
+  [("course",3110);
+  ("car",fun (x,y) -> x);
+  ("cdr",fun (x,y) -> y);
+  ("cons",fun x y -> (x,y));
+  ("+",);
+  ("-",);
+  ("equal?",fun x y -> x = y);
+
 
 (* Evaluates an expression down to a value in a given environment. *)
 (* You may want to add helper functions to make this function more
    readable, because it will get pretty long!  A good rule of thumb
    would be a helper function for each pattern in the match
    statement. *)
-and eval (expression : expression) (env : environment) : value =
+let eval (expression : expression) (env : environment) : value =
   match expression with
-  | ExprSelfEvaluating _
+  | ExprSelfEvaluating _  ->
   | ExprVariable _        ->
-     failwith "'Oh I sure love to row my boat with my...oar."
   | ExprQuote _           ->
-     failwith "Rowing!"
-  | ExprLambda (_, _)
+  | ExprLambda (_, _)     ->
   | ExprProcCall _        ->
-     failwith "Sing along with me as I row my boat!'"
-  | ExprIf (_, _, _) ->
-     failwith "But I love you!"
+  | ExprIf (_, _, _)      ->
   | ExprAssignment (_, _) ->
-     failwith "Say something funny, Rower!"
-  | ExprLet (_, _)
-  | ExprLetStar (_, _)
+  | ExprLet (_, _)        ->
+  | ExprLetStar (_, _)    ->
   | ExprLetRec (_, _)     ->
-     failwith "Ahahaha!  That is classic Rower."
 
 (* Evaluates a toplevel input down to a value and an output environment in a
    given environment. *)

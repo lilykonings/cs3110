@@ -176,9 +176,6 @@ zardoz> ;; Below we use mutual recursion, where even? and odd? both call one
           (even? 5))
 
 #f
-zardoz> (define non-nil #t)
-
-()
 zardoz> ;; The quote construct might seem a little bit mysterious, so here's an
         ;; example to motivate it: here's a function that binds an already
         ;; defined variable that the user passes in to the empty list:
@@ -187,6 +184,9 @@ zardoz> ;; The quote construct might seem a little bit mysterious, so here's an
             (eval (cons 'set! (cons symbol (cons ''() '()))))))
         ;; Note that we need to double quote the empty list so it's not
         ;; evaluated during the set!.
+
+()
+zardoz> (define non-nil #t)
 
 ()
 zardoz> non-nil
