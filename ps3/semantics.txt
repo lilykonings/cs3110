@@ -57,3 +57,10 @@ The variable z is bound to 15:
 	{z=15, y=5, g=9+z, x=3, f=<<fun y -> (<<fun z-> x + y + z, {x=y+1}>>), {x=1}>>}
 The variable z has a value and has already been bound to 15
 So the entire expression evaluates to 15.
+
+Problem 4: Summary
+------------------
+This problem set was the most challenging in terms of time resources. Due to the heavy load of other classes and exams, we found it especially difficult to dedicate the appropriate time. The problems were slightly more challenging but nothing impossible so if we were able to manage ourselves a little better, we probably would have fully finished everything.
+Problem 1: Charlie
+Problem 2: Lillian
+Problem 3: Both
