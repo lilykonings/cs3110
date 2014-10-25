@@ -176,10 +176,19 @@ zardoz> ;; Below we use mutual recursion, where even? and odd? both call one
           (even? 5))
 
 #f
+<<<<<<< HEAD
 
 zardoz> ;; The quote construct might seem a little bit mysterious, so here's an
         ;; example to motivate it: here's a function that binds an arbitrary
         ;; variable that the user passes in to the empty list:
+=======
+zardoz> (define non-nil #t)
+
+()
+zardoz> ;; The quote construct might seem a little bit mysterious, so here's an
+        ;; example to motivate it: here's a function that binds an already
+        ;; defined variable that the user passes in to the empty list:
+>>>>>>> 13bf29351563746fe87f8219b04ad29059f5b847
         (define nihilize
           (lambda (symbol)
             (eval (cons 'set! (cons symbol (cons ''() '()))))))
@@ -187,9 +196,12 @@ zardoz> ;; The quote construct might seem a little bit mysterious, so here's an
         ;; evaluated during the set!.
 
 ()
+<<<<<<< HEAD
 zardoz> (define non-nil #t)
 
 ()
+=======
+>>>>>>> 13bf29351563746fe87f8219b04ad29059f5b847
 zardoz> non-nil
 
 #t
