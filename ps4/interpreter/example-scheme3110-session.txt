@@ -1,0 +1,201 @@
+****************************************************************
+Welcome to the Scheme3110 reference implementation.
+  Type ^D (CTRL+D) to exit
+  Type #bindings to print the current variable bindings
+  Type #restart to start with a fresh environment
+  Input your Scheme3110 code, and press enter twice to evaluate.
+****************************************************************
+
+zardoz> ; Comments in Scheme3110 begin with a semicolon and end with a newline.
+
+zardoz> 3110
+
+3110
+zardoz> -1
+
+-1
+zardoz> #t ; The true constant
+
+#t
+zardoz> #f ; The false constant
+
+#f
+zardoz> () ; A valid datum, but not a valid expression
+
+Failure("Unknown expression form")
+zardoz> #bindings
+
+eqv? -> #<builtin>, * -> #<builtin>, + -> #<builtin>, cons -> #<builtin>, cdr -> #<builtin>, car -> #<builtin>, course -> 3110
+zardoz> course ; Evaluating a predefined identifier
+
+3110
+zardoz> x ; This identifier is not defined, as you can see above.
+
+Failure("x is not bound in this environment.")
+zardoz> (define x 2110)
+
+()
+zardoz> x ; Now it is
+
+2110
+zardoz> (define x course)
+
+()
+zardoz> x
+
+3110
+zardoz> (+ 1 2)
+
+3
+zardoz> (+ 1 -2)
+
+-1
+zardoz> (+ 1 2 3) 
+
+6
+zardoz> (+ 1)
+
+1
+zardoz> (+ 1 x)
+
+3111
+zardoz> (+ x x)
+
+6220
+zardoz> '(+ 1 2) ; 'e evaluates to e and then stops
+
+(+ 1 2)
+zardoz> (quote (+ 1 2)); ' is syntactic sugar for this.
+
+(+ 1 2)
+zardoz> 'x
+
+x
+zardoz> '5
+
+5
+zardoz> (if #t 1 '(a b c))
+
+1
+zardoz> (if #f 1 '(a b c))
+
+(a b c)
+zardoz> (if 0 1 '(a b c)) ; Anything that isn't #f satisfies conditional
+
+1
+zardoz> x
+
+3110
+zardoz> (if #t 1 x)
+
+1
+zardoz> (lambda (x) x) ; The identity function
+
+#<lambda>
+zardoz> (define id (lambda (x) x))
+
+()
+zardoz> (id 5) ; Function application (just like + was!)
+
+5
+zardoz> (define f (lambda (x y) (+ x y)))
+
+()
+zardoz> (f 1 2)
+
+3
+zardoz> (define - (lambda (x y) (+ x (* y -1))))
+
+()
+zardoz> (- course 1000) ; Now we have subtraction!
+
+2110
+zardoz> #bindings
+
+- -> #<lambda>, f -> #<lambda>, id -> #<lambda>, x -> 3110, eqv? -> #<builtin>, * -> #<builtin>, + -> #<builtin>, cons -> #<builtin>, cdr -> #<builtin>, car -> #<builtin>, course -> 3110
+zardoz> #restart
+
+zardoz> f
+
+Failure("f is not bound in this environment.")
+zardoz> (define a 1) 
+
+()
+zardoz> (define f (lambda (x) (+ a x)))
+
+()
+zardoz> (f 0)                                                                  
+
+1
+zardoz> (define a 2) ; Now we mutate b, including its binding in the closure!
+
+()
+zardoz> (f 0)
+
+2
+zardoz> (let ((x 0) (y 1)) (+ x y))
+
+1
+zardoz> x
+
+Failure("x is not bound in this environment.")
+zardoz> (let* ((x 0) (y (+ 1 x))) (+ x y))
+
+1
+zardoz> (let ((x 0) (y (+ 1 x))) (+ x y))
+
+Failure("x is not bound in this environment.")
+zardoz> (letrec ((factorial (lambda (x)
+                              (if (eqv? x 0)
+                                  1
+                                (* x (factorial (+ x -1)))))))
+          (factorial 5))
+
+120
+zardoz> ;; We can also do it like this:
+        (define factorial (lambda (x) 
+                            (if (eqv? x 0)
+                                1
+                              (* x (factorial (+ x -1))))))
+
+()
+zardoz> (factorial 5)
+
+120
+zardoz> ;; Below we use mutual recursion, where even? and odd? both call one   
+        ;; another.  We've mentioned that you can do this in OCaml, but you've
+        ;; never had to before.
+        (letrec ((even? (lambda (x)
+                          (if (eqv? x 0)
+                              #t
+                            (odd? (+ x -1)))))
+                 (odd? (lambda (x)
+                         (if (eqv? x 0)
+                             #f
+                           (even? (+ x -1))))))
+          (even? 5))
+
+#f
+
+zardoz> ;; The quote construct might seem a little bit mysterious, so here's an
+        ;; example to motivate it: here's a function that binds an arbitrary
+        ;; variable that the user passes in to the empty list:
+        (define nihilize
+          (lambda (symbol)
+            (eval (cons 'set! (cons symbol (cons ''() '()))))))
+        ;; Note that we need to double quote the empty list so it's not
+        ;; evaluated during the set!.
+
+()
+zardoz> (define non-nil #t)
+
+()
+zardoz> non-nil
+
+#t
+zardoz> (nihilize 'non-nil)
+
+()
+zardoz> non-nil
+
+()
