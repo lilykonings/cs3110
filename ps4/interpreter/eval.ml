@@ -93,15 +93,86 @@ let read_toplevel (input : datum) : toplevel =
 
 (* This function returns an initial environment with any built-in
    bound variables. *)
-(*let initial_environment () : environment =
-  [("course",ref ValDatum (Atom (Integer 3110)));
-  ("car", ref (fun (x,y) -> x));
-  ("cdr", ref (fun (x,y) -> y));
-  ("cons", ref (fun x y -> (x,y)));
-  ("+", ref (List.fold_left (fun acc x -> acc + x) 0));
-  ("*", ref (List.fold_left (fun acc x -> acc * x) 1));
-  ("equal?", ref (fun x y -> x = y));
-  ("eval", ref (fun x y -> eval x y))]*)
+let initial_environment () : environment =
+  let env1 = Environment.empty_environment in
+  let env2 =
+    Environment.add_binding env1
+      (Identifier.variable_of_identifier (Identifier.identifier_of_string "course"),
+        ref (ValDatum (Atom (Integer 3110)))) in
+  let env3 =
+    Environment.add_binding env2
+      (Identifier.variable_of_identifier (Identifier.identifier_of_string "car"),
+        ref (ValProcedure (ProcBuiltin (
+        fun l env -> match l with
+        | h1::h2::[] -> h1
+        | _ -> failwith "Error: not valid elements in list for car"
+      )))) in
+  let env4 =
+    Environment.add_binding env3
+      (Identifier.variable_of_identifier (Identifier.identifier_of_string "cdr"),
+        ref (ValProcedure (ProcBuiltin (
+        fun l env -> match l with
+        | h1::h2::[] -> h2
+        | _ -> failwith "Error: not valid elements in list for cdr"
+      )))) in
+  let env5 =
+    Environment.add_binding env4
+      (Identifier.variable_of_identifier (Identifier.identifier_of_string "cons"),
+        ref (ValProcedure (ProcBuiltin (
+        fun l env -> match l with
+        | (ValDatum h1)::(ValDatum h2)::[] -> 
+            ValDatum (Cons (h1, h2))
+        | _ -> failwith "Error: not valid elements in list for cons"
+      )))) in
+  let env6 =
+    Environment.add_binding env5
+      (Identifier.variable_of_identifier (Identifier.identifier_of_string "+"),
+        ref (ValProcedure (ProcBuiltin (
+        fun l env -> ValDatum (Atom (Integer (List.fold_left (
+          fun acc x -> match x with
+          | ValDatum (Atom (Integer n)) -> acc + n
+          | ValDatum (Atom (Identifier id)) when Identifier.is_valid_variable id ->
+            begin
+              match !(Environment.get_binding env (Identifier.variable_of_identifier id)) with
+              | ValDatum (Atom (Integer n)) -> acc + n
+              | _ -> failwith "Error: not valid elements in list for add"
+            end
+          | _ -> failwith "Error: not valid elements in list for add"
+        ) 0 l)))
+      )))) in
+  let env7 =
+    Environment.add_binding env6
+      (Identifier.variable_of_identifier (Identifier.identifier_of_string "*"),
+        ref (ValProcedure (ProcBuiltin (
+        fun l env -> ValDatum (Atom (Integer (List.fold_left (
+          fun acc x -> match x with
+          | ValDatum (Atom (Integer n)) -> acc * n
+          | ValDatum (Atom (Identifier id)) when Identifier.is_valid_variable id ->
+            begin
+              match !(Environment.get_binding env (Identifier.variable_of_identifier id)) with
+              | ValDatum (Atom (Integer n)) -> acc * n
+              | _ -> failwith "Error: not valid elements in list for mult"
+            end
+          | _ -> failwith "Error: not valid elements in list for mult"
+        ) 1 l)))
+      )))) in
+  let env8 =
+    Environment.add_binding env7
+      (Identifier.variable_of_identifier (Identifier.identifier_of_string "equal?"),
+        ref (ValProcedure (ProcBuiltin (
+        fun l env -> match l with
+        | h1::h2::[] -> ValDatum (Atom (Boolean (h1 = h2)))
+        | _ -> failwith "Error: not valid elements in list for equal?"
+      )))) in
+  let env9 =
+    Environment.add_binding env8
+      (Identifier.variable_of_identifier (Identifier.identifier_of_string "eval"),
+        ref (ValProcedure (ProcBuiltin (
+        fun l env -> match l with
+        | [] -> failwith "Error: not valid elements in list for eval"
+        | (ValDatum h)::t -> eval (read_expression h) env
+      )))) in
+  env9
 
 (* Evaluates an expression down to a value in a given environment. *)
 (* You may want to add helper functions to make this function more
@@ -109,29 +180,30 @@ let read_toplevel (input : datum) : toplevel =
    would be a helper function for each pattern in the match
    statement. *)
 let eval (expression : expression) (env : environment) : value =
-  match expression with
-    | ExprSelfEvaluating (SEBoolean b) -> ValDatum (Atom (Boolean b))
-    | ExprSelfEvaluating (SEInteger n) -> ValDatum (Atom (Integer n))
-    | ExprVariable var ->
-      match find var env with
-      | Some val -> val
-      | None -> failwith "Error: no binding found for " ^ var
-    | ExprQuote datum -> ValDatum datum
-    | ExprLambda (v,e) -> ValProcedure (ProcLambda (v, env, e))
-    | ExprProcCall (e_h,e_t) ->
-      match find e_h env with
-      | Some val -> ProcBuiltin 
-      | None -> 
-    | ExprIf (b, e1, e2) ->
-      match eval b env with
-      | ExprSelfEvaluating (SEBoolean b) ->
-        if b then eval e1 env
-        else eval e2 env
-      | _ -> failwith "Error: if statement does not have valid bool exp"
-    | ExprAssignment (_, _) ->
-    | ExprLet (_, _) ->
-    | ExprLetStar (_, _) ->
-    | ExprLetRec (_, _) ->
+  (* match expression with
+  | ExprSelfEvaluating (SEBoolean b) -> ValDatum (Atom (Boolean b))
+  | ExprSelfEvaluating (SEInteger n) -> ValDatum (Atom (Integer n))
+  | ExprVariable var ->
+    match find var env with
+    | Some val -> val
+    | None -> failwith "Error: no binding found for " ^ var
+  | ExprQuote datum -> ValDatum datum
+  | ExprLambda (v,e) -> ValProcedure (ProcLambda (v, env, e))
+  | ExprProcCall (e_h,e_t) ->
+    match find e_h env with
+    | Some val -> ProcBuiltin 
+    | None -> 
+  | ExprIf (b, e1, e2) ->
+    match eval b env with
+    | ExprSelfEvaluating (SEBoolean b) ->
+      if b then eval e1 env
+      else eval e2 env
+    | _ -> failwith "Error: if statement does not have valid bool exp"
+  | ExprAssignment (_, _) ->
+  | ExprLet (_, _) ->
+  | ExprLetStar (_, _) ->
+  | ExprLetRec (_, _) -> *)
+  failwith "testing"
 
 (* Evaluates a toplevel input down to a value and an output environment in a
    given environment. *)
