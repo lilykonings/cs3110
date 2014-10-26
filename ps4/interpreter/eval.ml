@@ -205,8 +205,8 @@ let eval (expression : expression) (env : environment) : value =
   | ExprLetRec (_, _) -> *)
   failwith "testing"
 
-Evaluates a toplevel input down to a value and an output environment in a
-   given environment.
+(* Evaluates a toplevel input down to a value and an output environment in a
+   given environment. *)
 let eval_toplevel (toplevel : toplevel) (env : environment) :
       value * environment =
   match toplevel with
