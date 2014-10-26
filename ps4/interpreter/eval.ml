@@ -91,6 +91,37 @@ let read_toplevel (input : datum) : toplevel =
   end
   | _ -> ToplevelExpression (read_expression input)
 
+(* Evaluates an expression down to a value in a given environment. *)
+(* You may want to add helper functions to make this function more
+   readable, because it will get pretty long!  A good rule of thumb
+   would be a helper function for each pattern in the match
+   statement. *)
+let eval (expression : expression) (env : environment) : value =
+  (* match expression with
+  | ExprSelfEvaluating (SEBoolean b) -> ValDatum (Atom (Boolean b))
+  | ExprSelfEvaluating (SEInteger n) -> ValDatum (Atom (Integer n))
+  | ExprVariable var ->
+    match find var env with
+    | Some val -> val
+    | None -> failwith "Error: no binding found for " ^ var
+  | ExprQuote datum -> ValDatum datum
+  | ExprLambda (v,e) -> ValProcedure (ProcLambda (v, env, e))
+  | ExprProcCall (e_h,e_t) ->
+    match find e_h env with
+    | Some val -> ProcBuiltin 
+    | None -> 
+  | ExprIf (b, e1, e2) ->
+    match eval b env with
+    | ExprSelfEvaluating (SEBoolean b) ->
+      if b then eval e1 env
+      else eval e2 env
+    | _ -> failwith "Error: if statement does not have valid bool exp"
+  | ExprAssignment (_, _) ->
+  | ExprLet (_, _) ->
+  | ExprLetStar (_, _) ->
+  | ExprLetRec (_, _) -> *)
+  failwith "testing"
+
 (* This function returns an initial environment with any built-in
    bound variables. *)
 let initial_environment () : environment =
@@ -169,41 +200,10 @@ let initial_environment () : environment =
       (Identifier.variable_of_identifier (Identifier.identifier_of_string "eval"),
         ref (ValProcedure (ProcBuiltin (
         fun l env -> match l with
-        | [] -> failwith "Error: not valid elements in list for eval"
         | (ValDatum h)::t -> eval (read_expression h) env
+        | _ -> failwith "Error: not valid elements in list for eval"
       )))) in
   env9
-
-(* Evaluates an expression down to a value in a given environment. *)
-(* You may want to add helper functions to make this function more
-   readable, because it will get pretty long!  A good rule of thumb
-   would be a helper function for each pattern in the match
-   statement. *)
-let eval (expression : expression) (env : environment) : value =
-  (* match expression with
-  | ExprSelfEvaluating (SEBoolean b) -> ValDatum (Atom (Boolean b))
-  | ExprSelfEvaluating (SEInteger n) -> ValDatum (Atom (Integer n))
-  | ExprVariable var ->
-    match find var env with
-    | Some val -> val
-    | None -> failwith "Error: no binding found for " ^ var
-  | ExprQuote datum -> ValDatum datum
-  | ExprLambda (v,e) -> ValProcedure (ProcLambda (v, env, e))
-  | ExprProcCall (e_h,e_t) ->
-    match find e_h env with
-    | Some val -> ProcBuiltin 
-    | None -> 
-  | ExprIf (b, e1, e2) ->
-    match eval b env with
-    | ExprSelfEvaluating (SEBoolean b) ->
-      if b then eval e1 env
-      else eval e2 env
-    | _ -> failwith "Error: if statement does not have valid bool exp"
-  | ExprAssignment (_, _) ->
-  | ExprLet (_, _) ->
-  | ExprLetStar (_, _) ->
-  | ExprLetRec (_, _) -> *)
-  failwith "testing"
 
 (* Evaluates a toplevel input down to a value and an output environment in a
    given environment. *)
