@@ -93,7 +93,7 @@ let read_toplevel (input : datum) : toplevel =
 
 (* This function returns an initial environment with any built-in
    bound variables. *)
-let initial_environment () : environment =
+(*let initial_environment () : environment =
   [("course",ref ValDatum (Atom (Integer 3110)));
   ("car", ref (fun (x,y) -> x));
   ("cdr", ref (fun (x,y) -> y));
@@ -101,7 +101,7 @@ let initial_environment () : environment =
   ("+", ref (List.fold_left (fun acc x -> acc + x) 0));
   ("*", ref (List.fold_left (fun acc x -> acc * x) 1));
   ("equal?", ref (fun x y -> x = y));
-  ("eval", ref (fun x y -> eval x y))]
+  ("eval", ref (fun x y -> eval x y))]*)
 
 (* Evaluates an expression down to a value in a given environment. *)
 (* You may want to add helper functions to make this function more
@@ -109,29 +109,30 @@ let initial_environment () : environment =
    would be a helper function for each pattern in the match
    statement. *)
 let eval (expression : expression) (env : environment) : value =
-  match expression with
-  | ExprSelfEvaluating (SEBoolean b) -> ValDatum (Atom (Boolean b))
-  | ExprSelfEvaluating (SEInteger n) -> ValDatum (Atom (Integer n))
-  | ExprVariable var ->
-    match find var env with
-    | Some val -> val
-    | None -> failwith "Error: no binding found for " ^ var
-  | ExprQuote datum -> ValDatum datum
-  | ExprLambda (v,e) -> ValProcedure (ProcLambda (v, env, e))
-  | ExprProcCall (e_h,e_t) ->
-    match find e_h env with
-    | Some val -> ProcBuiltin 
-    | None -> 
-  | ExprIf (b, e1, e2) ->
-    match eval b env with
-    | ExprSelfEvaluating (SEBoolean b) ->
-      if b then eval e1 env
-      else eval e2 env
-    | _ -> failwith "Error: if statement does not have valid bool exp"
-  | ExprAssignment (_, _) ->
-  | ExprLet (_, _) ->
-  | ExprLetStar (_, _) ->
-  | ExprLetRec (_, _) ->
+  (*match expression with
+    | ExprSelfEvaluating (SEBoolean b) -> ValDatum (Atom (Boolean b))
+    | ExprSelfEvaluating (SEInteger n) -> ValDatum (Atom (Integer n))
+    | ExprVariable var ->
+      match find var env with
+      | Some val -> val
+      | None -> failwith "Error: no binding found for " ^ var
+    | ExprQuote datum -> ValDatum datum
+    | ExprLambda (v,e) -> ValProcedure (ProcLambda (v, env, e))
+    | ExprProcCall (e_h,e_t) ->
+      match find e_h env with
+      | Some val -> ProcBuiltin 
+      | None -> 
+    | ExprIf (b, e1, e2) ->
+      match eval b env with
+      | ExprSelfEvaluating (SEBoolean b) ->
+        if b then eval e1 env
+        else eval e2 env
+      | _ -> failwith "Error: if statement does not have valid bool exp"
+    | ExprAssignment (_, _) ->
+    | ExprLet (_, _) ->
+    | ExprLetStar (_, _) ->
+    | ExprLetRec (_, _) ->*)
+  failwith "hi"
 
 (* Evaluates a toplevel input down to a value and an output environment in a
    given environment. *)
@@ -139,8 +140,12 @@ let eval_toplevel (toplevel : toplevel) (env : environment) :
       value * environment =
   match toplevel with
   | ToplevelExpression expression -> (eval expression env, env)
-  | ToplevelDefinition (_, _)     ->
-     failwith "I couldn't have done it without the Rower!"
+  | ToplevelDefinition (var, exp) ->
+    if (Environment.is_bound env var) = false then
+      ((eval exp (Environment.add_binding env (var, ref (ValDatum (Nil))))), 
+        (Environment.add_binding env (var, ref (eval exp (Environment.add_binding env (var, ref (ValDatum (Nil))))))))
+    else
+      ((eval exp env), Environment.add_binding env (var, ref (eval exp env)))
 
 let rec string_of_value value =
   let rec string_of_datum datum =
