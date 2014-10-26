@@ -109,7 +109,7 @@ let read_toplevel (input : datum) : toplevel =
    would be a helper function for each pattern in the match
    statement. *)
 let eval (expression : expression) (env : environment) : value =
-  (*match expression with
+  match expression with
     | ExprSelfEvaluating (SEBoolean b) -> ValDatum (Atom (Boolean b))
     | ExprSelfEvaluating (SEInteger n) -> ValDatum (Atom (Integer n))
     | ExprVariable var ->
@@ -131,8 +131,7 @@ let eval (expression : expression) (env : environment) : value =
     | ExprAssignment (_, _) ->
     | ExprLet (_, _) ->
     | ExprLetStar (_, _) ->
-    | ExprLetRec (_, _) ->*)
-  failwith "hi"
+    | ExprLetRec (_, _) ->
 
 (* Evaluates a toplevel input down to a value and an output environment in a
    given environment. *)
