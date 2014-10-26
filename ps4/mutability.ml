@@ -36,7 +36,6 @@ let fold_left_imp f acc xs =
 type t = int
 type u = string
 let lst : t list = [1;2;3]
-let lst2 : t list = [1;1;1]
 (* Function that returns a value of type u given x of value t. *)
 (* Uses side effects to invalidate the following theorem: *)
 (* List.map f (List.rev xs) = List.rev (List.map f xs) *)
