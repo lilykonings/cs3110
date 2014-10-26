@@ -94,14 +94,14 @@ let read_toplevel (input : datum) : toplevel =
 (* This function returns an initial environment with any built-in
    bound variables. *)
 let initial_environment () : environment =
-  [("course",3110);
-  ("car",fun (x,y) -> x);
-  ("cdr",fun (x,y) -> y);
-  ("cons",fun x y -> (x,y));
-  ("+",);
-  ("-",);
-  ("equal?",fun x y -> x = y);
-  ("eval",fun x y -> eval x y)]
+  [("course",ref ValDatum (Atom (Integer 3110)));
+  ("car", ref (fun (x,y) -> x));
+  ("cdr", ref (fun (x,y) -> y));
+  ("cons", ref (fun x y -> (x,y)));
+  ("+", ref (List.fold_left (fun acc x -> acc + x) 0));
+  ("*", ref (List.fold_left (fun acc x -> acc * x) 1));
+  ("equal?", ref (fun x y -> x = y));
+  ("eval", ref (fun x y -> eval x y))]
 
 (* Evaluates an expression down to a value in a given environment. *)
 (* You may want to add helper functions to make this function more
@@ -114,11 +114,14 @@ let eval (expression : expression) (env : environment) : value =
   | ExprSelfEvaluating (SEInteger n) -> ValDatum (Atom (Integer n))
   | ExprVariable var ->
     match find var env with
-    | Some val -> ValDatum () (* FIX THIS LATER *)
+    | Some val -> val
     | None -> failwith "Error: no binding found for " ^ var
-  | ExprQuote datum -> 
-  | ExprLambda (_, _) -> 
-  | ExprProcCall _ ->
+  | ExprQuote datum -> ValDatum datum
+  | ExprLambda (v,e) -> ValProcedure (ProcLambda (v, env, e))
+  | ExprProcCall (e_h,e_t) ->
+    match find e_h env with
+    | Some val -> ProcBuiltin 
+    | None -> 
   | ExprIf (b, e1, e2) ->
     match eval b env with
     | ExprSelfEvaluating (SEBoolean b) ->
@@ -129,11 +132,6 @@ let eval (expression : expression) (env : environment) : value =
   | ExprLet (_, _) ->
   | ExprLetStar (_, _) ->
   | ExprLetRec (_, _) ->
-
-(* Finds value of variable in env if exists, otherwise return None *)
-(* let find (var : variable) (env : environment) : value option =
-  try Some (List.assoc var env)
-  with Not_found -> None *)
 
 (* Evaluates a toplevel input down to a value and an output environment in a
    given environment. *)
