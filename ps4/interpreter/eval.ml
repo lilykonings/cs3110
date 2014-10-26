@@ -85,8 +85,9 @@ let read_toplevel (input : datum) : toplevel =
   | Cons (Atom (Identifier "define"), datum2)->
   begin
     match datum2 with
-    | Cons (Atom (Identifier id)), exp) when Identifier.is_valid_variable id -> ToplevelDefinition (var, (read_expression exp)) 
-    | Cons (Atom (Identifier id)), exp) -> failwith "Not valid identifier" 
+    | Cons (Atom (Identifier id), exp) when Identifier.is_valid_variable id -> 
+      ToplevelDefinition ((variable_of_identifier id), (read_expression exp)) 
+    | Cons (Atom (Identifier id), exp) -> failwith "Not valid identifier" 
   end
   | _ -> ToplevelExpression (read_expression input)
 
