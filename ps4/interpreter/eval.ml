@@ -22,20 +22,31 @@ let rec read_expression (input : datum) : expression =
   | Atom (Integer n) -> ExprSelfEvaluating (SEInteger n)
   | Cons (datum, Nil) -> read_expression datum
   | Cons (Atom (Identifier id), datum2) when Identifier.is_valid_variable id ->
-
+    ExprProcCall (ExprVariable id, List.map read_expression (list_of_cons d2))
   | Cons (Atom (Identifier id), datum2) ->
     match id, datum2 with
-    | "quote", _ as d -> ExprQuote d
-    | "if", Cons (d1, Cons (d2, d3)) ->
+    | "quote", d -> ExprQuote d
+    | "if", Cons (d1,Cons (d2,d3)) ->
       ExprIf (read_expression d1, read_expression d2, read_expression d3)
     | "if", _ -> failwith "Error: invalid arguments for if keyword"
-    | "lambda", Cons (d1, d2) ->
+    | "lambda", Cons (d1,d2) ->
       ExprLambda (list_of_cons d1, List.map read_expression (list_of_cons d2))
     | "lambda", _ -> failwith "Error: invalid arguments for lambda keyword"
-    | "set!", 
-    | "let",
-    | "let*",
-    | "letrec",
+    | "set!", Cons (d1,d2) -> ExprAssignment (d1, read_expression d2)
+    | "set!", _ -> failwith "Error: invalid arguments for set! keyword"
+    | "let", Cons (d1,d2) ->
+      ExprLet (List.map (fun (a,b) -> (a,read_expression b)) (list_of_cons d1),
+        List.map read_expression (list_of_cons d2))
+    | "let", _ -> failwith "Error: invalid arguments for let keyword"
+    | "let*", Cons (d1,d2) ->
+      ExprLet (List.map (fun (a,b) -> (a,read_expression b)) (list_of_cons d1),
+        List.map read_expression (list_of_cons d2))
+    | "let*", _ -> failwith "Error: invalid arguments for let* keyword"
+    | "letrec", Cons (d1,d2) ->
+      ExprLet (List.map (fun (a,b) -> (a,read_expression b)) (list_of_cons d1),
+        List.map read_expression (list_of_cons d2))
+    | "letrec", _ -> failwith "Error: invalid arguments for letrec keyword"
+    | "", _ -> failwith "Error: invalid keyword"
   | Cons (_,_) -> failwith "Error: invalid cons arguments"
   | _ -> failwith "Error: datum does not match expression grammar"
 
