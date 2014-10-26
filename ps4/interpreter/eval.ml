@@ -82,12 +82,12 @@ let rec read_expression (input : datum) : expression =
 (* Parses a datum into a toplevel input. *)
 let read_toplevel (input : datum) : toplevel =
   match input with
-  | Cons (Atom (Identifier "define"), datum2)->
+  | Cons (Atom (Identifier i), datum2) when Identifier.string_of_identifier i = "define" ->
   begin
     match datum2 with
     | Cons (Atom (Identifier id), exp) when Identifier.is_valid_variable id -> 
-      ToplevelDefinition ((variable_of_identifier id), (read_expression exp)) 
-    | Cons (Atom (Identifier id), exp) -> failwith "Not valid identifier" 
+      ToplevelDefinition ((Identifier.variable_of_identifier id), (read_expression exp)) 
+    | _ -> failwith "Not valid identifier" 
   end
   | _ -> ToplevelExpression (read_expression input)
 
