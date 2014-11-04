@@ -1,0 +1,2 @@
+OCaml is fun
+because fun is a keyword

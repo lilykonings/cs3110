@@ -1,0 +1,4 @@
+compile.include_directories=map_reduce,apps,apps/word_count,apps/inverted_index,apps/dna_sequencing,apps/selection,apps/relation_composition,apps/common_friends,async
+compile.ocaml_libraries=str
+compile.opam_packages=async
+compile.thread=true

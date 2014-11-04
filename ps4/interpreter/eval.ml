@@ -96,31 +96,43 @@ let read_toplevel (input : datum) : toplevel =
    readable, because it will get pretty long!  A good rule of thumb
    would be a helper function for each pattern in the match
    statement. *)
-let eval (expression : expression) (env : environment) : value =
-  (* match expression with
+let rec eval (expression : expression) (env : environment) : value =
+  match expression with
   | ExprSelfEvaluating (SEBoolean b) -> ValDatum (Atom (Boolean b))
   | ExprSelfEvaluating (SEInteger n) -> ValDatum (Atom (Integer n))
   | ExprVariable var ->
-    match find var env with
-    | Some val -> val
-    | None -> failwith "Error: no binding found for " ^ var
+    begin
+      try !(Environment.get_binding env var)
+      with Not_found -> failwith "Error: no binding for this variable in environment"
+    end
   | ExprQuote datum -> ValDatum datum
   | ExprLambda (v,e) -> ValProcedure (ProcLambda (v, env, e))
-  | ExprProcCall (e_h,e_t) ->
-    match find e_h env with
-    | Some val -> ProcBuiltin 
-    | None -> 
+  | ExprProcCall (ExprVariable h,t) ->
+    (try
+          let f = !(Environment.get_binding env h) in
+          match f with
+          | ValProcedure (ProcBuiltin x) -> x (List.map (fun x -> eval x env) t) env
+          | ValProcedure (ProcLambda (v,envir,e)) ->
+            let env2 =
+              List.fold_left2 (fun acc a b ->
+                Environment.add_binding acc (a,ref (eval b acc))
+              ) envir v t in
+            List.fold_left (fun acc x -> eval x env2) (ValDatum (Atom (Integer 0))) e
+          | _ -> failwith "Error: not valid procedure call"
+        with Not_found -> failwith "Error: no binding for this variable in environment")
   | ExprIf (b, e1, e2) ->
-    match eval b env with
-    | ExprSelfEvaluating (SEBoolean b) ->
-      if b then eval e1 env
-      else eval e2 env
-    | _ -> failwith "Error: if statement does not have valid bool exp"
-  | ExprAssignment (_, _) ->
-  | ExprLet (_, _) ->
-  | ExprLetStar (_, _) ->
-  | ExprLetRec (_, _) -> *)
-  failwith "testing"
+    (match eval b env with
+        | ValDatum (Atom (Boolean b)) ->
+          if b then eval e1 env
+          else eval e2 env
+        | _ -> eval e1 env)
+  | ExprAssignment (var, exp) ->
+    if not (Environment.is_bound env var) then
+      failwith "Error: The variable is not bound"
+    else
+      let bnd = Environment.get_binding env var in
+      bnd := (eval exp env); ValDatum (Nil)
+  | _ -> failwith "unfinished"
 
 (* This function returns an initial environment with any built-in
    bound variables. *)
