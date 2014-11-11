@@ -8,18 +8,48 @@ type filename = string
 (******************************************************************************)
 
 module Job = struct
-  type input
-  type key
-  type inter
-  type output
+
+  type word = string
+  type contents = string
+
+  type input = filename * contents 
+  type key = word 
+  type inter = filename
+  type output = filename list 
 
   let name = "index.job"
 
-  let map input : (key * inter) list Deferred.t =
-    failwith "I'm stepping through the door / And I'm floating in a most peculiar way / And the stars look very different today"
+  (* Returns a list with no duplicates *)
+  let elim_duplicates lst = 
+    List.fold_left (fun acc elem -> 
+      if (List.mem elem acc) then acc
+      else 
+        elem :: acc) [] lst 
 
-  let reduce (key, inters) : output Deferred.t =
-    failwith "Here am I floating round my tin can / Far above the Moon / Planet Earth is blue / And there's nothing I can do."
+  (*Returns a list of non-duplicated words found in the file*)
+  let read_contents contents : (string list) Deferred.t =
+    Reader.file_lines contents
+    >>= fun lst -> Deferred.List.fold lst ~init: [] ~f: 
+      (fun acc line -> return (elim_duplicates (
+        elim_duplicates (AppUtils.split_words line) @ acc ) ))
+
+      (*map version*)
+      (* >>= fun lst -> Deferred.List.map ~how: `Parallel lst ~f: 
+        (fun line -> return (elim_duplicates (AppUtils.split_words line))) *)
+        
+
+  (* Creates a list of (index, filename) tuples where indices are words from
+   * the contents of the filename*)
+  let map input : (key * inter) list Deferred.t =
+    let filename = fst input in 
+      read_contents filename 
+        >>| List.map (fun elem -> elem,filename) 
+
+
+  (* returns a list of filenames that does not contain duplicates *)
+  let reduce (_, inters) : output Deferred.t =
+    return (elim_duplicates inters)
+
 end
 
 (* register the job *)
@@ -55,13 +85,20 @@ module App  = struct
       (filename, contents)
     )
 
+
   module Make (Controller : MapReduce.Controller) = struct
     module MR = Controller(Job)
 
     (** The input should be a single file name.  The named file should contain
         a list of files to index. *)
     let main args =
-      failwith "Can you hear me, Major Zardoz? Can you hear me, Major Zardoz? Can you hear me, Major Zardoz?"
+      if args = [] then failwith "No files provided"
+      else
+        (*Separate filenames in master text file*)
+        read (List.hd args)
+          >>= MR.map_reduce
+          >>| output
+
   end
 end
 
