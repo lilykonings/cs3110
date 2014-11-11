@@ -5,50 +5,32 @@ module Make (Job : MapReduce.Job) = struct
   (* see .mli *)
   let run (r: Reader.t) (w: Writer.t) : unit Deferred.t =
     (*get request from controller*)
-    let request = Protocol.WorkerRequest (Job) in 
-    let response = Protocol.WorkerResponse (Job) in 
+    let module Request = Protocol.WorkerRequest (Job) in 
+    let module Response = Protocol.WorkerResponse (Job) in 
 
-(*     let is_broken_connection w r = 
- *)
-    let exception_handler (job_result: 'a Deferred.t) : unit Deferred.t =
-      try_with (fun () -> job_result) >>| fun a -> function
-      | `Ok (a) -> (function
-        | (key,inter) :: t as lst-> response.send w (response.MapResult lst)
-        | output -> response.send w (ReduceResult output))
-      | `Err _exn -> response.send w (JobFailed "Job failed")   
+  let handle (job_result: 'a Deferred.t) =
+    let open Response in  
+    try_with (fun () -> job_result) 
+      >>| function
+        | Core.Std.Result.Ok (a) -> (match a with 
+          | [] as lst -> send w (MapResult lst)
+          | (key,inter) :: t as lst -> send w (MapResult lst)) 
+          (* | output -> send w (ReduceResult output)     *)
+        | Core.Std.Result.Error _ -> send w (JobFailed "Job failed") in 
 
-    in 
-    (*Note: include async version of try-with, 
-     * if it fails, do response.send w (JobFailed of string)*)
-    (*process request*)
-    request.receive r >>= function
-    | `Ok job_request -> (function 
-      (*do job*)
-      | MapRequest input -> exception_handler (Job.map input)
-      | ReduceRequest (key,inters) -> 
-        exception_handler (Job.reduce (key,inters))
-
-
-
-      (* -> Job.map input 
-        >>| fun result 
-        (* not sure how to access t in response.t *)
-          (*send response back *)
-          -> let response.t = MapResult(result) in 
-            response.send w (MapResult result)
-
-          -> exception_handler (result) *)
-
-     (*  | ReduceRequest (key,inters) -> Job.reduce (key,inters))
-        >>| fun result 
-          (*send response back *)
-          -> let response.t = ReduceResult result in 
-            response.send w (ReduceResult result)
-
-          -> exception_handler (result) *)
-
-    | `Eof -> return (Pipe.close w) (*close the pipe*)
-
+      let open Request in 
+      let open Response in 
+      Request.receive r 
+        >>= function 
+          | `Ok job_request -> (match job_request with  
+            | Request.MapRequest input -> handle (Job.map input)
+            | Request.ReduceRequest (key,inters) -> 
+                try_with (fun () -> Job.reduce (key,inters))
+                >>| function
+                  | Core.Std.Result.Ok result -> Response.send w (Response.ReduceResult result)
+                  | Core.Std.Result.Error _ -> Response.send w (JobFailed "Job failed")) 
+          | `Eof -> return () 
+  
 end
 
 (* see .mli *)
