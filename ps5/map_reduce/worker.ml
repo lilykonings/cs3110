@@ -15,7 +15,6 @@ module Make (Job : MapReduce.Job) = struct
         | Core.Std.Result.Ok (a) -> (match a with 
           | [] as lst -> send w (MapResult lst)
           | (key,inter) :: t as lst -> send w (MapResult lst)) 
-          (* | output -> send w (ReduceResult output)     *)
         | Core.Std.Result.Error _ -> send w (JobFailed "Job failed") in 
 
       let open Request in 
