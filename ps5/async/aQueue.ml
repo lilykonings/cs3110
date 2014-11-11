@@ -21,7 +21,7 @@ let push (q : 'a t) (x : 'a) : unit =
 (* require: a queue of type 'a t *)
 (* returns: the first element in the queue of type 'a Deferred.t *)
 let pop (q : 'a t) : 'a Deferred.t =
-  (Pipe.read (fst q)) >>= fun e ->
+  (Pipe.read (fst q)) >>= (fun e ->
   	match e with
   	|`Ok a -> return a
-    |`Eof -> failwith "Invalid queue"
+    |`Eof -> failwith "queue is closed")
