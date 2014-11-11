@@ -1,5 +1,10 @@
 # PS 5 #
 
+This is version 2 of the release files.  It updates the example
+file for the common_friends app to be correct.  The writeup was
+already correct, so it has not been updated.  No other files have
+changed.
+
 ## Getting Started ##
 Before you do anything, please update your tools:
 
