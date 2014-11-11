@@ -5,17 +5,38 @@ type relation = R | S
 
 module Job = struct
   type input  = relation * string * string
-  type key    = unit (* TODO: choose an appropriate type *)
-  type inter  = unit (* TODO: choose an appropriate type *)
+  type key    = string
+  type inter  = (relation * string)
   type output = (string * string) list
 
   let name = "composition.job"
 
-  let map (r, x, y) =
-    failwith "TODO"
+  (* *)
+  let map (r, x, y) : (key * inter) list Deferred.t =
+    match r with 
+    | R -> return ((y, (R,x))::[])
+    | S -> return ((x, (S,y))::[])
 
-  let reduce (k, vs) =
-    failwith "TODO"
+  (* *)
+  let reduce (_, vs) : output Deferred.t =
+    let (xs,zs) = List.fold_left (fun (xs,zs) (r,elem) -> 
+      match r with 
+      | R -> (elem::xs, zs) 
+      | S -> (xs, elem::zs)) ([],[]) vs in 
+
+    (*Might want to come up with a more efficient way of doing this*)
+    let lst = List.map (fun x -> 
+      List.fold_left (fun acc z -> (x,z)::acc) [] zs) xs in
+
+    (*List.flatten is NOT tail recursive *)
+     return (List.flatten lst)
+
+    (* alternative method *)
+    (* let lst = List.fold_left (fun acc x -> 
+      (List.fold_left (fun acc' z -> (x,z)::acc) [] zs)) @ acc) [] xs in
+    return lst  *)
+
+
 end
 
 let () = MapReduce.register_job (module Job)
