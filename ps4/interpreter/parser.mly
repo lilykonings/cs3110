@@ -45,20 +45,13 @@ symbol:
 ;
 
 cons:
-<<<<<<< HEAD
-  | LPAREN datum DOT datum RPAREN { Cons ($2, $4) }
-=======
->>>>>>> 13bf29351563746fe87f8219b04ad29059f5b847
   | LPAREN datum cons_tail { Cons ($2, $3) }
 ;
 
 cons_tail:
   | RPAREN { Nil }
   | datum cons_tail { Cons ($1, $2) }
-<<<<<<< HEAD
-=======
   | DOT datum RPAREN { $2 }
->>>>>>> 13bf29351563746fe87f8219b04ad29059f5b847
 ;
 
 quoted:

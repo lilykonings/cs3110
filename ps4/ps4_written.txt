@@ -1,0 +1,3 @@
+This assignment was unexpectedly time-consuming in terms of the sheer amount of complexity involved.
+
+Lily completed Problem 2, read_expression, initial_environment, and eval, as well as any helper functions involved in implementing them. Charles completed Problem 1, read_toplevel, eval_toplevel, and also worked on eval.

@@ -1,0 +1,1126 @@
+(a, b): f, c, d, e, g, h, i, j, za, ze, zzh, zzo, zl, zzzu, zq, zzb, zzj, zzl, zzq, zzs, zzzm, zzzv
+(a, c): f, b, d, e, g, h, i, j, n, za, ze, zm, zz, zzo, zzd, r, zzb, zzl, zzp, zzq, zzs, zzy, zzzs, zzzv
+(a, d): f, b, c, e, g, h, i, j, zc, ze, zzh, zzr, zm, zz, zzzg, zzzu, r, zj, zn, zq, zx, zzj, zzs, zzzv
+(a, e): b, c, d, f, g, h, i, j, u, zzzg, zzzh, t, ze, zl, zzp, w, zc, zx, zzh, zzq, zzzm, zzzo, zzzq, zzzt, n, r, v, zm, zq, zzb, zzj
+(a, f): b, c, d, e, g, h, i, j, zc, ze, zzr, zzzh, zl, zzd, zzzu, t, u, v, w, zj, zq, zzj, zzs, zzw, zzzo, zzzv
+(a, g): f, b, c, d, e, h, i, j, n, zzh, zm, zzo, zzzg, v, zb, zj, zn, zq, zzj, zzl, zzq, zzs, zzy, zzzo
+(a, h): f, b, c, d, e, g, i, j, zzh, zzr, zzd, zzzu, r, t, v, w, zj, zn, zx, zzj, zzl, zzq, zzs, zzzo, zzzs, zzzt
+(a, i): c, f, b, d, e, g, h, j, zzl, zzzg, zq, zc, zl, zz, zzr, zzzq, t, v, za, zzh, zzq, zzzn, zzzs
+(a, j): f, b, c, d, e, g, h, i, ze, zzh, zzr, zm, zz, zzo, zzze, zzzi, zl, zzd, zzzu, t, v, w, zx, zzb, zzj, zzs, zzw, zzzm, zzzn, zzzo, zzzt, zzzv
+(a, n): c, e, g, zzw, zzzn, zzzv
+(a, r): c, d, e, h, zl, t, u, zzb, zzzt
+(a, t): f, e, h, i, j, zzzh, zzzq, r, u, v, zb, zj, zzq, zzzs, zzzt
+(a, u): e, r, f, t, zn, zzb, zzh
+(a, v): f, e, g, h, i, j, zzr, zm, zzze, zzzh, zzd, zzzu, t, zn, zzb, zzj, zzl, zzp, zzzm
+(a, w): f, e, h, j, ze, zzzu, zzw, zzzo, zzzv
+(a, za): b, c, i, zzd, zq, zx, zzzm
+(a, zb): g, zzzu, t, zn, zzj, zzs, zzzs, zzzt
+(a, zc): f, d, e, i, zzze, zzzq, zzzg, zj, zq, zzj, zzq, zzw, zzy
+(a, ze): f, b, c, d, e, j, zzr, zzo, zzzh, w, zn, zzp, zzy, zzzt
+(a, zj): f, d, g, h, zc, zzo, zzze, zzzh, zzzi, t, zx, zzj
+(a, zl): f, b, e, i, j, zzzu, r, zx, zzq
+(a, zm): c, d, e, g, j, zzze, zzzq, v, zzzv
+(a, zn): d, g, h, ze, u, v, zb, zzj, zzzm, zzzo
+(a, zq): f, b, d, e, g, i, za, zc, zz, zzzg, zzzt
+(a, zx): d, e, h, j, za, zzzq, zl, zzzg, zj, zzw
+(a, zz): c, d, i, j, zzze, zq, zzb, zzl, zzw, zzzn, zzzo, zzzs, zzzt, zzzv
+(a, zzb): b, c, e, j, zz, r, u, v, zzj
+(a, zzd): f, c, h, j, za, v, zzj, zzzn, zzzs
+(a, zzh): b, d, e, g, h, i, j, u, zzl, zzy
+(a, zzj): f, b, d, e, g, h, j, zc, zzd, v, zb, zj, zn, zzb, zzzn, zzzo, zzzv
+(a, zzl): b, c, g, h, i, zzh, zz, v, zzp
+(a, zzo): b, c, g, j, ze, zzzi, zzzq, zj, zzs, zzw, zzy
+(a, zzp): c, e, ze, zzzh, zzzi, v, zzl
+(a, zzq): b, c, e, g, h, i, zc, zl, zzzu, t, zzw, zzzm, zzzt
+(a, zzr): f, d, h, i, j, ze, zzze, zzzq, v
+(a, zzs): f, b, c, d, g, h, j, zzo, zb, zzy, zzzn
+(a, zzw): f, j, n, zc, zz, zzo, zzzq, zzzg, w, zx, zzq, zzzo, zzzt
+(a, zzy): c, g, zc, ze, zzh, zzo, zzzh, zzs
+(a, zzze): j, zc, zzr, zm, zz, v, zj
+(a, zzzg): d, e, g, i, zc, zq, zx, zzw, zzzs
+(a, zzzh): f, e, ze, t, v, zj, zzp, zzy, zzzt
+(a, zzzi): j, zzo, zzzu, zj, zzp
+(a, zzzm): b, e, j, za, zzzq, v, zn, zzq, zzzn
+(a, zzzn): i, j, n, zz, zzd, zzzu, zzj, zzs, zzzm, zzzo
+(a, zzzo): f, e, g, h, j, zz, w, zn, zzj, zzw, zzzn
+(a, zzzq): e, i, zc, zzr, zm, zzo, t, zx, zzw, zzzm
+(a, zzzs): c, h, i, zz, zzd, zzzg, zzzu, t, zb
+(a, zzzt): e, h, j, ze, zz, zzzh, zzzu, r, t, zb, zq, zzq, zzw
+(a, zzzu): f, b, d, h, j, zzzi, zl, v, w, zb, zzq, zzzn, zzzs, zzzt
+(a, zzzv): f, b, c, d, j, n, zm, zz, w, zzj
+(b, c): g, h, a, d, e, f, i, j, za, zzo, zzs, ze, zr, zzzv, l, zs, zzb, zzzj, q, zh, zzi, zzl, zzq, zzx, zzzf, zzzk, zzzp
+(b, d): g, h, a, c, e, f, i, j, zg, zzj, zzs, ze, zr, zzzv, k, l, p, zq, zzzc, zzzj, q, zf, zzh, zzi, zzz, zzzf, zzzu
+(b, e): a, c, d, f, g, h, i, j, zs, ze, zl, zzz, zzzj, zzh, zzq, zzzd, zzzm, p, zq, zr, zzb, zzg, zzi, zzj, zzn, zzzk
+(b, f): a, i, c, d, e, g, h, j, l, zl, zzx, zv, zzg, p, zh, zzj, zzzu, ze, zf, zq, zs, zzs, zzzc, zzzd, zzzp, zzzv
+(b, g): h, a, c, d, e, f, i, j, zv, zzj, zzo, zzs, zt, k, l, p, zq, zs, z, zh, zzg, zzh, zzl, zzq, zzx, zzzd, zzzp
+(b, h): g, a, c, d, e, f, i, j, zzj, zzs, zr, k, l, zzzj, z, zh, zzh, zzi, zzl, zzq, zzz, zzzf, zzzk, zzzr, zzzu
+(b, i): c, f, a, d, e, g, h, j, q, z, zr, zzl, zq, zzzk, zzzp, k, zl, za, zg, zh, zzh, zzq, zzzd
+(b, j): a, c, d, e, f, g, h, i, zv, zzh, zzi, zzj, zzzm, ze, zzzd, zzzp, zzzu, zzb, zzn, q, zf, zl, zr, zzk, zzo, zzs, zzzv
+(b, k): g, h, d, i, za, zzj, zzo, zzs, zq, zzzc, zl, zzzd, zzzu
+(b, l): g, h, c, d, f, zs, zzk, zzzc, q, z, zzzp
+(b, p): g, d, e, f, zg, zr, zzb, zh, zzh, zzq, zzz, zzzu
+(b, q): c, i, l, j, d, za, zzzr, zzzv, zq, zzg
+(b, z): i, h, l, g, zzb, zzq, zzzc, zzzf, zzzr, zzzk
+(b, za): a, c, i, zg, zv, k, zq, zzn, zzzj, q, zf, zzx, zzz, zzzd, zzzm, zzzr
+(b, ze): a, c, d, e, f, j, zzo
+(b, zf): d, f, j, za, zzb, zzzj, zzi, zzzd, zzzr
+(b, zg): d, i, za, zzj, zt, p, zzn, zzzj, zl, zzh, zzzf, zzzp
+(b, zh): g, h, c, f, i, zzj, zr, zzzv, p, zzb, zzz, zzzd, zzzp
+(b, zl): a, e, f, i, j, zg, zt, k, zs, zzq, zzzf, zzzr, zzzu
+(b, zq): g, a, d, e, f, i, za, k, zzzc, q, zzg, zzx, zzzk, zzzr
+(b, zr): h, c, d, e, i, j, zzj, p, zzb, zzzc, zh, zzx
+(b, zs): g, c, e, f, zzo, l, zzb, zl, zzz
+(b, zt): g, zg, zzj, zzb, zl, zzg, zzl, zzzd
+(b, zv): g, f, j, za, zzo, zzk, zzn, zzq, zzzf
+(b, zzb): a, c, e, j, zzj, zr, zt, p, zs, z, zf, zh, zzx, zzz, zzzk
+(b, zzg): g, e, f, zt, zq, q, zzi, zzzp
+(b, zzh): g, h, a, d, e, i, j, zg, p, zzl, zzx
+(b, zzi): h, c, d, e, j, zzzv, zf, zzg, zzzp, zzzr
+(b, zzj): g, h, a, d, e, f, j, zg, zr, zt, zzzv, k, zzb, zzzj, zh, zzx
+(b, zzk): j, zv, l, zzn
+(b, zzl): g, h, a, c, i, zt, zzh, zzz, zzzp
+(b, zzn): e, j, za, zg, zv, zzo, zzzv, zzk, zzzu
+(b, zzo): g, a, c, j, zv, zzs, ze, k, zs, zzn
+(b, zzq): g, h, a, c, e, i, zv, p, z, zl, zzzm, zzzr, zzzu
+(b, zzs): g, h, a, c, d, f, j, zzo, k
+(b, zzx): g, c, f, za, zzj, zr, zq, zzb, zzh, zzzu
+(b, zzz): h, d, e, za, p, zs, zzb, zh, zzl, zzzk, zzzr, zzzu
+(b, zzzc): l, z, f, d, k, zq, zr, zzzj, zzzv
+(b, zzzd): j, e, g, k, zf, zh, zt, i, f, za
+(b, zzzf): c, h, z, zg, zl, d, zv, zzzk
+(b, zzzj): c, e, d, za, zzzc, h, zf, zg, zzj
+(b, zzzk): h, i, c, e, z, zq, zzb, zzz, zzzf
+(b, zzzm): j, e, za, a, zzq
+(b, zzzp): g, i, j, l, zzl, c, f, zg, zh, zzg, zzi
+(b, zzzr): h, q, z, zl, za, zf, zq, zzi, zzq, zzz
+(b, zzzu): j, a, d, f, k, zl, zzn, h, p, zzq, zzx, zzz
+(b, zzzv): c, q, zh, zzj, zzzc, f, j, a, d, zzi, zzn
+(c, d): h, i, a, b, e, f, g, j, l, q, r, zi, zzi, zzzj, zzzv, zzs, zzzf, ze, x, zd, zm, zo, zr, zz
+(c, e): a, b, d, f, g, h, i, j, zs, x, ze, zzp, zzzj, zd, zzq, n, o, r, y, zi, zm, zo, zr, zzb, zzi, zzzk
+(c, f): a, i, b, d, e, g, h, j, l, zp, zzx, zh, zo, o, x, zd, ze, zs, zzd, zzs, zzzp, zzzv
+(c, g): b, h, a, d, e, f, i, j, zh, zzy, zzzp, zzs, l, n, zm, zo, zs, zzl, zzo, zzq, zzx
+(c, h): i, a, b, d, e, f, g, j, l, r, zh, zi, zzi, zzzj, zzzs, zzs, zzzf, zzq, y, zr, zzd, zzl, zzzk
+(c, i): f, a, b, d, e, g, h, j, q, x, zi, zr, zzl, zp, zzzk, zzzp, y, zz, za, zh, zzq, zzzs
+(c, j): a, b, d, e, f, g, h, i, y, zd, zi, zzi, ze, zzd, zzzp, zm, zzb, q, zr, zz, zzo, zzs, zzzv
+(c, l): h, b, d, f, g, n, q, zs, zd, zzzp
+(c, n): a, e, g, l, zzzv
+(c, o): f, e, x, zd, zi, zo, zs, zzo, q, zzx
+(c, q): i, l, j, b, d, o, za, zo, zzzv, zi
+(c, r): h, d, a, e, zp, zzzk, zzb, zzzf, zzzp
+(c, x): i, d, e, f, za, o, zzx
+(c, y): h, j, i, e, zi, zzzs, zzl
+(c, za): i, a, b, q, zp, zzzj, x, zd, zzd, zzx
+(c, zd): d, e, f, j, l, zs, zzzv, za, zzb, o, zzo
+(c, ze): a, b, d, e, f, j, zzp, zzo, zzy
+(c, zh): h, i, b, f, g, zp, zzzv, zzb, zzp, zr, zzzp
+(c, zi): h, i, d, e, j, q, zs, zzzs, zzs, zzq, o, y, zm, zz, zzo
+(c, zm): a, d, e, g, j, zi, zs, zzzv, zzzp
+(c, zo): d, e, f, g, q, zzzj, zzzv, o, zz, zzl
+(c, zp): i, f, r, zh, zzi, zzzv, za, zzd
+(c, zr): h, i, b, d, e, j, zh, zzb, zzx
+(c, zs): b, e, f, g, l, zi, zzb, o, zd, zm, zzo
+(c, zz): i, a, d, j, zi, zzzs, zzzv, zzzf, zzb, zo, zzl
+(c, zzb): a, b, e, j, r, zh, zs, zd, zr, zz, zzx, zzzk
+(c, zzd): h, a, f, j, zp, zzzs, za
+(c, zzi): h, b, d, e, j, zp, zzzv, zzp, zzzp
+(c, zzl): h, i, a, b, g, zzp, y, zo, zz, zzzp
+(c, zzo): a, b, g, j, zi, zs, zzs, ze, o, zd, zzy
+(c, zzp): a, e, zh, zzi, ze, zzl
+(c, zzq): h, i, a, b, e, g, zi
+(c, zzs): h, a, b, d, f, g, j, zi, zzo, zzy
+(c, zzx): b, f, g, za, zzb, o, x, zr
+(c, zzy): a, g, zzs, ze, zzo, zzzk
+(c, zzzf): h, b, d, r, zz, zzzk
+(c, zzzj): e, b, d, za, h, zo
+(c, zzzk): h, i, r, zzy, b, e, zzb, zzzf, zzzs
+(c, zzzp): g, i, j, l, zzl, f, b, r, zh, zm, zzi
+(c, zzzs): h, y, zz, zzd, a, i, zi, zzzk
+(c, zzzv): b, n, q, zd, zh, zm, zo, zz, f, j, a, d, zp, zzi
+(d, e): a, b, c, f, g, h, i, j, zzzb, zzzg, x, ze, zzz, zzzj, zc, zd, zx, zzh, p, r, zi, zm, zo, zq, zr, zu, zy, zzi, zzj
+(d, f): a, i, b, c, e, g, h, j, l, zj, zzr, zc, zzv, p, zo, zza, zzj, zzzb, zzzu, x, zd, ze, zf, zq, zzc, zzs, zzzc, zzzv
+(d, g): b, h, a, c, e, f, i, j, zzh, p, zzzg, zzj, zzs, k, l, zj, zm, zn, zo, zq, zy, zzv
+(d, h): c, b, g, a, e, f, i, j, k, zzzb, l, zi, zzj, zzz, zu, zzzf, r, zj, zn, zr, zx, zy, zzh, zzi, zzr, zzs, zzzj, zzzu
+(d, i): c, f, a, b, e, g, h, j, q, x, zi, zr, zzzg, zq, k, zc, zu, zz, zzr, zzzb, zg, zzh
+(d, j): a, b, c, e, f, g, h, i, zd, zi, zu, zza, zzh, zzi, zzj, ze, zzzu, zm, zx, q, zf, zr, zz, zzr, zzs, zzzv
+(d, k): h, b, i, g, zq, zu, zz, zzv, zzzb, zzzu, zzj, zzs, zzzc
+(d, l): c, f, h, b, g, q, zzzc, zd, zy
+(d, p): g, b, f, e, zu, zzz, zzzb, zg, zj, zr, zzh, zzzu
+(d, q): c, i, l, j, b, zo, zza, zzzv, zi, zq, zzzb
+(d, r): c, h, a, e, zzv, zzzf
+(d, x): i, e, c, f, zg, zzz, zzc, zzr, zzzb
+(d, zc): a, f, e, i, zj, zy, zzzg, zzzj, zg, zq, zzj
+(d, zd): j, e, c, f, l, zf, zn, zu, zzf, zzzb, zzzg, zzzv, zza, zzr
+(d, ze): a, b, e, j, c, f, zza, zzr, zzv, zn, zzf
+(d, zf): zd, f, j, b, zj, zzr, zzf, zzi, zzzj
+(d, zg): b, x, i, p, zc, zzf, zzh, zzj, zzzb, zzzf, zzzg, zj, zzzj
+(d, zi): c, i, j, h, e, q, zz, zm, zzs
+(d, zj): f, zc, zf, g, a, h, p, zg, zzj, zzv, zx
+(d, zm): a, j, c, e, g, zi, zu, zzc, zzzv, zzv
+(d, zn): zd, a, g, h, ze, zzc, zza, zzi, zzj
+(d, zo): f, q, g, c, e, zz, zzzb, zzzv, zzzc, zzzj
+(d, zq): i, b, k, f, a, e, g, q, zc, zza, zzv, zzzg, zz, zzc, zzzc
+(d, zr): i, b, e, j, c, h, p, zu, zzj, zzc, zzzc
+(d, zu): j, h, i, k, p, zd, zm, zr, e, zzh, zzr, zzs, zzf, zzz, zzzu
+(d, zx): e, j, h, a, zj, zzz, zzzf, zzzg, zzi
+(d, zy): zc, e, h, g, l, zzf, zzr, zzi
+(d, zz): a, i, k, zi, zo, j, c, zq, zza, zzzv, zzz, zzzb, zzzf
+(d, zza): j, f, q, ze, zq, zz, zd, zn, zzh, zzzc
+(d, zzc): zm, zn, f, x, zq, zr
+(d, zzf): zd, zg, zy, ze, zf, zu, zzz, zzh, zzj
+(d, zzh): a, g, j, e, zg, zu, zza, h, b, i, p, zzf
+(d, zzi): c, j, h, b, e, zf, zn, zx, zy, zzv, zzzv
+(d, zzj): b, j, h, f, g, zg, zj, zr, e, a, k, zc, zn, zzf, zzv, zzzv, zzzj
+(d, zzr): a, f, i, ze, zf, zu, zy, h, j, x, zd, zzzc
+(d, zzs): b, c, g, zu, f, h, j, a, k, zi, zzv
+(d, zzv): f, k, ze, zj, zq, zzi, zzj, zzs, g, r, zm, zzzb
+(d, zzz): e, h, p, x, zx, zzf, b, zu, zz, zzzb, zzzu
+(d, zzzb): e, h, f, i, k, p, zd, zg, zo, zzv, q, x, zz, zzz, zzzc
+(d, zzzc): b, l, f, k, zo, zq, zr, zza, zzr, zzzb, zzzj, zzzv
+(d, zzzf): c, h, zg, zx, b, r, zz
+(d, zzzg): e, i, g, a, zc, zd, zg, zq, zx
+(d, zzzj): c, e, b, zc, zzzc, h, zf, zg, zo, zzj
+(d, zzzu): j, a, f, k, b, h, p, zu, zzz
+(d, zzzv): c, b, q, zd, zm, zo, zz, zzj, zzzc, f, j, a, zzi
+(e, f): a, b, c, d, g, h, i, j, u, zs, zw, zzzb, zzzh, t, x, ze, zl, w, zc, zd, zzzd, zzzo, m, o, p, v, zo, zq, zze, zzg, zzj
+(e, g): a, b, c, d, f, h, i, j, zs, zw, zzzg, zzh, zzq, zzzd, zzzo, n, p, v, zm, zo, zq, zy, zzg, zzj
+(e, h): a, b, c, d, f, g, i, j, zzzb, t, zzz, zzzj, w, zx, zzh, zzq, zzzo, zzzt, r, v, y, zi, zr, zu, zy, zzi, zzj, zzt, zzzk
+(e, i): c, f, a, b, d, g, h, j, x, zi, zr, zzzg, zq, zzzk, y, zc, zl, zu, zzzb, zzzq, t, v, zze, zzh, zzq, zzzd
+(e, j): a, b, c, d, f, g, h, i, t, ze, zl, w, zd, zx, zzh, zzzd, zzzm, zzzo, zzzt, m, v, y, zi, zm, zr, zu, zzb, zze, zzi, zzj, zzn, zzt
+(e, m): j, f, n, u, y, zm, zy, zzzg, o, p, zo, zzq
+(e, n): a, c, g, zzzl, m, zy, zzt
+(e, o): c, f, zs, zzzb, t, x, zc, zd, zzzd, zzzl, zzzq, m, zi, zo, zq
+(e, p): b, d, f, g, zzzb, zzz, zzh, zzq, zzzo, zzzt, m, y, zr, zu, zzb
+(e, r): a, c, d, h, u, t, zl, zzzt, zzb, zze, zzzk
+(e, t): a, f, h, i, j, u, zzzb, zzzh, zzzj, zzq, zzzd, zzzq, zzzt, o, r, v
+(e, u): m, r, a, f, t, x, zs, zzb, zzh, zd, zr, zzn
+(e, v): a, f, g, h, i, j, zzzb, zzzh, t, zzp, zzzl, zzzm, zm, zzb, zzj, zzt
+(e, w): a, f, h, j, zw, zzzb, ze, zzzj, zzzo
+(e, x): c, d, f, i, u, zzzb, zzz, zzzm, zzzt, o
+(e, y): h, j, i, m, p, c, zi, zl, zq, zzzl, zzzm, zzj, zzzq
+(e, zc): a, d, f, i, zzzg, zzzj, zzq, zzzd, zzzq, o, zq, zy, zze, zzj
+(e, zd): c, d, f, j, u, zs, zzzb, zzzg, o, zu, zzb, zze, zzn
+(e, ze): a, b, c, d, f, j, zzzh, zzp, w, zzzt
+(e, zi): c, d, h, i, j, zs, zzq, zzzl, zzzq, o, y, zm, zzn
+(e, zl): a, b, f, i, j, zs, zx, zzq, r, y, zu, zzt
+(e, zm): a, c, d, g, j, zs, zzzq, m, v, zi, zu
+(e, zo): c, d, f, g, zzzb, zzzh, zzzj, zzzm, zzzt, m, o
+(e, zq): a, b, d, f, g, i, zzzg, zc, zzzl, zzzt, o, y, zzg, zzzk
+(e, zr): b, c, d, h, i, j, u, zzzl, p, zu, zzb, zzj
+(e, zs): b, c, f, g, u, zzzb, zl, zzz, zd, o, zi, zm, zy, zzb
+(e, zu): d, h, i, j, zl, zzz, zd, zzh, zzzo, p, zm, zr, zzg
+(e, zw): f, g, zzzh, w, zzzd, zzzo, zy, zzb, zzt
+(e, zx): a, d, h, j, zzzg, zl, zzz, zzzd, zzzq, zze, zzi
+(e, zy): d, g, h, zs, zw, zzzh, zzp, zc, zzzl, zzzm, zzzo, zzzt, m, n, zzb, zzi
+(e, zzb): a, b, c, j, u, zs, zw, zzz, zd, p, r, v, zr, zy, zze, zzj, zzzk
+(e, zze): f, i, j, zc, zd, zx, zzzd, zzzm, zzzo, zzzq, r, zzb
+(e, zzg): b, f, g, zq, zu, zzi
+(e, zzh): a, b, d, g, h, i, j, u, zzzl, p, zu
+(e, zzi): b, c, d, h, j, zzzh, zzp, zx, zzzl, zy, zzg
+(e, zzj): a, b, d, f, g, h, j, zzzj, zc, zzzo, v, y, zr, zzb, zzt
+(e, zzn): b, j, u, zd, zzzl, zi
+(e, zzp): a, c, zzzh, ze, zzz, v, zy, zzi
+(e, zzq): a, b, c, g, h, i, t, zl, zc, zzzm, zzzt, m, p, zi
+(e, zzt): h, j, zw, zl, zzzd, zzzl, n, v, zzj, zzzk
+(e, zzz): b, d, h, zs, zzzb, x, zzp, zx, zzzq, p, zu, zzb, zzzk
+(e, zzzb): d, f, h, i, zs, t, x, zzz, w, zd, zzzo, o, p, v, zo
+(e, zzzd): b, f, g, i, j, zw, t, zc, zx, zzzo, o, zze, zzt
+(e, zzzg): a, d, g, i, zc, zd, zx, m, zq
+(e, zzzh): a, f, zw, t, ze, zzp, zzzt, v, zo, zy, zzi
+(e, zzzj): b, c, d, h, t, w, zc, zo, zzj
+(e, zzzk): b, c, h, i, zzz, r, zq, zzb, zzt
+(e, zzzl): zzh, zzzm, n, o, v, y, zi, zq, zr, zy, zzi, zzn, zzt
+(e, zzzm): a, b, j, x, zzq, zzzl, zzzq, v, y, zo, zy, zze
+(e, zzzo): a, f, g, h, j, zw, zzzb, w, zzzd, p, zu, zy, zze, zzj
+(e, zzzq): a, i, t, zzz, zc, zx, zzzm, o, y, zi, zm, zze
+(e, zzzt): a, h, j, zzzh, t, x, ze, zzq, p, r, zo, zq, zy
+(f, g): a, i, b, c, d, e, h, j, l, zj, zw, zzx, zv, zzg, zzv, zzzo, p, s, zh, zk, zo, zzj, v, zq, zs, zzs, zzza, zzzd, zzzp
+(f, h): a, i, b, c, d, e, g, j, l, w, zj, zzr, zzzo, t, zh, zk, zzj, zzzb, zzzu, v, zzd, zzs
+(f, i): c, a, b, d, e, g, h, j, x, zp, zq, zzzp, s, zc, zl, zzr, zzzb, t, v, zh, zze, zzzd
+(f, j): a, b, c, d, e, g, h, i, w, zd, zv, zza, zzj, zzw, m, v, ze, zzd, zzzd, zzzp, zzzu, s, zzzo, t, zf, zl, zze, zzr, zzs, zzzv
+(f, l): b, c, d, g, h, u, zd, zs, zzzc, zzzh, zzzp
+(f, m): j, e, u, zf, zzw, zzzp, o, p, zo, zzx, zzza, zzzc
+(f, o): c, e, zj, zzx, zc, t, zo, zzzb, zzzu, m, x, zd, zq, zs, zzc, zzzc, zzzd
+(f, p): b, d, e, g, zj, zzzo, zh, zzzb, zzzu, m
+(f, s): i, g, j, zl, zv, zzv, t, zo, x, zzd, zzs, zzzc, zzzh
+(f, t): a, i, e, h, j, zj, zv, s, zzzb, o, u, v, zzc, zzzd, zzzh
+(f, u): e, l, m, a, t, x, zs, zd, zzx
+(f, v): g, h, j, i, e, a, t, zzj, zzzb, zzzc, zzzu, zf, zzd, zzr, zzzh
+(f, w): a, e, h, j, zw, zzw, zzzo, zzzb, zzzu, ze, zzzp, zzzv
+(f, x): i, c, d, e, zzr, zzx, s, zzzb, o, u, zzc
+(f, zc): a, i, d, e, zj, zzw, zv, zk, zze, zzj, o, zq, zzzd
+(f, zd): c, d, e, j, l, zzr, zza, zze, zzzb, o, u, zf, zs, zzzv
+(f, ze): a, b, c, d, e, j, w, zzr, zzv, zza, zzzh
+(f, zf): b, d, j, zj, zzr, zk, m, v, zd, zzzd, zzzh
+(f, zh): i, b, c, g, h, zp, zzr, p, zzj, zzzd, zzzp, zzzv
+(f, zj): a, d, g, h, zc, zv, zzv, p, t, zzj, o, zf, zs, zzzh, zzzp
+(f, zk): g, h, zzr, zc, zza, zzzb, zf, zzzv
+(f, zl): a, i, b, e, j, s, zzzu, zs
+(f, zo): c, d, e, g, s, zzzb, m, o, zzzc, zzzh, zzzv
+(f, zp): i, c, zw, zzw, zv, zh, zzd, zzzv
+(f, zq): a, i, b, d, e, g, zzx, zc, zzg, zzv, zza, o, zzc, zzzc
+(f, zs): b, c, e, g, l, zj, zl, zzw, zzzb, o, u, zd
+(f, zv): b, g, j, zj, zp, zzr, zc, s, t, zze
+(f, zw): e, g, w, zp, zzzo, zza, zzzu, zzzc, zzzd, zzzh
+(f, zza): d, j, zw, zzw, zzx, zk, zd, ze, zq, zzzc
+(f, zzc): d, t, o, x, zq
+(f, zzd): a, c, h, j, zp, s, zzj, v, zzzc
+(f, zze): i, e, j, zc, zv, zzzo, zd, zzs, zzzd
+(f, zzg): b, e, g, zq, zzzp
+(f, zzj): a, b, d, e, g, h, j, zj, zzx, zc, zzv, zzzo, zh, v, zzd, zzza, zzzv
+(f, zzr): a, i, d, h, j, zv, zh, zk, v, x, zd, ze, zf, zzzc
+(f, zzs): a, b, c, d, g, h, j, zzv, s, zze
+(f, zzv): d, g, zj, s, zzj, zzzb, ze, zq, zzs
+(f, zzw): a, j, w, zp, zc, zzzo, zza, m, zs, zzzp
+(f, zzx): b, c, g, zza, zzj, zzzu, m, o, u, x, zq
+(f, zzza): g, zzj, m, zzzo
+(f, zzzb): e, h, d, i, p, v, zd, zo, zs, zzv, o, t, w, x, zk, zzzo, zzzc
+(f, zzzc): b, l, v, zzd, d, m, o, s, zo, zq, zw, zza, zzr, zzzb, zzzv
+(f, zzzd): j, e, g, t, zc, zf, zh, zw, i, b, o, zze, zzzo
+(f, zzzh): e, a, l, zj, zo, s, t, v, ze, zf, zw
+(f, zzzo): h, e, j, zze, zzj, zzza, zzzb, g, a, p, w, zw, zzw, zzzd
+(f, zzzp): g, i, j, l, m, zj, zzw, c, b, w, zh, zzg
+(f, zzzu): j, a, d, v, zl, b, h, o, p, w, zw, zzx
+(f, zzzv): c, b, w, zd, zh, zo, zzj, zzzc, j, a, d, zk, zp
+(g, h): b, a, c, d, e, f, i, j, zh, zzh, v, zzj, zzs, k, l, z, zj, zk, zn, zy, zzl, zzq, zzzo
+(g, i): c, f, a, b, d, e, h, j, z, zzl, zzzg, zq, zzzp, k, s, v, zh, zzh, zzm, zzq, zzzd
+(g, j): a, b, c, d, e, f, h, i, zv, zzh, zzj, v, zzzd, zzzp, s, zm, zzzo, zzm, zzo, zzs
+(g, k): h, d, b, i, zq, zzm, zzv, zzzd, zzzo, zzj, zzo, zzs
+(g, l): b, h, c, d, f, zzzp, n, z, zs, zy
+(g, n): a, c, e, l, zy, zv
+(g, p): b, d, e, f, zh, zzh, zj, zzq, zzzo
+(g, s): f, i, j, zzh, zzq, zzzg, zo, zv, zzl, zzo, zzs, zzv
+(g, v): h, j, f, i, e, a, zzj, zm, zn, zzl
+(g, z): i, h, l, b, zzq
+(g, zb): a, zzzp, zzj, zzs, zzzd, zn, zs
+(g, zh): b, h, c, f, i, zzzp, p, zzj, zzzd
+(g, zj): h, a, d, f, zzzp, p, zv, zzj, zs, zt, zzo, zzv
+(g, zk): h, f, zt
+(g, zm): a, c, d, e, j, zzzp, v, zv, zs, zzv
+(g, zn): h, a, d, v, zb, zv, zzj, zzza, zzzo
+(g, zo): c, d, e, f, s, zzl
+(g, zq): b, a, d, e, f, i, zzzg, zzm, k, zzg, zzv, zzx
+(g, zs): b, c, e, f, zb, zzm, l, zj, zm, zy, zzo
+(g, zt): b, zzj, zzza, zzzd, zj, zk, zzg, zzl
+(g, zv): b, f, j, s, n, zj, zm, zn, zzo, zzq
+(g, zw): e, f, zzzd, zy, zzzo
+(g, zy): h, d, e, zw, zzzp, zzza, l, n, zs, zzzo
+(g, zzg): b, e, f, zzzp, zq, zt
+(g, zzh): b, h, a, d, e, i, j, zzy, p, s, zzl, zzx
+(g, zzj): b, h, a, d, e, f, j, zh, v, zb, zzza, k, zj, zn, zt, zzv, zzx, zzzo
+(g, zzl): b, h, a, c, i, zzh, zzzp, v, s, zo, zt
+(g, zzm): i, j, zzs, zzza, zzzd, k, zq, zs
+(g, zzo): b, a, c, j, zzy, zv, s, zzs, k, zj, zs
+(g, zzq): b, h, a, c, e, i, p, zv, s, z
+(g, zzs): b, h, a, c, d, f, j, zzy, zb, s, zzm, k, zzo, zzv
+(g, zzv): d, f, zzy, s, zzj, zzs, k, zj, zm, zq
+(g, zzx): b, c, f, zzh, zzj, zq
+(g, zzy): a, c, zzh, zzs, zzza, zzo, zzv
+(g, zzza): zn, zt, zzj, f, zy, zzm, zzy, zzzg, zzzo
+(g, zzzd): j, e, k, zb, zh, zt, zw, i, f, b, zzm, zzzo
+(g, zzzg): e, i, a, s, zq, zzza, d
+(g, zzzo): h, f, e, j, k, zzj, zzza, a, p, zn, zw, zy, zzzd
+(g, zzzp): i, j, l, zj, zy, zzl, c, f, b, zb, zh, zm, zzg
+(h, i): c, f, a, b, d, e, g, j, z, zi, zr, zzl, zzzk, k, y, zu, zzr, zzzb, t, v, zh, zzh, zzq, zzzs
+(h, j): a, b, c, d, e, f, g, i, w, y, zi, zu, zzh, zzi, zzj, v, zzd, zzzt, zzzu, zx, zzzo, t, zr, zzr, zzs, zzt
+(h, k): d, b, i, g, zu, zzd, zzt, zzzb, zzzo, zzzu, zzj, zzs
+(h, l): c, d, f, b, g, z, zy
+(h, r): c, d, a, e, zzzk, t, z, zzzf, zzzt
+(h, t): e, f, j, a, i, r, zzzj, zzzt, v, zj, zzq, zzzb, zzzs
+(h, v): g, j, f, i, e, a, t, zzj, zzt, zzu, zzzb, zzzr, zzzu, zn, zzd, zzl, zzr
+(h, w): f, j, e, a, zzzb, zzzj, zzzo, zzzu
+(h, y): j, i, e, c, zi, zzzs, zzj, zzl
+(h, z): i, l, b, g, r, zzq, zzzf, zzzr, zzzk, zzzs, zzzt
+(h, zh): c, g, f, b, i, zr, zzr, zzz, zx, zzj
+(h, zi): c, i, j, d, y, e, zzq, zzu, zzs, zzzs
+(h, zj): f, d, g, a, t, zzj, zx
+(h, zk): f, g, zzr, zzu, zzzb
+(h, zn): d, a, g, v, zzi, zzj, zzzo
+(h, zr): i, b, zh, d, e, j, c, zu, zzj
+(h, zu): j, i, k, zr, e, d, zzh, zzr, zzs, zzz, zzzo, zzzu
+(h, zx): e, j, d, a, zh, zj, zzz, zzzf, zzi
+(h, zy): e, d, g, l, zzr, zzzt, zzi, zzu, zzzo
+(h, zzd): j, a, k, f, c, v, zzj, zzz, zzzr, zzzs
+(h, zzh): a, g, j, d, e, zu, b, i, zzl
+(h, zzi): c, j, d, b, e, zn, zx, zy, zzu, zzzr
+(h, zzj): b, d, j, f, g, v, zj, zr, zzd, e, a, k, y, zh, zn, zzzo, zzt, zzzj
+(h, zzl): i, zzh, a, g, b, c, v, y, zzz, zzt
+(h, zzq): c, e, z, zi, g, i, a, b, t, zzzr, zzzt, zzzu
+(h, zzr): a, d, f, i, zh, zk, zu, zy, j, v, zzt
+(h, zzs): b, c, d, g, zu, f, j, a, k, zi
+(h, zzt): k, v, e, j, zzj, zzl, zzr, zzzk
+(h, zzu): v, zi, zk, zzi, zy
+(h, zzz): e, zh, zx, zzd, zzl, d, b, zu, zzzb, zzzk, zzzr, zzzu
+(h, zzzb): e, d, f, i, k, v, t, w, zk, zzz, zzzo
+(h, zzzf): c, z, zx, b, d, r, zzzk
+(h, zzzj): c, e, b, d, t, w, zzj
+(h, zzzk): i, r, zzt, c, b, e, z, zzz, zzzf, zzzs
+(h, zzzo): f, e, j, k, zzj, zzzb, g, a, w, zn, zu, zy
+(h, zzzr): v, z, zzd, b, zzi, zzq, zzz
+(h, zzzs): c, y, zzd, a, i, t, z, zi, zzzk, zzzu
+(h, zzzt): j, e, t, zy, a, r, z, zzq, zzzu
+(h, zzzu): j, a, d, f, k, v, zzzt, b, w, zu, zzq, zzz, zzzs
+(i, j): c, f, a, b, d, e, g, h, q, zi, zr, zzzp, s, y, zl, zu, zz, zzr, t, v, zze, zzh, zzm, zzzd, zzzn
+(i, k): b, d, g, h, zp, zq, zl, zu, zz, zzzb, za, zze, zzm, zzzd
+(i, q): c, j, b, d, za, zzzn, s, zi, zq, zzzb
+(i, s): f, g, j, q, x, zzl, zzzg, zl, t, za, zzh, zzq, zzzs
+(i, t): f, a, e, h, j, s, zzzb, zzzq, v, zg, zzm, zzq, zzzd, zzzs
+(i, v): f, a, e, g, h, j, zzl, zzr, zzzb, t
+(i, x): c, f, d, e, z, s, zzr, zzzb, za, zg
+(i, y): h, j, e, c, zi, zl, zq, zzzs, zzl, zzzq
+(i, z): b, g, h, x, zzzk, zzq, zzzs
+(i, za): c, a, b, q, x, zp, zq, k, s, zg, zzzd
+(i, zc): f, a, d, e, zzzg, zq, zzzq, zg, zze, zzq, zzzd
+(i, zg): b, d, x, zzzg, zzzp, zc, zl, zzzb, t, za, zzh, zzzn, zzzs
+(i, zh): c, f, b, g, h, zr, zp, zzzp, zzr, zzzq, zzzd, zzzn
+(i, zi): c, d, e, h, j, q, y, zz, zzzq, zzm, zzq, zzzs
+(i, zl): f, a, b, e, j, k, s, y, zu, zg, zzq
+(i, zp): c, f, k, zu, za, zh, zzm
+(i, zq): f, a, b, d, e, g, q, zzzg, zzzk, k, y, zc, zz, za, zzm
+(i, zr): c, b, d, e, h, j, zu, zh, zzm
+(i, zu): d, e, h, j, zr, zp, k, zl, zzr, zzh
+(i, zz): c, a, d, j, zi, zzl, zq, k, zzzb, zzzn, zzzs
+(i, zze): f, e, j, zzl, k, zc, zzzq, zzzd, zzzs
+(i, zzh): a, b, d, e, g, h, j, zzl, s, zu, zg
+(i, zzl): c, a, b, g, h, zzzp, s, y, zz, v, zze, zzh
+(i, zzm): g, j, zi, zr, zp, zq, k, t, zzzd, zzzn
+(i, zzq): c, a, b, e, g, h, z, zi, s, zc, zl, t
+(i, zzr): f, a, d, h, j, x, zu, zzzq, v, zh
+(i, zzzb): f, d, e, h, q, x, k, zz, t, v, zg
+(i, zzzd): f, b, e, g, j, k, zc, t, za, zh, zze, zzm
+(i, zzzg): a, d, e, g, zq, s, zc, zg, zzzs
+(i, zzzk): c, b, e, h, z, zq, zzzs
+(i, zzzn): a, j, q, zz, zg, zh, zzm
+(i, zzzp): c, f, b, g, j, zzl, zzzq, zg, zh
+(i, zzzq): a, e, zi, zzzp, y, zc, zzr, t, zh, zze
+(i, zzzs): c, a, h, z, zi, zzzg, zzzk, s, y, zz, t, zg, zze
+(j, m): f, e, q, y, zf, zm, zzw, zzzp, zz
+(j, q): c, i, m, b, d, zza, zzzn, zzzv, s, zi
+(j, s): f, g, i, zv, zzh, zzd, zzn, q, t, zl, zzo, zzs, zzt
+(j, t): a, e, f, h, i, zv, v, zzzd, zzzt, s, zzm
+(j, v): g, h, f, i, e, a, t, zzj, zzt, zzzm, zzzu, zf, zm, zzb, zzd, zzr, zzze
+(j, w): a, e, f, h, zzw, ze, zzzp, zzzu, zzzo, zzk, zzzv
+(j, y): h, i, m, e, c, zi, zl, zzw, zzzm, zzj, zzk
+(j, zd): c, d, e, f, zu, zza, zzb, zzn, zf, zze, zzo, zzr, zzzv
+(j, ze): a, b, c, d, e, f, w, zza, zzzt, zzm, zzo, zzr
+(j, zf): b, d, f, zd, zzi, zzze, m, v, zzzd, zzzt, zzb, zzr
+(j, zi): c, d, e, h, i, y, zm, zzn, q, zz, zzm, zzo, zzs
+(j, zl): a, b, e, f, i, y, zu, zzzu, s, zx, zzt
+(j, zm): a, c, d, e, g, zi, zu, zv, zzze, m, v, zzzp, zzzv
+(j, zr): b, c, d, e, h, i, zu, zzj, zzb, zzm
+(j, zu): d, e, h, i, zd, zzh, zzw, zzzu, zm, zzzo, zl, zr, zzr, zzs
+(j, zv): b, f, g, zzzt, s, zm, zzn, t, zze, zzk, zzo, zzr, zzt
+(j, zx): a, d, e, h, zzi, zzw, zzzd, zl, zze, zzm
+(j, zz): a, c, d, i, zi, zza, zzw, zzze, m, zzzt, zzb, zzn, zzzo, zzzn, zzzv
+(j, zza): d, f, zd, zzh, zzw, ze, q, zz, zzzi
+(j, zzb): a, b, c, e, zd, zzj, v, zf, zr, zz, zze
+(j, zzd): a, c, f, h, zzj, v, s, zzk, zzzn
+(j, zze): e, f, i, zd, zv, zzzm, zzzd, zx, zzb, zzzo, zzs
+(j, zzh): a, b, d, e, g, h, i, zu, zza, s
+(j, zzi): b, c, d, e, h, zzzp, zx, zf, zzm, zzzi, zzzv
+(j, zzj): a, b, d, e, f, g, h, y, v, zzd, zzb, zzzo, zr, zzt, zzzn, zzzv
+(j, zzk): b, w, y, zv, zzze, zzd, zzzt, zzn
+(j, zzm): g, i, zi, zzi, ze, zzzd, zx, zzn, t, zr, zzs, zzzn
+(j, zzn): b, e, zd, zi, zv, zzw, zzzu, s, zz, zzk, zzm, zzo, zzr, zzzv
+(j, zzo): a, b, c, g, zd, zi, zv, zzw, ze, s, zzn, zzs, zzzi
+(j, zzr): a, d, f, h, i, zd, zu, zv, zzze, v, ze, zzn, zf, zzt
+(j, zzs): a, b, c, d, f, g, h, zi, zu, s, zze, zzm, zzo, zzzn
+(j, zzt): e, h, zv, zzj, v, zzzd, s, zl, zzr, zzzi
+(j, zzw): a, f, w, y, zu, zza, m, zzzp, zzzt, zx, zzn, zzzo, zz, zzo
+(j, zzzd): e, g, t, zf, i, f, b, zx, zze, zzm, zzt, zzzi, zzzo
+(j, zzze): a, zz, zzr, v, zf, zm, zzk
+(j, zzzi): a, zzo, zzt, zzzd, zza, zzi, zzzu
+(j, zzzm): e, v, y, zze, a, b, zzzn
+(j, zzzn): q, zz, zzj, zzm, zzs, zzzm, i, a, zzd, zzzu, zzzo
+(j, zzzo): h, f, e, zz, zze, zzj, g, a, w, zu, zzw, zzzd, zzzn
+(j, zzzp): g, i, m, zzw, c, f, b, w, zm, zzi
+(j, zzzt): e, t, ze, zf, zv, zzk, zzw, h, a, zz, zzzu
+(j, zzzu): a, d, f, v, zl, zzn, zzzi, zzzn, zzzt, b, h, w, zu
+(j, zzzv): c, b, q, w, zd, zm, zz, zzj, f, a, d, zzi, zzn
+(k, za): b, i, zp, zq, zzd, zzt, zzzd
+(k, zl): b, i, zu, zzt, zzzu
+(k, zp): i, za, zu, zzd, zzm
+(k, zq): d, b, i, g, za, zz, zzm, zzv, zzzc, zzzl
+(k, zu): h, d, i, zl, zp, zzzo, zzzu, zzs
+(k, zz): d, i, zq, zzzb, zzzo, zzzl
+(k, zzd): h, za, zp, zzj, zzzc
+(k, zze): i, zzzd, zzzo, zzs
+(k, zzj): h, d, b, g, zzd, zzt, zzv, zzzo
+(k, zzm): i, g, zp, zq, zzzd, zzs
+(k, zzo): b, g, zzs
+(k, zzs): h, d, b, g, zu, zzm, zzv, zze, zzo
+(k, zzt): h, za, zl, zzzd, zzj, zzzl
+(k, zzv): d, g, zq, zzzb, zzj, zzs
+(k, zzzb): h, d, i, zzv, zz, zzzo, zzzc
+(k, zzzc): b, zzd, d, zq, zzzb, zzzl
+(k, zzzd): g, i, b, za, zze, zzm, zzt, zzzo
+(k, zzzl): zz, zq, zzt, zzzc, zzzu
+(k, zzzo): h, zz, zze, zzj, zzzb, g, zu, zzzd
+(k, zzzu): d, zl, zzzl, b, h, zu
+(l, n): c, g, zy
+(l, q): c, b, d, zzzh
+(l, u): f, z, zs, zd
+(l, z): h, u, b, g, zzzc
+(l, zd): d, c, f, u, zs
+(l, zs): c, b, u, f, g, zd, zy
+(l, zy): n, d, h, g, zs, zzzp, zzzh
+(l, zzk): b
+(l, zzzc): b, z, f, d
+(l, zzzh): f, q, zy
+(l, zzzp): g, zy, c, f, b
+(m, n): e, zy, zzw
+(m, o): f, e, q, zo, zzx, zzzc
+(m, p): f, e, y, zzq
+(m, q): j, o, zo, zzza
+(m, u): e, f, z, zzx
+(m, y): j, p, e, zzw, zzl
+(m, z): u, zzq, zzzc
+(m, zf): j, f
+(m, zm): j, e, zzzp
+(m, zo): f, e, q, o, zz, zzl, zzzc
+(m, zy): e, n, zzzp, zzza
+(m, zz): j, zzw, zo, zzl
+(m, zzl): y, zzzp, zo, zz
+(m, zzq): e, z, zzw, p
+(m, zzw): j, f, n, y, zzzg, zzzp, zz, zzq
+(m, zzx): f, u, o
+(m, zzza): f, q, zy, zzzg
+(m, zzzc): f, z, o, zo
+(m, zzzg): e, zzw, zzza
+(m, zzzp): j, f, zm, zy, zzw, zzl
+(n, zg): zzzn, zzt
+(n, zv): g, zzt
+(n, zy): m, e, g, l, zzu, zzzl
+(n, zzt): e, zg, zv, zzzl
+(n, zzu): zy
+(n, zzw): a, m
+(n, zzzl): e, zy, zzt
+(n, zzzn): zg, a
+(n, zzzr): 
+(n, zzzv): c, a
+(o, q): c, m, zo, zi, zq, zzzb
+(o, t): f, e, zzzq, zj, zzc, zzzb, zzzd
+(o, x): c, f, e, zzc, zzx, zzzb
+(o, zc): f, e, zzzq, zj, zq, zzzd
+(o, zd): c, f, e, zs, zzo, zzzb
+(o, zi): c, e, zs, zzo, zzzq, q, zzzl
+(o, zj): f, t, zs, zzo, zc
+(o, zo): c, f, e, m, q, zzzb, zzzc
+(o, zq): f, e, q, zc, zzc, zzx, zzzc, zzzl
+(o, zs): c, f, e, zd, zi, zzo, zj, zzzb
+(o, zzc): f, t, x, zzo, zq
+(o, zzo): c, zd, zi, zs, zzzq, zj, zzc
+(o, zzx): c, f, m, x, zq, zzzu
+(o, zzzb): e, f, zd, zo, zs, q, t, x, zzzc
+(o, zzzc): f, m, zo, zq, zzzb, zzzl
+(o, zzzd): e, t, zc, f
+(o, zzzl): e, zi, zq, zzzc, zzzu
+(o, zzzq): e, zzo, t, zc, zi
+(o, zzzu): f, zzzl, zzx
+(p, y): m, e
+(p, zg): b, d, zzh, zzzb, zj
+(p, zh): g, f, b, zr, zzz, zzb
+(p, zj): f, d, g, zg
+(p, zr): b, zh, d, e, zu, zzb
+(p, zu): zr, e, d, zzh, zzz, zzzo, zzzu
+(p, zzb): b, e, zh, zr, zzz
+(p, zzh): g, d, e, zg, zu, b
+(p, zzq): e, g, b, m, zzzt, zzzu
+(p, zzz): e, zh, d, b, zu, zzb, zzzb, zzzu
+(p, zzzb): e, d, f, zg, zzz, zzzo
+(p, zzzo): f, e, zzzb, g, zu
+(p, zzzt): e, zzq, zzzu
+(p, zzzu): d, f, zzzt, b, zu, zzq, zzz
+(q, s): i, j, za, zo, zzzr, zzzh
+(q, za): c, i, b, zzzr, s, zq
+(q, zi): c, i, j, d, o
+(q, zo): c, m, d, o, zzzv, s, zzzb, zzzh
+(q, zq): i, b, d, o, za, zza, zzzr, zzg
+(q, zza): j, d, zq
+(q, zzg): b, zq
+(q, zzza): m, zzzn
+(q, zzzb): i, d, o, zo
+(q, zzzh): l, zo, zzzr, s
+(q, zzzn): i, j, zzza
+(q, zzzr): b, za, s, zq, zzzh
+(q, zzzv): c, j, b, d, zo
+(r, t): h, a, e, u, zzm, zzzt
+(r, u): e, a, t, z, zzb, zzm
+(r, z): h, u, zzb, zzzf, zzzk, zzzt
+(r, zl): a, e, zzzf
+(r, zp): c, zzm
+(r, zzb): c, a, e, u, zze, zzzk, z, zzza
+(r, zze): e, zzb
+(r, zzm): u, zp, t, zzza
+(r, zzv): d, zzzk
+(r, zzza): zzb, zzm, zzzf
+(r, zzzf): c, h, z, zl, d, zzza, zzzk
+(r, zzzk): h, c, e, z, zzb, zzv, zzzf
+(r, zzzp): c
+(r, zzzt): e, t, h, a, z
+(s, t): f, i, j, zzq, zzzs, zv, zzzh
+(s, x): f, i, za, zzzr
+(s, za): i, q, zzn, x, zv, zzd, zzt, zzzr
+(s, zl): f, i, j, zzq, zzt, zzzf, zzzr
+(s, zo): f, g, q, zzl, zzzc, zzzh
+(s, zv): f, g, j, za, zzn, zzq, zzzs, t, zzo, zzt, zzzf
+(s, zzd): f, j, za, zzzs, zzzc, zzzr
+(s, zzh): g, i, j, zzl
+(s, zzl): g, i, zzh, zo, zzt
+(s, zzn): j, za, zv, zzo
+(s, zzo): g, j, zzn, zv, zzs
+(s, zzq): g, i, zl, t, zv, zzzr
+(s, zzs): f, g, j, zzo, zzv
+(s, zzt): j, za, zl, zv, zzl
+(s, zzv): f, g, zzs
+(s, zzzc): zzd, f, zo, zzzs
+(s, zzzf): zl, zv
+(s, zzzg): i, g, zzzs, zzzr
+(s, zzzh): zo, f, q, t, zzzr
+(s, zzzr): q, zl, zzd, zzzh, x, za, zzq, zzzg
+(s, zzzs): zzd, zzzc, zzzg, i, t, zv
+(t, u): e, r, a, f, zzm
+(t, v): h, j, f, i, e, a, zzzb, zzzh
+(t, zb): a, zg, zzzd, zzzs, zzzt
+(t, zg): zb, i, zzzb, zzzs, zj, zzzj
+(t, zj): f, a, h, o, zg, zv, zzzh
+(t, zv): j, f, zj, s, zzzq, zzzt, zzq, zzzs
+(t, zzc): f, o, zzm
+(t, zzm): zzc, i, j, r, u, zzzd
+(t, zzq): h, e, s, i, a, zv, zzzt
+(t, zzzb): e, h, f, i, v, zg, o
+(t, zzzd): j, e, zb, i, f, o, zzm
+(t, zzzh): e, a, zj, f, s, v, zzzt
+(t, zzzj): e, h, zg
+(t, zzzq): a, e, i, o, zv
+(t, zzzs): h, s, zb, zg, a, i, zv
+(t, zzzt): j, e, zb, zv, h, a, r, zzq, zzzh
+(u, x): e, f, z, zzx
+(u, z): l, m, r, x, zzb
+(u, zd): e, l, f, zn, zs, zzb, zzf, zzn
+(u, zn): a, zd, zzn
+(u, zr): e, zzb, zzm, zzx
+(u, zs): e, l, f, zzb, zd, zzm
+(u, zzb): e, r, a, z, zs, zd, zr, zzx
+(u, zzf): zzh, zd, zzm
+(u, zzh): e, a, zzf, zzx
+(u, zzm): r, t, zs, zzf, zr, zzn
+(u, zzn): e, zn, zd, zzm
+(u, zzx): m, f, x, zzb, zzh, zr
+(v, zf): j, f, zzu, zzzr, zzb, zzf, zzr, zzze, zzzh
+(v, zm): g, j, e, a, zzze
+(v, zn): g, h, a, zzj, zzzm
+(v, zzb): j, e, a, zzj, zzu, zf
+(v, zzd): h, j, f, a, zzj, zzzc, zzzr
+(v, zzf): zzj, zzu, zf, zzzl
+(v, zzj): g, h, j, f, e, a, zzt, zn, zzb, zzd, zzf
+(v, zzl): g, h, i, a, zzp, zzt
+(v, zzp): e, a, zzl, zzzh
+(v, zzr): h, j, f, i, a, zzt, zzzc, zf, zzze
+(v, zzt): h, j, e, zzj, zzl, zzr, zzzl
+(v, zzu): h, zf, zzb, zzf
+(v, zzzb): e, h, f, i, t, zzzc
+(v, zzzc): zzd, f, zzr, zzzb, zzzl
+(v, zzze): j, a, zzr, zf, zm
+(v, zzzh): e, a, f, t, zf, zzp, zzzr
+(v, zzzl): e, zzf, zzt, zzzc, zzzm, zzzu
+(v, zzzm): j, e, zn, zzzl, a
+(v, zzzr): h, zzd, zzzh, zf
+(v, zzzu): j, a, f, zzzl, h
+(w, ze): f, j, e, a
+(w, zw): f, e, zzzo, zzzu
+(w, zzk): j
+(w, zzw): f, j, a, zzzo, zzzp
+(w, zzzb): e, h, f, zzzo
+(w, zzzj): e, h
+(w, zzzo): h, f, e, j, zzzb, a, zw, zzw
+(w, zzzp): j, zzw, f
+(w, zzzu): j, a, f, h, zw
+(w, zzzv): f, j, a
+(x, z): i, u, zzzr, zzzt
+(x, za): c, s, i, zg, zzx, zzzm, zzz, zzzr
+(x, zg): za, d, i, zzzb
+(x, zzc): d, f, o, zzzm
+(x, zzr): d, f, i
+(x, zzx): f, za, c, o, u
+(x, zzz): e, d, za, zzzb, zzzr
+(x, zzzb): e, d, f, i, zg, o, zzz
+(x, zzzm): e, za, zzc
+(x, zzzr): z, s, za, zzz
+(x, zzzt): e, z
+(y, zi): h, j, i, e, c, zzzl, zzzs, zzzq
+(y, zl): j, i, e
+(y, zq): i, e, zzzl
+(y, zzj): h, j, e
+(y, zzk): j
+(y, zzl): h, i, m, c
+(y, zzw): j, m, zzzq
+(y, zzzl): e, zi, zq, zzzm
+(y, zzzm): j, e, zzzl, zzzq
+(y, zzzq): i, e, zi, zzw, zzzm
+(y, zzzs): h, i, c, zi
+(z, zzb): u, b, r, zzzk
+(z, zzq): i, h, m, b, g, zzzr, zzzt
+(z, zzzc): b, l, m, zzzs, zzzt
+(z, zzzf): h, b, r, zzzk
+(z, zzzi): 
+(z, zzzk): h, i, r, b, zzb, zzzf, zzzs
+(z, zzzr): h, b, x, zzq
+(z, zzzs): h, zzzc, i, zzzk
+(z, zzzt): x, zzzc, h, r, zzq
+(za, zd): c, zf, zzn
+(za, zf): b, zzzj, zd, zzzd, zzzr
+(za, zg): b, x, i, zzzj, zzd, zzn, zzt
+(za, zp): c, i, k, zzd, zzn, zv
+(za, zq): i, b, k, a, q, zzx, zzzr
+(za, zv): b, s, zp, zzn, zzt
+(za, zx): a, zzz, zzzd
+(za, zzd): a, k, zp, c, s, zg, zzz, zzzr
+(za, zzn): b, s, zg, zp, zv, zd
+(za, zzt): k, zg, zv, s, zzzd
+(za, zzx): c, b, x, zq
+(za, zzz): x, zx, zzd, b, zzzr
+(za, zzzd): k, zf, i, b, zx, zzt
+(za, zzzj): c, b, zf, zg
+(za, zzzm): x, a, b
+(za, zzzr): q, zzd, b, s, x, zf, zq, zzz
+(zb, zg): t, zzzs, zzj, zzzf, zzzp
+(zb, zn): g, a, zza, zzj
+(zb, zs): g
+(zb, zza): zn
+(zb, zzj): g, zg, a, zn
+(zb, zzs): g, a
+(zb, zzzd): g, t
+(zb, zzzf): zg
+(zb, zzzp): g, zg
+(zb, zzzs): zg, a, t, zzzu
+(zb, zzzt): t, a, zzzu
+(zb, zzzu): a, zzzt, zzzs
+(zc, zg): i, d, zj, zzze, zzzg, zzzj, zzj, zzy
+(zc, zj): a, f, d, o, zzze, zg, zv, zzj
+(zc, zk): f, zzzq
+(zc, zq): i, d, f, a, e, o, zzzg
+(zc, zv): f, zj, zzzq, zze, zzq
+(zc, zy): e, d
+(zc, zze): f, e, i, zv, zzy, zzzq, zzzd
+(zc, zzj): d, f, zg, zj, e, a, zzzj
+(zc, zzq): e, i, a, zv, zzw
+(zc, zzw): f, zzq, a, zzzg, zzzq
+(zc, zzy): zg, zze, a
+(zc, zzzd): e, i, f, o, zze
+(zc, zzze): a, zg, zj
+(zc, zzzg): e, i, a, zg, zq, zzw, d
+(zc, zzzj): e, d, zg, zzj
+(zc, zzzq): a, e, i, o, zk, zv, zze, zzw
+(zd, zf): za, f, j, d, zzb, zzr, zzf
+(zd, zn): d, u, zza, zzn
+(zd, zs): c, e, l, o, u, f, zzo, zzzb, zzb
+(zd, zu): j, e, d, zzr, zzf
+(zd, zza): j, f, d, zn
+(zd, zzb): c, j, u, zf, e, zs, zze
+(zd, zze): f, e, j, zzb
+(zd, zzf): u, d, zf, zu
+(zd, zzn): j, zn, e, u, za, zzo, zzr, zzzv
+(zd, zzo): o, zs, zzn, j, c
+(zd, zzr): d, f, zf, zu, zzn, j
+(zd, zzzb): e, d, f, zs, o
+(zd, zzzg): e, d
+(zd, zzzv): c, f, j, d, zzn
+(ze, zn): a, d, zza
+(ze, zza): j, f, d, zn
+(ze, zzf): d, zzy, zzm
+(ze, zzm): j, zzf
+(ze, zzo): b, a, j, c, zzy
+(ze, zzp): e, c, a, zzzh
+(ze, zzr): a, d, f, j
+(ze, zzv): f, d, zzy
+(ze, zzy): zzf, c, a, zzo, zzv, zzzh
+(ze, zzzh): e, a, f, zzp, zzy, zzzt
+(ze, zzzt): j, e, a, zzzh
+(zf, zj): f, d, zzze, zzzh
+(zf, zk): f, zzr, zzu, zzzq
+(zf, zzb): b, j, v, zd, zzu
+(zf, zzf): zd, d, v, zzzd, zzu
+(zf, zzi): j, d, b, zzu, zzzh, zzzr
+(zf, zzr): d, f, zk, j, v, zd, zzze, zzzq
+(zf, zzu): v, zk, zzb, zzi, zzf
+(zf, zzzd): j, zzf, f, b, za
+(zf, zzze): j, zzr, v, zj
+(zf, zzzh): zj, zzi, f, v, zzzr, zzzt
+(zf, zzzj): b, d, za
+(zf, zzzq): zk, zzr
+(zf, zzzr): v, zzzh, b, za, zzi
+(zf, zzzt): j, zzzh
+(zg, zj): t, d, p, zc, zzj, zt, zzze, zzzp
+(zg, zl): b, i, zzt, zzzf, zt
+(zg, zt): b, zj, zl, zzj
+(zg, zzd): za, zzj, zzzs, zzzn
+(zg, zzf): d, zzy, zzh, zzj
+(zg, zzh): d, b, i, p, zzf, zzy
+(zg, zzj): b, d, zj, zt, zzd, zb, zc, zzf, zzzn, zzt, zzzj
+(zg, zzn): b, za
+(zg, zzt): zl, n, za, zzj, zzy
+(zg, zzy): zzf, zzh, zzt, zc, zzzb
+(zg, zzzb): d, i, p, zzy, t, x
+(zg, zzze): zc, zj
+(zg, zzzf): zl, b, d, zb
+(zg, zzzg): i, zc, d, zzzs
+(zg, zzzj): b, d, t, za, zc, zzj
+(zg, zzzn): n, zzj, i, zzd
+(zg, zzzp): i, zj, b, zb
+(zg, zzzs): zb, zzd, zzzg, i, t
+(zh, zp): c, f, i, zzzv
+(zh, zr): i, b, c, h, p, zzj, zzb
+(zh, zx): h, zzz, zzzd, zzzq
+(zh, zzb): b, c, p, zr, zzj, zzz
+(zh, zzj): b, h, f, g, zr, zzb, zzzn, zzzv
+(zh, zzp): c, zzzi, zzz
+(zh, zzr): f, i, h, zzzq
+(zh, zzz): h, p, zx, b, zzb, zzp, zzzq
+(zh, zzzd): g, i, f, b, zx, zzzi
+(zh, zzzi): zzp, zzzd
+(zh, zzzn): zzj, i
+(zh, zzzp): g, i, c, f, b, zzzq
+(zh, zzzq): i, zzzp, zx, zzr, zzz
+(zh, zzzv): c, b, zzj, f, zp
+(zi, zm): c, j, d, e, zs, zzzq
+(zi, zs): c, e, o, zm, zzo, zzm
+(zi, zz): d, i, j, c, zzn, zzzl, zzzs
+(zi, zzm): i, j, zs, zzn, zzs
+(zi, zzn): j, zz, zzm, e, zzo, zzzl
+(zi, zzo): o, zs, zzn, j, c, zzu, zzzq, zzs
+(zi, zzq): h, c, e, i
+(zi, zzs): c, d, h, j, zzm, zzo
+(zi, zzu): zzo, h
+(zi, zzzl): e, y, zz, zzn, o
+(zi, zzzq): e, i, o, zzo, y, zm
+(zi, zzzs): c, h, y, zz, i
+(zj, zs): o, f, g, zzo
+(zj, zt): g, zg, zzj
+(zj, zv): f, g, t, zc, zzo
+(zj, zx): h, d, a
+(zj, zzj): d, h, f, g, zg, zt, a, zc, zzv
+(zj, zzo): a, o, zs, zv, g, zzzi
+(zj, zzv): f, zzj, d, g
+(zj, zzze): a, zc, zf, zg
+(zj, zzzh): a, f, t, zf
+(zj, zzzi): a, zzo
+(zj, zzzp): g, f, zg
+(zk, zt): g, zzr
+(zk, zza): f
+(zk, zzr): f, zf, h, zt, zzzq
+(zk, zzu): zf, h
+(zk, zzzb): h, f
+(zk, zzzm): zzzq
+(zk, zzzq): zc, zf, zzr, zzzm
+(zk, zzzv): f
+(zl, zs): e, b, f
+(zl, zt): b, zg
+(zl, zu): j, i, k, e, zzzu
+(zl, zx): e, j, a, zzzf
+(zl, zzq): e, s, i, a, b, zzzr, zzzu
+(zl, zzt): k, zg, e, j, s
+(zl, zzzf): zg, zx, b, r, s
+(zl, zzzr): b, s, zzq
+(zl, zzzu): j, a, f, k, b, zu, zzq
+(zm, zs): c, e, zi, g
+(zm, zu): j, e, d
+(zm, zv): j, g, zzzq
+(zm, zzc): d, zzze
+(zm, zzv): d, g
+(zm, zzze): j, a, zzc, v
+(zm, zzzp): g, j, m, c, zzzq
+(zm, zzzq): a, e, zv, zzzp, zi
+(zm, zzzv): c, j, a, d
+(zn, zv): g, zzn
+(zn, zza): zb, ze, d, zd
+(zn, zzc): d, zzzm
+(zn, zzi): d, h
+(zn, zzj): d, h, g, v, a, zb, zzza, zzzo
+(zn, zzn): zv, u, zd
+(zn, zzza): g, zzj, zzzo
+(zn, zzzm): v, a, zzc
+(zn, zzzo): h, zzj, zzza, g, a
+(zo, zz): d, c, m, zzl, zzzv, zzzb, zzzt
+(zo, zzl): zz, g, c, m, s
+(zo, zzu): 
+(zo, zzzb): e, d, f, o, q, zz, zzzc
+(zo, zzzc): f, d, m, o, s, zzzb, zzzj, zzzt, zzzv
+(zo, zzzh): e, f, q, s, zzzt
+(zo, zzzj): c, e, d, zzzc
+(zo, zzzm): e
+(zo, zzzt): e, zzzc, zz, zzzh
+(zo, zzzv): c, q, zz, zzzc, f, d
+(zp, zu): i, k, zzw
+(zp, zv): f, za, zzn
+(zp, zw): f, zy
+(zp, zy): zw, zzi
+(zp, zzd): k, f, c, za
+(zp, zzi): c, zy, zzm, zzzv
+(zp, zzm): k, zzi, i, r, zzn
+(zp, zzn): zv, zzm, za, zzw, zzzv
+(zp, zzw): f, zzn, zu
+(zp, zzzv): c, zh, f, zzi, zzn
+(zq, zz): i, d, k, a, zza, zzzl, zzzt
+(zq, zza): f, q, zz, d, zzx, zzzc
+(zq, zzc): d, f, o, zzm
+(zq, zzg): f, b, e, g, q
+(zq, zzm): g, k, zzc, i
+(zq, zzv): f, k, d, g, zzzk
+(zq, zzx): f, za, g, b, o, zza
+(zq, zzzc): b, f, d, k, o, zza, zzzt, zzzl
+(zq, zzzg): e, i, g, a, zc, d, zzzr
+(zq, zzzk): i, b, e, zzv
+(zq, zzzl): e, y, zz, k, o, zzzc
+(zq, zzzr): q, b, za, zzzg
+(zq, zzzt): e, zzzc, a, zz
+(zr, zu): i, d, e, j, h, p
+(zr, zzb): b, c, j, p, u, e, zh, zzx, zzj
+(zr, zzc): d, zzm
+(zr, zzj): b, d, j, h, e, zh, zzb, zzx
+(zr, zzm): zzc, i, j, u
+(zr, zzx): zzb, c, b, u, zzj
+(zr, zzzc): b, d, zzzl
+(zr, zzzl): e, zzzc
+(zs, zy): e, l, g, zzb
+(zs, zzb): b, c, u, zy, e, zd, zzz
+(zs, zzm): g, zi, u
+(zs, zzo): b, o, zi, zj, g, c, zd, zzw
+(zs, zzw): f, zzo
+(zs, zzz): e, b, zzb, zzzb
+(zs, zzzb): e, f, zd, o, zzz
+(zt, zzb): b, zzj, zzza
+(zt, zzg): b, g
+(zt, zzj): b, g, zg, zj, zzb, zzza
+(zt, zzl): g, b
+(zt, zzr): zk
+(zt, zzw): 
+(zt, zzza): g, zzj, zzb
+(zt, zzzd): g, b
+(zu, zzf): zd, d, zzz, zzh, zzw
+(zu, zzg): e
+(zu, zzh): j, d, e, h, i, p, zzf
+(zu, zzr): d, i, h, j, zd
+(zu, zzs): d, h, j, k
+(zu, zzw): j, zp, zzf, zzzo
+(zu, zzz): e, h, p, zzf, d, zzzu
+(zu, zzzo): h, e, j, k, p, zzw
+(zu, zzzu): j, d, k, zl, h, p, zzz
+(zv, zze): f, zc, j, zzzq, zzzs
+(zv, zzk): b, j, zzn, zzzt
+(zv, zzn): b, j, s, zn, zp, zzk, za, zzo, zzr
+(zv, zzo): b, zj, zzn, j, g, s, zzzq
+(zv, zzq): s, g, b, t, zc, zzzt
+(zv, zzr): f, zzn, j, zzt, zzzq
+(zv, zzt): j, n, s, za, zzr
+(zv, zzzf): b, s
+(zv, zzzq): zze, zzo, t, zc, zm, zzr
+(zv, zzzs): s, zze, t
+(zv, zzzt): j, t, zzk, zzq
+(zw, zy): e, g, zp, zzb, zzzh, zzzo
+(zw, zza): f, zzzc
+(zw, zzb): zy, e
+(zw, zzt): e, zzzd
+(zw, zzzc): f, zza
+(zw, zzzd): e, g, f, zzt, zzzo
+(zw, zzze): 
+(zw, zzzh): e, f, zy
+(zw, zzzo): f, e, g, w, zy, zzzd
+(zw, zzzu): f, w
+(zx, zze): e, j, zzzq, zzzd
+(zx, zzi): j, d, h, e, zzm
+(zx, zzm): zzi, j, zzza, zzzd
+(zx, zzw): j, a, zzzg, zzzq
+(zx, zzz): e, h, zh, d, za, zzzq
+(zx, zzza): zzm, zzzg, zzzf
+(zx, zzzd): j, e, zh, za, zze, zzm
+(zx, zzzf): h, zl, d, zzza
+(zx, zzzg): e, a, zzw, zzza, d
+(zx, zzzq): a, e, zze, zh, zzw, zzz
+(zy, zzb): zw, e, zs, zzu, zzza
+(zy, zzf): d, zzu, zzzl
+(zy, zzi): d, h, e, zp, zzp, zzu, zzzh, zzzl, zzzp
+(zy, zzp): e, zzi, zzzh
+(zy, zzr): d, h
+(zy, zzu): zzb, zzi, h, n, zzf
+(zy, zzza): g, m, zzb, zzzo
+(zy, zzzh): e, l, zzi, zw, zzp, zzzt
+(zy, zzzl): e, n, zzf, zzi, zzzm
+(zy, zzzm): e, zzzl
+(zy, zzzo): h, e, zzza, g, zw
+(zy, zzzp): g, l, m, zzi
+(zy, zzzt): e, h, zzzh
+(zz, zza): j, zq, d, zzw
+(zz, zzb): c, j, a, zzz
+(zz, zzl): i, a, c, m, zo, zzz
+(zz, zzn): j, zi, zzw, zzzl, zzzv
+(zz, zzw): j, m, zzn, a, zza, zzzt, zzzo
+(zz, zzz): zzl, d, zzb, zzzb
+(zz, zzzb): d, i, k, zo, zzz, zzzo
+(zz, zzze): j, a
+(zz, zzzf): c, d
+(zz, zzzl): zzn, k, zi, zq
+(zz, zzzn): i, a, j, zzzo
+(zz, zzzo): j, k, zzzb, a, zzw, zzzn
+(zz, zzzs): c, a, i, zi
+(zz, zzzt): j, zo, zzw, a, zq
+(zz, zzzv): c, zo, j, a, d, zzn
+(zza, zzh): j, d, zzx
+(zza, zzw): j, f, zz
+(zza, zzx): f, zq, zzh
+(zza, zzzc): f, d, zq, zw
+(zza, zzzi): j
+(zzb, zze): j, e, r, zd
+(zzb, zzj): b, j, a, e, v, zh, zr, zt, zzx, zzza
+(zzb, zzu): zf, zy, v, zzx
+(zzb, zzx): b, c, u, zr, zzu, zzj
+(zzb, zzz): b, p, e, zh, zs, zz, zzzk
+(zzb, zzza): zt, zzj, r, zy
+(zzb, zzzk): r, c, b, e, z, zzz
+(zzc, zzm): t, zq, zr
+(zzc, zzo): o
+(zzc, zzt): 
+(zzc, zzze): zm
+(zzc, zzzm): x, zn
+(zzd, zzj): h, j, a, k, f, v, zg, zzzn
+(zzd, zzk): j
+(zzd, zzz): h, za, zzzr
+(zzd, zzzc): v, f, k, s, zzzs
+(zzd, zzzn): zg, zzj, a, j
+(zzd, zzzr): h, v, s, za, zzz
+(zzd, zzzs): c, h, s, zg, zzzc, a
+(zze, zzl): i
+(zze, zzs): f, j, k, zzy
+(zze, zzy): zc, zzs
+(zze, zzzd): j, e, k, zc, i, f, zx, zzzo
+(zze, zzzm): j, e, zzzq
+(zze, zzzo): f, e, j, k, zzzd
+(zze, zzzq): e, i, zv, zc, zx, zzzm
+(zze, zzzs): i, zv
+(zzf, zzh): u, zg, d, zu, zzy, zzzl
+(zzf, zzj): zg, d, v
+(zzf, zzm): u, ze, zzzd
+(zzf, zzu): zy, v, zf
+(zzf, zzw): zu
+(zzf, zzy): zg, ze, zzh
+(zzf, zzz): d, zu
+(zzf, zzzd): zf, zzm
+(zzf, zzzl): zy, v, zzh
+(zzg, zzi): b, e, zzzp
+(zzg, zzzp): g, f, b, zzi
+(zzh, zzl): a, g, s, h, b, i
+(zzh, zzx): g, u, zza, b
+(zzh, zzy): a, g, zg, zzf
+(zzh, zzzl): e, zzf
+(zzi, zzm): j, zp, zx
+(zzi, zzp): c, e, zy, zzzh, zzzi
+(zzi, zzu): h, zf, zy
+(zzi, zzv): d
+(zzi, zzzh): e, zf, zy, zzp, zzzr
+(zzi, zzzi): zzp, j
+(zzi, zzzl): e, zy
+(zzi, zzzp): j, zy, c, b, zzg
+(zzi, zzzr): h, zzzh, b, zf
+(zzi, zzzv): c, b, j, d, zp
+(zzj, zzt): j, h, v, zg, e, k
+(zzj, zzv): d, f, g, zj, k
+(zzj, zzx): b, f, g, zr, zzb
+(zzj, zzza): g, zn, zt, f, zzb, zzzo, zzzn
+(zzj, zzzj): e, b, d, zc, h, zg
+(zzj, zzzn): zg, a, j, zh, zzd, zzza, zzzo
+(zzj, zzzo): h, f, e, j, k, zzza, g, a, zn, zzzn
+(zzj, zzzv): b, zh, f, j, a, d
+(zzk, zzn): b, j, zv
+(zzk, zzze): j
+(zzk, zzzg): 
+(zzk, zzzt): j, zv
+(zzl, zzp): a, c, v, zzz
+(zzl, zzt): h, s, v
+(zzl, zzz): zz, b, h, zzp
+(zzl, zzzp): g, i, m, c, b
+(zzm, zzn): zi, zp, j, u
+(zzm, zzs): g, k, zi, j, zzzn
+(zzm, zzza): g, r, zx, zzzn
+(zzm, zzzd): j, g, k, t, zzf, i, zx
+(zzm, zzzn): zzs, i, j, zzza
+(zzn, zzo): b, j, s, zi, zv, zd, zzw
+(zzn, zzr): j, zv, zd
+(zzn, zzw): j, zp, zz, zzo
+(zzn, zzzl): e, zz, zi, zzzu
+(zzn, zzzu): j, zzzl, b
+(zzn, zzzv): b, zd, zz, j, zp
+(zzo, zzs): b, a, zi, j, g, c, k, s, zzy
+(zzo, zzu): zi
+(zzo, zzw): a, zs, zzn, j, zzzq
+(zzo, zzy): a, ze, g, c, zzs
+(zzo, zzzi): a, j, zj
+(zzo, zzzq): a, o, zv, zi, zzw
+(zzp, zzz): e, zzl, zh
+(zzp, zzzh): e, a, zzi, v, ze, zy
+(zzp, zzzi): a, zh, zzi
+(zzq, zzw): a, m, zc, zzzt
+(zzq, zzzm): e, a, b
+(zzq, zzzr): h, z, zl, b, s
+(zzq, zzzt): e, p, t, zv, zzw, h, a, z, zzzu
+(zzq, zzzu): a, zl, zzzt, b, h, p
+(zzr, zzt): zv, h, j, v
+(zzr, zzzc): v, f, d
+(zzr, zzze): j, a, v, zf
+(zzr, zzzq): a, i, zk, zv, zf, zh
+(zzs, zzv): d, g, f, k, s, zzy
+(zzs, zzy): c, g, zze, a, zzo, zzv
+(zzs, zzzn): zzm, a, j
+(zzt, zzy): zg, zzzk
+(zzt, zzzd): j, e, k, zw, za, zzzi
+(zzt, zzzi): zzzd, j
+(zzt, zzzk): h, zzy, e
+(zzt, zzzl): e, k, n, v
+(zzu, zzx): zzb
+(zzv, zzy): ze, zzs, g, zzzb, zzzk
+(zzv, zzzb): d, f, k, zzy
+(zzv, zzzk): r, zzy, zq
+(zzw, zzzg): a, m, zc, zx
+(zzw, zzzk): 
+(zzw, zzzo): f, j, zz, a, w, zu
+(zzw, zzzp): j, m, f, w, zzzq
+(zzw, zzzq): a, zzo, zzzp, y, zc, zx
+(zzw, zzzt): j, a, zz, zzq
+(zzx, zzze): 
+(zzx, zzzu): f, b, o
+(zzy, zzza): g
+(zzy, zzzb): zg, zzv
+(zzy, zzzh): a, ze
+(zzy, zzzk): zzt, c, zzv
+(zzz, zzzb): e, h, d, p, zs, x, zz
+(zzz, zzzk): h, b, e, zzb
+(zzz, zzzq): e, zh, zx
+(zzz, zzzr): h, zzd, b, x, za
+(zzz, zzzu): d, b, h, p, zu
+(zzza, zzzf): r, zx
+(zzza, zzzg): g, m, zx
+(zzza, zzzn): q, zzj, zzm, zzzo
+(zzza, zzzo): f, zzj, g, zn, zy, zzzn
+(zzzb, zzzc): v, f, d, k, o, zo
+(zzzb, zzzo): h, f, e, k, zz, p, w
+(zzzc, zzzj): b, d, zo
+(zzzc, zzzl): zr, k, o, v, zq
+(zzzc, zzzs): z, zzd, s
+(zzzc, zzzt): z, zo, zq
+(zzzc, zzzv): b, f, d, zo
+(zzzd, zzzi): zzt, j, zh
+(zzzd, zzzo): f, e, j, k, zze, g, zw
+(zzzf, zzzk): h, r, c, b, z
+(zzzg, zzzr): s, zq
+(zzzg, zzzs): i, a, s, zg
+(zzzh, zzzr): zzi, q, s, v, zf
+(zzzh, zzzt): e, a, zo, t, ze, zf, zy
+(zzzi, zzzu): a, j
+(zzzk, zzzs): h, i, c, z
+(zzzl, zzzm): e, v, y, zy
+(zzzl, zzzu): zzn, k, o, v
+(zzzm, zzzn): j, a
+(zzzm, zzzq): e, y, zze, a, zk
+(zzzn, zzzo): j, zz, zzj, zzza, a
+(zzzn, zzzu): a, j
+(zzzp, zzzq): i, zh, zm, zzw
+(zzzs, zzzu): h, zb, a
+(zzzt, zzzu): j, a, zb, h, p, zzq
