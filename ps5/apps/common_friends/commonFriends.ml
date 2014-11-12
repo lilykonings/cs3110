@@ -2,17 +2,37 @@ open Async.Std
 
 module Job = struct
   type input  = string * string list
-  type key    = unit (* TODO: choose an appropriate type *)
-  type inter  = unit (* TODO: choose an appropriate type *)
+  type key    = (string*string) 
+  type inter  = string list 
   type output = string list
 
+  exception InvalidIntersList
   let name = "friends.job"
 
-  let map (name, friendlist) =
-    failwith "TODO"
 
-  let reduce (_, friendlists) =
-    failwith "TODO"
+  
+
+  (*Returns a list of pairs*)
+  let map (name, friendlist) : (key * inter) list Deferred.t =
+    let remove x lst =
+      List.filter (fun elem -> elem <> x) lst  in
+    return (List.fold_left (fun acc elem -> 
+      let lst = remove elem friendlist in 
+      if elem < name then ((elem, name), lst) :: acc
+      else 
+        ((name,elem), remove elem lst) :: acc ) [] friendlist)
+
+  let reduce (_, friendlists) : output Deferred.t =
+    match friendlists with
+    | lst1::lst2::[] -> 
+      return (List.fold_left (fun acc elem ->
+        if List.mem elem lst2 then elem::acc
+        else
+          acc) [] lst1)
+    | _ -> raise InvalidIntersList
+    
+
+    
 end
 
 let () = MapReduce.register_job (module Job)
@@ -55,7 +75,7 @@ module App = struct
         >>= MR.map_reduce
         (* replace this failwith with print once you've figured out the key and
            inter types*)
-        >>| fun _ -> failwith "TODO"
+        >>| print 
   end
 end
 
