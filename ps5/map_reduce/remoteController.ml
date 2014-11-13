@@ -55,10 +55,7 @@ module Make (Job : MapReduce.Job) = struct
                   map input
               | `Ok result -> (match result with
                 | Response.JobFailed e -> raise (MapFailure e)
-                | Response.ReduceResult _ ->
-                    Socket.shutdown s `Both;
-                    active := (!active) - 1;
-                    map input
+                | Response.ReduceResult _ -> raise (MapFailure "Wrong response type! Expecting MapResult, got ReduceResult")
                 | Response.MapResult a -> return a
               )
             )
@@ -80,20 +77,17 @@ module Make (Job : MapReduce.Job) = struct
                   reduce (k, intrs)
               | `Ok result -> (match result with
                 | Response.JobFailed e -> raise (ReduceFailure e)
-                | Response.MapResult _ ->
-                    Socket.shutdown s `Both;
-                    active := (!active) - 1;
-                    reduce (k, intrs)
+                | Response.MapResult _ -> raise (ReduceFailure "Wrong response type! Expecting ReduceResult, got MapResult.")
                 | Response.ReduceResult a -> return (k, a)
               )
             )
           )
         ) in
     
-    ignore (connect ());
+    connect ()
     (* return (List.map helpRed (Combine.combine (List.flatten (List.map helpMap inputs)))) *)
 
-    Deferred.List.map inputs map
+    >>= Deferred.List.map inputs map
     >>| List.flatten
     >>| Combine.combine
     >>= fun mapped -> Deferred.List.map mapped reduce
