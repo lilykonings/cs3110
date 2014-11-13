@@ -6,6 +6,9 @@ let addresses = ref []
  * by storing into a list ref *)
 (* requires: list of addresses, each of which is a (string, int) tuple *)
 (* returns: unit *)
+(* side effects: changes to the active ref according to connection to workers
+                 and to workers queue as we pop/push workers onto it.
+                 Also sending and receiving requests/responses to workers *)
 let init addrs : unit =
   addresses := List.map (fun (s,i) ->
     Tcp.to_host_and_port s i) addrs;
