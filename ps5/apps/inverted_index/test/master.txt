@@ -1,2 +1,2 @@
-zar.txt
-doz.txt
+apps/inverted_index/test/zar.txt
+apps/inverted_index/test/doz.txt
