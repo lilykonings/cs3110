@@ -9,45 +9,42 @@ type filename = string
 
 module Job = struct
 
-  type word = string
-  type contents = string
-
-  type input = filename * contents 
-  type key = word 
+  type input = filename * string 
+  type key = string 
   type inter = filename
   type output = filename list 
+  
+  exception AppFailure of string  
 
   let name = "index.job"
 
-  (* Returns a list with no duplicates *)
-  let elim_duplicates lst = 
+  (* creates a list of non-duplicated elements found in [lst]
+   * requires: a list of type 'a elements
+   * returns: a list of type 'a elements *)
+  let elim_duplicates (lst: 'a list) : 'a list = 
     List.fold_left (fun acc elem -> 
       if (List.mem elem acc) then acc
       else 
         elem :: acc) [] lst 
 
-  (*Returns a list of non-duplicated words found in the file*)
-  let read_contents contents : (string list) Deferred.t =
-    Reader.file_lines contents
-    >>= fun lst -> Deferred.List.fold lst ~init: [] ~f: 
-      (fun acc line -> return (elim_duplicates (
-        elim_duplicates (AppUtils.split_words line) @ acc ) ))
+  (* takes an [input] of type (filename * contents) and creates a list of 
+   * (index, [filename]) tuples where indices are words found in [contents]
+   * requires: an input type argument 
+   * returns: a (key * inter) list Deferred t*)
+  let map (filename, contents : input) : (key * inter) list Deferred.t =
 
-      (*map version*)
-      (* >>= fun lst -> Deferred.List.map ~how: `Parallel lst ~f: 
-        (fun line -> return (elim_duplicates (AppUtils.split_words line))) *)
-        
+    let read_contents (contents: string) : string list =
+      let lines_lst = Str.split (Str.regexp " \n") contents in       
+      List.fold_left (fun acc line -> 
+        elim_duplicates (elim_duplicates (AppUtils.split_words line) @ acc)) 
+        [] lines_lst  in 
 
-  (* Creates a list of (index, filename) tuples where indices are words from
-   * the contents of the filename*)
-  let map input : (key * inter) list Deferred.t =
-    let filename = fst input in 
-      read_contents filename 
-        >>| List.map (fun elem -> elem,filename) 
+    return (List.map (fun elem -> elem,filename) (read_contents contents))
 
-
-  (* returns a list of filenames that does not contain duplicates *)
-  let reduce (_, inters) : output Deferred.t =
+  (* creates a list of non-duplicated filenames 
+   * requires: a (key*inter list) type argument
+   * returns: an output Deferred.t *)
+  let reduce (key, inters : key * inter list) : output Deferred.t =
     return (elim_duplicates inters)
 
 end
@@ -77,7 +74,7 @@ module App  = struct
 
   (** for each line f in the master list, output a pair containing the filename
       f and the contents of the file named by f.  *)
-  let read (master_file : filename) : (filename * string) list Deferred.t =
+  let read (master_file: filename) : (filename * string) list Deferred.t =
     Reader.file_lines master_file >>= fun filenames ->
 
     Deferred.List.map filenames (fun filename ->
