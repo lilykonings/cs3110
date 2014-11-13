@@ -1,10 +1,22 @@
+
 open Async.Std
 
 module Make (Job : MapReduce.Job) = struct
+
     module Request = Protocol.WorkerRequest (Job)
     module Response = Protocol.WorkerResponse (Job)
 
-  (* see .mli *)
+  (* Handles job requests sent by the controller. [run] takes 
+   * each WorkerRequest(Job) sent by the contoller and performs the
+   * necessary Job.map or Job.reduce function. Once it finishes, it 
+   * sends back a WorkerResponse(Job) to the controller. If Job.map or
+   * Job.reduce raises an exception, it should return a JobFailed message.
+   * The module keeps handling jobs until its reader returns an Eof. 
+   *  
+   * requires: a Reader.t and a Writer.t
+   * returns: unit Deferred.t
+   * side effects: sends a message of type WorkerResponse(Job) to 
+   *                the controller *)
   let run r w =
     let rec handle () =
       Request.receive r >>= function
