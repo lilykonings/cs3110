@@ -17,12 +17,10 @@ module Make (Job : MapReduce.Job) = struct
       | `Ok job_request -> (match job_request with
         | Request.MapRequest input -> handle (Job.map input)
         | Request.ReduceRequest (key,inters) ->
-          begin
-            try_with (fun () -> Job.reduce (key,inters))
-            >>| function
-              | Core.Std.Result.Ok result -> Response.send w (Response.ReduceResult result)
-              | Core.Std.Result.Error _ -> Response.send w (Response.JobFailed "Job failed")
-          end)
+            (try_with (fun () -> Job.reduce (key,inters))
+              >>| function
+                | Core.Std.Result.Ok result -> Response.send w (Response.ReduceResult result)
+                | Core.Std.Result.Error _ -> Response.send w (Response.JobFailed "Job failed")))
       | `Eof -> return ()
 end
 
