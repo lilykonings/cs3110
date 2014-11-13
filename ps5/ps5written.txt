@@ -1,0 +1,6 @@
+The problem set was interesting and a good test of our knowledge of Async.
+One area of concern in our implementation was the specific cases in which exceptions were to be raised.
+In some cases, we were forced to make uncertain decisions about which to raise and at what points in our code.
+In this regard, the writeup was not very helpful in alleviating confusion regarding when certain failures were to be called.
+
+Regarding the division of work, Lilian and Charles worked mostly on remoteController and worker, while Elaine worked on the applications and worker.  Edward also worked on worker.
