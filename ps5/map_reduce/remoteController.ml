@@ -36,9 +36,6 @@ module Make (Job : MapReduce.Job) = struct
                 | Core.Std.Ok _ -> (s,r,w))
             >>| (fun a ->
               ignore (active := (!active) + 1);
-              print_endline "Active: ";
-              print_int (!active);
-              print_endline " ";
               ignore (AQueue.push workers a);
               ())
         )
@@ -56,7 +53,6 @@ module Make (Job : MapReduce.Job) = struct
               | `Eof ->
                 ignore (Socket.shutdown s `Both);
                 ignore (active := (!active) - 1);
-                print_endline "A worker died!";
                 map input
               | `Ok result -> (match result with
                 | Response.JobFailed e -> raise (MapFailure e)

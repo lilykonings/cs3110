@@ -6,7 +6,7 @@ module Make (Job : MapReduce.Job) = struct
 
   (* see .mli *)
   let run r w =
-    let rec handle =
+    let rec handle () =
       Request.receive r >>= function
         | `Eof -> return ()
         | `Ok job_request -> (
@@ -16,10 +16,10 @@ module Make (Job : MapReduce.Job) = struct
                   >>| (function
                       | Core.Std.Result.Error _ ->
                           Response.send w (Response.JobFailed "Job failed")
-                      | Core.Std.Result.Ok lst ->
-                          Response.send w (Response.MapResult lst))
-                  >>| (fun _ -> handle)
+                      | Core.Std.Result.Ok result ->
+                          Response.send w (Response.MapResult result))
                 )
+                >>= (fun _ -> handle ())
             | Request.ReduceRequest (k,i) ->
                 ((try_with (fun () -> Job.reduce (k,i)))
                   >>| (function
@@ -27,9 +27,10 @@ module Make (Job : MapReduce.Job) = struct
                           Response.send w (Response.JobFailed "Job failed")
                       | Core.Std.Result.Ok result ->
                           Response.send w (Response.ReduceResult result))
-                  >>| (fun _ -> handle)
                 )
-        )
+                >>= (fun _ -> handle ())
+        ) in
+    handle ()
 end
 
 (* see .mli *)

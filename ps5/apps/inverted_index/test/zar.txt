@@ -1,0 +1,2 @@
+ocaml is fun
+fun fun fun
