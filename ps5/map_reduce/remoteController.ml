@@ -85,9 +85,7 @@ module Make (Job : MapReduce.Job) = struct
         ) in
     
     connect ()
-    (* return (List.map helpRed (Combine.combine (List.flatten (List.map helpMap inputs)))) *)
-
-    >>= Deferred.List.map inputs map
+    >>= (fun _ -> Deferred.List.map inputs map)
     >>| List.flatten
     >>| Combine.combine
     >>= fun mapped -> Deferred.List.map mapped reduce
