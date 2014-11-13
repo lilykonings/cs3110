@@ -6,14 +6,19 @@ module Job = struct
   type inter  = string list 
   type output = string list
 
-  exception InvalidIntersList
+  exception AppFailure of string
+
   let name = "friends.job"
 
-
-  
-
-  (*Returns a list of pairs*)
-  let map (name, friendlist) : (key * inter) list Deferred.t =
+  (* creates a list of pairs (key, friend list) tuples. A key is a pair 
+   * consisting of [name] and an element of [friendlist]. The order of 
+   * the pair values is alphabetized, e.g. ("B","A") becomes ("A","B"). 
+   * Each key's friend list is the remaining [friendlist] which does not
+   * contain any element found in the key. There is only one (key, friend list)
+   * tuple for each element in [friendlist].  
+   * requires: an input type argument
+   * returns: a (key * inter) list Deferred.t *)
+  let map (name, friendlist : input) : (key * inter) list Deferred.t =
     let remove x lst =
       List.filter (fun elem -> elem <> x) lst  in
     return (List.fold_left (fun acc elem -> 
@@ -22,16 +27,18 @@ module Job = struct
       else 
         ((name,elem), remove elem lst) :: acc ) [] friendlist)
 
-  let reduce (_, friendlists) : output Deferred.t =
+  (* creates a list of mutual friends of the elements given in the key. 
+   * [friendlists] should only contain two lists. 
+   * requires: a (key*inter list) type argument
+   * returns: an output Deferred.t *)
+  let reduce (_, friendlists : key * inter list) : output Deferred.t =
     match friendlists with
     | lst1::lst2::[] -> 
       return (List.fold_left (fun acc elem ->
         if List.mem elem lst2 then elem::acc
         else
           acc) [] lst1)
-    | _ -> raise InvalidIntersList
-    
-
+    | _ -> raise (AppFailure "Failed at reduce: invalid inter list")
     
 end
 
