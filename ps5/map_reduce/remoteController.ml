@@ -26,23 +26,27 @@ module Make (Job : MapReduce.Job) = struct
 
     let connect () =
       Deferred.List.map (!addresses) (fun addr ->
-        (try_with (fun () -> Tcp.connect addr)
-        >>= function
-          | Core.Std.Error e -> return ()
+        (try_with (fun () -> Tcp.connect addr))
+        >>= (function
+          | Core.Std.Error _ -> return ()
           | Core.Std.Ok (s,r,w) ->
-            active := (!active) + 1; return ()
-            >>= (fun _ ->
-              Writer.write_line w Job.name;
-              return ())
-            >>= (fun _ ->
-              AQueue.push workers (s,r,w);
-              return ())
+            (try_with (fun () -> return (Writer.write_line w Job.name)))
+              >>| (function
+                | Core.Std.Error _ -> failwith "Writer's block"
+                | Core.Std.Ok _ -> (s,r,w))
+            >>| (fun a ->
+              ignore (active := (!active) + 1);
+              print_endline "Active: ";
+              print_int (!active);
+              print_endline " ";
+              ignore (AQueue.push workers a);
+              ())
         )
       ) in
 
     let rec map input =
       if ((!active) = 0) then
-        raise (InfrastructureFailure) (* No connection with any workers *)
+        raise (InfrastructureFailure) (* "No active workers!" *)
       else
         (AQueue.pop workers) >>= (fun (s,r,w) ->
           ignore (Request.send w (Request.MapRequest (input)));
@@ -50,12 +54,16 @@ module Make (Job : MapReduce.Job) = struct
             ignore (AQueue.push workers (s,r,w));
             (match resp with
               | `Eof ->
-                  ignore (Socket.shutdown s `Both);
-                  ignore (active := (!active) - 1);
-                  map input
+                ignore (Socket.shutdown s `Both);
+                ignore (active := (!active) - 1);
+                print_endline "A worker died!";
+                map input
               | `Ok result -> (match result with
                 | Response.JobFailed e -> raise (MapFailure e)
-                | Response.ReduceResult _ -> raise (MapFailure "Wrong response type! Expecting MapResult, got ReduceResult")
+                | Response.ReduceResult a ->
+                    ignore (Socket.shutdown s `Both);
+                    ignore (active := (!active) - 1);
+                    map input
                 | Response.MapResult a -> return a
               )
             )
@@ -64,20 +72,23 @@ module Make (Job : MapReduce.Job) = struct
 
     let rec reduce (k, intrs) =
       if ((!active) = 0) then
-        raise (InfrastructureFailure) (* No connection with any workers *)
+        raise (InfrastructureFailure) (* No active workers! *)
       else 
-        (AQueue.pop workers) >>= (fun (s,r,w) ->
+        (AQueue.pop workers) >>= (fun (s, r, w) ->
           ignore (Request.send w (Request.ReduceRequest (k, intrs)));
           Response.receive r >>= (fun resp ->
-            ignore (AQueue.push workers (s,r,w));
+            ignore (AQueue.push workers (s, r, w));
             (match resp with
               | `Eof ->
-                  ignore (Socket.shutdown s `Both);
-                  ignore (active := (!active) - 1);
-                  reduce (k, intrs)
+                ignore (Socket.shutdown s `Both);
+                ignore (active := (!active) - 1);
+                reduce (k, intrs)
               | `Ok result -> (match result with
                 | Response.JobFailed e -> raise (ReduceFailure e)
-                | Response.MapResult _ -> raise (ReduceFailure "Wrong response type! Expecting ReduceResult, got MapResult.")
+                | Response.MapResult _ ->
+                    ignore (Socket.shutdown s `Both);
+                    ignore (active := (!active) - 1);
+                    reduce (k, intrs)
                 | Response.ReduceResult a -> return (k, a)
               )
             )
@@ -89,4 +100,5 @@ module Make (Job : MapReduce.Job) = struct
     >>| List.flatten
     >>| Combine.combine
     >>= fun mapped -> Deferred.List.map mapped reduce
+
 end
