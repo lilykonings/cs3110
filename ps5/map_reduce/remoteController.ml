@@ -2,9 +2,9 @@ open Async.Std
 
 let addresses = ref []
 
-let init addrs : () =
-  addresses :=
-    List.map (fun (s,i) -> Tcp.to_host_and_port s i) addrs;
+let init addrs : unit =
+  addresses := List.map (fun (s,i) ->
+    Tcp.to_host_and_port s i) addrs;
 
 exception InfrastructureFailure
 exception MapFailure of string
@@ -24,13 +24,49 @@ module Make (Job : MapReduce.Job) = struct
     let queue = AQueue.create () in 
 
     let connect () =
-    Deferred.List.map (!addresses) (fun addr ->
-      (try_with (fun () -> Tcp.connect addr))
-      >>= function
-        | Core.Std.Error _ -> return ()
-        | Core.Std.Ok (_,_,w) -> Deferred.all (Writer.write_line w Job.name)
-      >>= (fun a -> active := (!active) + 1; AQueue.push cons a)
-    )
+      Deferred.List.map (!addresses) (fun addr ->
+        (try_with (fun () -> Tcp.connect addr))
+        >>= (function
+          | Core.Std.Error _ -> return ()
+          | Core.Std.Ok (s,r,w) ->
+            (try_with (fun () -> return Writer.write_line w Job.name))
+              >>| (function
+                | Core.Std.Error _ -> failwith "Writer's block"
+                | Core.Std.Ok _ -> (s,r,w))
+            >>| (fun a ->
+              ignore (active := (!active) + 1);
+              ignore (AQueue.push queue a);
+              ()))
+      ) in
+
+    let rec execute input =
+      if ((!active) = 0) then
+        raise (InfrastructureFailure "All workers inactive!")
+      else
+        (AQueue.pop queue) >>= (fun (s,r,w) ->
+          ignore (Request.send w (Request.MapRequest (input)));
+          Response.receive r >>= fun resp ->
+            ignore (AQueue.push queue (s,r,w));
+            match resp with
+              | `Eof ->
+                ignore (Socket.shutdown socket `Both);
+                ignore (active := (!active) - 1);
+                execute input
+              | `Ok result -> (match result with
+                | Response.JobFailed e -> raise (MapFailed e)
+                | Response.ReduceResult a ->
+                  Socket.shutdown socket `Both;
+                  active := (!active) - 1;
+                  assign_work input  
+                | Response.MapResult a -> return a)
+        )
+
+
 
 end
+
+
+
+
+
 
