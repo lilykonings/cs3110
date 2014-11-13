@@ -26,18 +26,18 @@ module Make (Job : MapReduce.Job) = struct
 
     let connect () =
       Deferred.List.map (!addresses) (fun addr ->
-        (try_with (fun () -> Tcp.connect addr))
-        >>= (function
-          | Core.Std.Error _ -> return ()
+        (try_with (fun () -> Tcp.connect addr)
+        >>= function
+          | Core.Std.Error e -> return ()
           | Core.Std.Ok (s,r,w) ->
-            (try_with (fun () -> return (Writer.write_line w Job.name)))
-            >>| (function
-                | Core.Std.Error _ -> failwith "Writer's block"
-                | Core.Std.Ok _ -> (s,r,w))
-            >>| (fun a ->
-              ignore (active := (!active) + 1);
-              ignore (AQueue.push workers a);
-              return ()))
+            active := (!active) + 1; return ()
+            >>= (fun _ ->
+              Writer.write_line w Job.name;
+              return ())
+            >>= (fun _ ->
+              AQueue.push workers (s,r,w);
+              return ())
+        )
       ) in
 
     let rec map input =
