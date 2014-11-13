@@ -21,8 +21,8 @@ module Make (Job : MapReduce.Job) = struct
             try_with (fun () -> Job.reduce (key,inters))
             >>| function
               | Core.Std.Result.Ok result -> Response.send w (Response.ReduceResult result)
-              | Core.Std.Result.Error _ -> Response.send w (Response.JobFailed "Job failed"))
-          end
+              | Core.Std.Result.Error _ -> Response.send w (Response.JobFailed "Job failed")
+          end)
       | `Eof -> return ()
 end
 
