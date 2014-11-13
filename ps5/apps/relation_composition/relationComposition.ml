@@ -9,33 +9,35 @@ module Job = struct
   type inter  = (relation * string)
   type output = (string * string) list
 
+  exception AppFailure of string 
+
   let name = "composition.job"
 
-  (* *)
-  let map (r, x, y) : (key * inter) list Deferred.t =
+  (* creates a list of (key, inter) tuples. The key is determined by [r]
+   * and the inter contents is also determined by [r]. The returned
+   * list should contain only one element. 
+   * requires: an input type argument 
+   * returns: an expression of type (key * inter) list Deferred.t *)
+  let map (r, x, y : input) : (key * inter) list Deferred.t =
     match r with 
     | R -> return ((y, (R,x))::[])
     | S -> return ((x, (S,y))::[])
 
-  (* *)
-  let reduce (_, vs) : output Deferred.t =
+  (* creates a list of all possible combinations of the pairs of elements
+    that are found in the relations for a given key.  
+   * requires: a (key*inter list) type argument
+   * returns: an output Deferred.t *)
+  let reduce (_, vs : key * inter list) : output Deferred.t =
     let (xs,zs) = List.fold_left (fun (xs,zs) (r,elem) -> 
       match r with 
       | R -> (elem::xs, zs) 
       | S -> (xs, elem::zs)) ([],[]) vs in 
 
-    (*Might want to come up with a more efficient way of doing this*)
     let lst = List.map (fun x -> 
       List.fold_left (fun acc z -> (x,z)::acc) [] zs) xs in
 
     (*List.flatten is NOT tail recursive *)
      return (List.flatten lst)
-
-    (* alternative method *)
-    (* let lst = List.fold_left (fun acc x -> 
-      (List.fold_left (fun acc' z -> (x,z)::acc) [] zs)) @ acc) [] xs in
-    return lst  *)
-
 
 end
 
