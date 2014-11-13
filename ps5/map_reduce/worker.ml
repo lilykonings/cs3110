@@ -5,23 +5,32 @@ module Make (Job : MapReduce.Job) = struct
     module Response = Protocol.WorkerResponse (Job)
 
   (* see .mli *)
-  let run (r: Reader.t) (w: Writer.t) : unit Deferred.t =
-    let handle (job_result: 'a Deferred.t) =
-      try_with (fun () -> job_result) 
-        >>| function
-          | Core.Std.Result.Ok (a) -> (match a with 
-            | [] as lst -> Response.send w (Response.MapResult lst)
-            | (key,inter) :: t as lst -> Response.send w (Response.MapResult lst)) 
-          | Core.Std.Result.Error _ -> Response.send w (Response.JobFailed "Job failed") in 
-    Request.receive r >>= function
-      | `Ok job_request -> (match job_request with
-        | Request.MapRequest input -> handle (Job.map input)
-        | Request.ReduceRequest (key,inters) ->
-            (try_with (fun () -> Job.reduce (key,inters))
-              >>| function
-                | Core.Std.Result.Ok result -> Response.send w (Response.ReduceResult result)
-                | Core.Std.Result.Error _ -> Response.send w (Response.JobFailed "Job failed")))
-      | `Eof -> return ()
+  let run r w =
+    let rec handle () =
+      Request.receive r >>= function
+        | `Eof -> return ()
+        | `Ok job_request -> (
+          match job_request with
+            | Request.MapRequest input ->
+                ((try_with (fun () -> Job.map input))
+                  >>| (function
+                      | Core.Std.Result.Error _ ->
+                          Response.send w (Response.JobFailed "Job failed")
+                      | Core.Std.Result.Ok result ->
+                          Response.send w (Response.MapResult result))
+                )
+                >>= (fun _ -> handle ())
+            | Request.ReduceRequest (k,i) ->
+                ((try_with (fun () -> Job.reduce (k,i)))
+                  >>| (function
+                      | Core.Std.Result.Error _ ->
+                          Response.send w (Response.JobFailed "Job failed")
+                      | Core.Std.Result.Ok result ->
+                          Response.send w (Response.ReduceResult result))
+                )
+                >>= (fun _ -> handle ())
+        ) in
+    handle ()
 end
 
 (* see .mli *)
