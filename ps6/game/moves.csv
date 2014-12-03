@@ -1,0 +1,333 @@
+#Move Name,Type,Target,Power,Accuracy,PP,Properties
+#Absorb,Grass,Opponent,20,100,20,DrainPercent 50 User 100
+Acid,Poison,Opponent,40,100,30,StatModifier Def -1 Opponent 10
+AcidArmor,Poison,User,0,100,40,StatModifier Def 2 User 100
+AerialAce,Flying,Opponent,60,100,20
+Aeroblast,Flying,Opponent,100,95,5
+Agility,Psychic,User,0,100,30,StatModifier Spe 2 User 100
+AirCutter,Flying,Opponent,55,95,25
+Amnesia,Psychic,User,0,100,20,StatModifier SpD 2 User 100
+Ancientpower,Rock,Opponent,60,100,5,StatModifier Atk 1 StatModifier Def 1 StatModifier SpA 1 StatModifier SpD 1 StatModifier Spe 1 User 10
+#ArmThrust,Fighting,Opponent,15,100,20,Attacks two to five times.
+Aromatherapy,Grass,User,0,100,5,HealStatus Burned Poisoned Paralyzed Asleep Frozen Confused User 100
+#Assist,Normal,User,0,100,20,Uses an ally's move
+Astonish,Ghost,Opponent,30,100,15
+#Attract,Normal,Opponent,0,100,15,May render pokemon of opposite gender incapable of attack
+AuroraBeam,Ice,Opponent,65,0,0,StatModifier Atk -1 Opponent 10
+#Barrage,Normal,Opponent,15,85,20,Attacks up to five times
+Barrier,Psychic,User,0,100,30,StatModifier Def 2 User 100
+#BatonPass,Normal,User,0,100,40,Switches out current pokemon and passes stat changes to the next
+#BeatUp,Dark,Opponent,10,100,10,"Each pokemon in your part attacks the foe, except fainted ones."
+BellyDrum,Normal,User,0,100,10,DamagePercent 50 StatModifier Atk 12 User 100
+#Bide,Normal,Opponent,0,100,10,Stores damage for two turns and then counters with double force
+#Bind,Normal,User,15,75,20,Opponent is damaged slightly for 2 - 6 turns and cannot escape.
+Bite,Dark,Opponent,60,100,25,InflictStatus Paralyzed Opponent 30
+BlastBurn,Fire,Opponent,150,90,1
+BlazeKick,Fire,Opponent,85,90,10,InflictStatus Burned Opponent 10
+Blizzard,Ice,Opponent,120,70,5,InflictStatus Frozen Opponent 10
+#Block,Normal,Opponent,0,100,5,Prevents the foes escape while user is in battle.
+BodySlam,Normal,Opponent,85,100,15,InflictStatus Paralyzed Opponent 30
+BoneClub,Ground,Opponent,65,85,20
+#BoneRush,Ground,Opponent,25,80,10,"Hits 2, 3, 4, or 5 times."
+#Bonemerang,Ground,Opponent,50,90,10,Hits twice
+#Bounce,Flying,Opponent,85,85,5,Bounces up the first turn and is out of range. Attacks the second turn. 30% chance to paralyze the target.
+BrickBreak,Fighting,Opponent,75,100,15
+Bubble,Water,Opponent,20,100,30,StatModifier Spe -1 Opponent 10
+BubbleBeam,Water,Opponent,65,100,20,StatModifier Spe -1 Opponent 30
+BulkUp,Fighting,User,0,100,20,StatModifier Atk 1 StatModifier Def 1 User 100
+#BulletSeed,Grass,Opponent,10,100,30,Attacks between 2 and 5 turns.
+CalmMind,Psychic,User,0,100,20,StatModifier SpA 1 StatModifier SpD 1 User 100
+#Camouflage,Normal,User,0,100,20,Changes a pokemon's type to match the terrain.
+#Charge,Electric,User,0,100,20,Boosts the power of a following electric type attack by 100%
+Charm,Normal,Opponent,0,100,20,StatModifier Atk -2 Opponent 100
+#Clamp,Water,Opponent,35,75,10,"The foe cannot escape and is damaged for 2, 3, 4, or 5 turns."
+#CometPunch,Normal,Opponent,18,85,15,Hits the for 2 to 5 times.
+ConfuseRay,Ghost,Opponent,0,100,10,InflictStatus Confused Opponent 100
+Confusion,Psychic,Opponent,50,100,25,InflictStatus Confused Opponent 10
+Constrict,Normal,Opponent,10,100,35,StatModifier Spe -1 Opponent 10
+#Conversion,Normal,User,0,100,30,Pokemon's type changes to move's type.
+#Conversion2,Normal,User,0,100,30,Pokemon is resistant to the type of the last attack.
+CosmicPower,Psychic,User,0,100,20,StatModifier Def 1 StatModifier SpD 1 User 100
+CottonSpore,Grass,Opponent,0,85,40,StatModifier Spe -2 Opponent 100
+#Counter,Fighting,Opponent,0,100,20,Returns to the foe double the damage of attack done that turn. Foe's attack must be a non-special attack
+#Covet,Normal,Opponent,40,100,40,Pokemon steals held item from foe.
+Crabhammer,Water,Opponent,90,85,10
+CrossChop,Fighting,Opponent,100,80,5
+Crunch,Dark,Opponent,80,100,15,StatModifier SpD -1 Opponent 10
+CrushClaw,Normal,Opponent,75,95,10,StatModifier Def -1 Opponent 10
+Curse,Ghost,User,0,100,10,StatModifier Atk 1 StatModifier Def 1 StatModifier Spe -1 User 100
+Cut,Normal,Opponent,50,95,30
+DefenseCurl,Normal,User,0,100,40,StatModifier Def 1 User 100
+#DestinyBond,Ghost,Opponent,0,100,5,"If pokemon faints in the next turn, the destiny bonded foe faints."
+#Detect,Fighting,User,0,100,5,"Negates all attcks, may fail if used in sucession."
+#Dig,Ground,Opponent,60,100,10,"Pokemon dig into the ground the first turn, then attacks the second. Pokemon cannot be hit while underground except by earthquake and magnitude which do 200% damage, as well as fissure."
+#Disable,Normal,Opponent,0,55,20,The opponent's last used move is disabled for 2 to 5 turns.
+#Dive,Water,Opponent,60,100,10,"Dives underwater the first turn, then surfaces to attack the second. Pokemon cannot be hit while underwater."
+DizzyPunch,Normal,Opponent,70,100,10,InflictStatus Confused Opponent 30
+#DoomDesire,Steel,Opponent,120,85,5,Attack hits whatever pokemon is out 2 turns later.
+Double-Edge,Normal,Opponent,120,100,15,Recoil 33 User 100
+#DoubleKick,Fighting,Opponent,30,100,30,Attacks twice.
+#DoubleTeam,Normal,User,0,100,15,StatModifier Eva 1 User 100
+#Doubleslap,Normal,Opponent,15,85,10,Attacks 2 to 5 times.
+DragonClaw,Dragon,Opponent,80,100,15
+DragonDance,Dragon,User,0,100,20,StatModifier Atk 1 StatModifier Spe 1 User 100
+#DragonRage,Dragon,Opponent,0,100,10,Causes 40 HP damage regardless of foe's defence.
+Dragonbreath,Dragon,Opponent,60,100,20,InflictStatus Paralyzed Opponent 10
+#DreamEater,Psychic,Opponent,100,100,15,Adds the damage inflicted on the sleeping foe into the pokemon's HP
+DrillPeck,Flying,Opponent,80,100,20
+Dynamicpunch,Fighting,Opponent,100,50,5,InflictStatus Confused Opponent 100
+Earthquake,Ground,Opponent,100,100,10
+EggBomb,Normal,Opponent,100,75,10
+Ember,Fire,Opponent,40,100,25,InflictStatus Burned Opponent 10
+#Encore,Normal,User,0,100,5,The foe is forced to repeat his last attack for 2 to 5 turns.
+#Endeavor,Normal,Opponent,0,100,5,Does damage to the foe by subtracting your HP from your foes and dealing the remainder.
+#Endure,Normal,User,0,100,10,Pokemon will have at least 1 HP left over after the foe's move. Move may fail if used consecutively.
+#Eruption,Fire,Opponent,150,100,5,"The higher your HP is, the more powerful the move is."
+Explosion,Normal,Opponent,250,100,5,DamagePercent 100 User 100
+Extrasensory,Psychic,Opponent,80,100,30
+Extremespeed,Normal,Opponent,80,100,5,StatModifier Spe 1 User 100
+#Facade,Normal,Opponent,70,100,20,"The move power is doubled when user is poisoned, paralyzed, or burned."
+FaintAttack,Dark,Opponent,60,100,20
+#FakeOut,Normal,Opponent,40,100,10,User attacks first and causes foe to flinch. Only works on first turn.
+FakeTears,Dark,Opponent,0,100,20,StatModifier SpD -2 Opponent 100
+#FalseSwipe,Normal,Opponent,40,100,40,Leave the target with no less than 1 HP.
+Featherdance,Flying,Opponent,0,100,15,StatModifier Atk -2 Opponent 100
+FireBlast,Fire,Opponent,120,85,5,InflictStatus Burned Opponent 30
+FirePunch,Fire,Opponent,75,100,15,InflictStatus Burned Opponent 10
+#FireSpin,Fire,Opponent,15,70,15,Traps target in a firey vortex for 2 - 5 turns.
+#Fissure,Ground,Opponent,0,30,5,Ground type 1HKO move.
+#Flail,Normal,Opponent,0,100,15,"The lower the users HP, the more powerful the move becomes."
+Flamethrower,Fire,Opponent,95,100,15,InflictStatus Burned Opponent 10
+#Flash,Normal,Opponent,0,70,20,StatModifier Acc -1 Opponent 100
+Flatter,Dark,Opponent,0,100,15,InflictStatus Confused StatModifier SpA 2 Opponent 100
+#Fly,Flying,Opponent,70,95,15,"User flies up out of harms way for the first turn, then swoops to attack the second."
+#FocusEnergy,Normal,User,0,100,30,Increases critical hit rate of user.
+#FocusPunch,Fighting,Opponent,150,100,20,"If the user is struck before using this move, the user flinches."
+#FollowMe,Normal,Opponent,0,100,20,All foe's attacks become focused on user.
+#Foresight,Normal,User,0,100,40,Restores lost accuracy and prevents accuracy loss.
+FrenzyPlant,Grass,Opponent,150,90,1
+Frustration,Normal,Opponent,102,100,20
+#FuryAttack,Normal,Opponent,15,85,20,Strikes two to five times.
+#FuryCutter,Bug,Opponent,10,95,20,Power of move increases every time the move connects sequentially. Power returns to normal if move misses or is not used.
+#FurySwipes,Normal,Opponent,18,80,15,Strikes two to five times.
+#FutureSight,Psychic,Opponent,80,90,15,Foresees an attack two turns in the future.
+#GigaDrain,Grass,Opponent,60,100,5,DrainPercent 50 User 100
+Glare,Normal,Opponent,0,75,30,InflictStatus Paralyzed Opponent 100
+Grasswhistle,Grass,Opponent,0,55,15,InflictStatus Asleep Opponent 100
+Growl,Normal,Opponent,0,100,40,StatModifier Atk -1 Opponent 100
+Growth,Normal,User,0,100,40,StatModifier Atk 1 User 100
+#Grudge,Ghost,Opponent,0,100,5,"If user faints, the PP of the killing move is reduced to zero."
+#Guillotine,Normal,Opponent,0,30,5,A normal type 1HKO.
+Gust,Flying,Opponent,40,100,35
+#Hail,Ice,User,0,100,10,Damages all non ice type pokemon for 5 turns.
+Harden,Normal,User,0,100,30,StatModifier Def 1 User 100
+#Haze,Ice,User,0,100,30,Resets all stat changes.
+Headbutt,Normal,Opponent,70,100,15
+HealBell,Normal,User,0,100,5,HealStatus Burned Poisoned Paralyzed Asleep Frozen Confused User 100
+HeatWave,Fire,Opponent,100,90,10,InflictStatus Burned Opponent 10
+#HelpingHand,Normal,User,0,100,20,Boosts ally's attack by 50%
+#HiJumpKick,Fighting,Opponent,85,90,20,If the user misses the target the user takes damage.
+#HiddenPower,Normal,Opponent,0,100,15,The type and strength of this move is based on the IVs of the user.
+HornAttack,Normal,Opponent,65,100,25
+#HornDrill,Normal,Opponent,0,30,5,A normal type 1HKO move.
+Howl,Normal,User,0,100,40,StatModifier Atk 1 User 100
+HydroCannon,Water,Opponent,150,90,1
+HydroPump,Water,Opponent,120,80,5
+HyperBeam,Normal,Opponent,150,90,1
+HyperVoice,Normal,Opponent,90,100,10
+Hypnosis,Psychic,Opponent,0,60,20,InflictStatus Asleep Opponent 100
+#IceBall,Ice,Opponent,30,90,20,Attacks for five turns with increasing damage unless the user misses.
+IceBeam,Ice,Opponent,95,100,10,InflictStatus Frozen Opponent 10
+IcePunch,Ice,Opponent,75,100,15,InflictStatus Frozen Opponent 10
+IcyWind,Ice,Opponent,55,95,15,StatModifier Spe -1 Opponent 100
+#Imprison,Psychic,Opponent,0,100,15,Prevents target from using moves that that the user knows.
+#Ingrain,Grass,User,0,100,20,User becomes unable to flee but regains HP each turn.
+IronDefense,Steel,User,0,100,15,StatModifier Def 2 User 100
+IronTail,Steel,Opponent,100,75,15,StatModifier Def -1 Opponent 30
+KarateChop,Fighting,Opponent,50,100,25
+#Kinesis,Psychic,Opponent,0,80,15,StatModifier Acc -1 Opponent 100
+#KnockOff,Dark,Opponent,20,100,20,Removes the targets item from it.
+LeafBlade,Grass,Opponent,70,100,15
+#LeechLife,Bug,Opponent,20,100,15,DrainPercent 50 User 100
+#LeechSeed,Grass,Opponent,0,90,10,Seeds the target and leeches health for the user every turn.
+Leer,Normal,Opponent,0,100,30,StatModifier Def -1 Opponent 100
+Lick,Ghost,Opponent,20,100,20,InflictStatus Paralyzed Opponent 30
+#LightScreen,Psychic,User,0,100,30,Reduces damage done by special type attacks to 50% while in effect.
+#Lock-On,Normal,Opponent,0,100,5,The target is hit by the next move. Period.
+#LowKick,Fighting,Opponent,0,100,20,"The more the pokemon weighs, the stronger the attack is."
+LusterPurge,Psychic,Opponent,70,100,5,StatModifier Def -1 Opponent 100
+MachPunch,Fighting,Opponent,40,100,5
+#MagicCoat,Psychic,Opponent,0,100,15,Reflects Status Attacks.
+MagicalLeaf,Grass,Opponent,60,100,20
+#Magnitude,Ground,Opponent,0,100,30,The attack is stronger at higher magnitudes.
+#MeanLook,Normal,Opponent,0,100,5,Target is trapped and cannot switch out.
+Meditate,Psychic,User,0,100,40,StatModifier Atk 1 User 100
+#MegaDrain,Grass,Opponent,40,100,10,DrainPercent 50 User 100
+Megahorn,Bug,Opponent,120,85,10
+Memento,Dark,Opponent,0,100,10,StatModifier Atk -12 StatModifier SpA -12 DamagePercent 100 User 100
+MetalClaw,Steel,Opponent,50,95,35,StatModifier Def 1 User 10
+MetalSound,Steel,Opponent,0,85,40,StatModifier SpD -2 Opponent 100
+MeteorMash,Steel,Opponent,100,85,10,StatModifier Atk 1 User 10
+MilkDrink,Normal,User,0,100,10,RecoverPercent 50 User 100
+#Mimic,Normal,Opponent,0,100,10,User temporarily learns one of the target's moves.
+#MindReader,Normal,Opponent,0,100,5,"The users next move hits, period."
+#Minimize,Normal,User,0,100,20,StatModifier Eva 1 Opponent 100
+#MirrorCoat,Psychic,Opponent,0,100,20,Counters special moves returning 200% of damage.
+#MirrorMove,Flying,Opponent,0,100,20,User copies the targets move.
+#Mist,Ice,User,0,100,30,User's team becomes immune to status afflictions for 5 turns.
+MistBall,Psychic,Opponent,70,100,5,StatModifier SpD -1 Opponent 50
+Moonlight,Normal,User,0,100,5,RecoverPercent 50 User 100
+MorningSun,Normal,User,0,100,5,RecoverPercent 50 User 100
+MudShot,Ground,Opponent,55,95,15,StatModifier Spe -1 Opponent 100
+#MudSport,Ground,User,0,100,15,Reduces the power of electric moves by 50%
+#Mud-Slap,Ground,Opponent,20,100,10,StatModifier Acc -1 Opponent 100
+#MuddyWater,Water,Opponent,95,85,10,StatModifier Acc -1 Opponent 30
+#NaturePower,Normal,Opponent,0,95,20,Changes moves depending on location.
+NeedleArm,Grass,Opponent,60,100,15
+#NightShade,Ghost,Opponent,0,100,15,Causes the same amount of damage as the users level.
+#OdorSleuth,Normal,Opponent,0,100,40,Reset's the users accuracy and prevents accuracy loss.
+#Outrage,Dragon,Opponent,90,100,15,User rampages for 2 or 3 turns but is confused afterwards.
+Overheat,Fire,Opponent,140,90,5,StatModifier SpA -2 User 100
+Peck,Flying,Opponent,35,100,35
+#PerishSong,Normal,Opponent,0,100,5,Causes all pokemon on the battlefield to faint in three turns.
+#PetalDance,Grass,Opponent,70,100,20,User attacks for 2 or 3 turns but is confused aftarwards.
+#PinMissle,Bug,Opponent,14,85,20,Attacks 2 to 5 times.
+PoisonFang,Poison,Opponent,50,100,15,InflictStatus Poisoned Opponent 30
+PoisonGas,Poison,Opponent,0,55,40,InflictStatus Poisoned Opponent 100
+PoisonSting,Poison,Opponent,15,100,35,InflictStatus Poisoned Opponent 30
+PoisonTail,Poison,Opponent,50,100,25,InflictStatus Poisoned Opponent 10
+Poisonpowder,Poison,Opponent,0,75,35,InflictStatus Poisoned Opponent 100
+Pound,Normal,Opponent,40,100,35
+PowderSnow,Ice,Opponent,40,100,25,StatModifier Spe -1 Opponent 10
+#Protect,Normal,User,0,100,10,Negates all attacks on user when used. Successive uses degrade accuracy.
+Psybeam,Psychic,Opponent,65,100,20,InflictStatus Confused Opponent 10
+#PsychUp,Normal,Opponent,0,100,10,"When target uses a stat boosting move, users stat is also boosted."
+Psychic,Psychic,Opponent,90,100,10,StatModifier SpD -1 Opponent 10
+PsychoBoost,Psychic,Opponent,140,90,5,StatModifier SpA -2 User 100
+#Psywave,Psychic,Opponent,0,80,15,It deals anywhere between 1 damage and 1.5x the user's level.
+#Pursuit,Dark,Opponent,40,100,20,Does massive damage if target attempts to switch out.
+QuickAttack,Normal,Opponent,40,100,30
+#Rage,Normal,Opponent,20,100,20,"Each time the user is hit while using this move, the user's attack builds."
+#RainDance,Water,User,0,100,5,Causes it to rain adding 50% to water type moves and taking 50% from fire type moves.
+#RapidSpin,Normal,Opponent,20,100,40,"Frees user from Fire spin, Whirlpool, Wrap, and other similar moves. Blows away spikes, leech seeds, etc."
+RazorLeaf,Grass,Opponent,55,95,25
+#RazorWind,Normal,Opponent,80,100,10,High critical hit rate but must first be charged.
+Recover,Normal,User,0,100,20,RecoverPercent 50 User 100
+#Recycle,Normal,User,0,100,10,Allows user to re-use a held item.
+#Reflect,Psychic,User,0,100,20,Reduces damage of normal attacks by 50%
+Refresh,Normal,User,0,100,20,HealStatus Burned Poisoned Paralyzed User 100
+Rest,Psychic,User,0,100,10,RecoverPercent 100 HealStatus Burned Paralyzed Poisoned Frozen Confused Asleep InflictStatus Asleep User 100
+Return,Normal,Opponent,102,100,20
+#Revenge,Fighting,Opponent,60,100,10,100% stronger if user takes damage.
+#Reversal,Fighting,Opponent,0,100,15,"The lower the user's HP, the more powerful the move is."
+#Roar,Normal,Opponent,0,100,20,Causes the trainer to switch pokemon.
+#RockBlast,Rock,Opponent,25,80,10,Attacks 2 to 5 times.
+RockSlide,Rock,Opponent,75,90,10
+RockSmash,Fighting,Opponent,20,100,15
+RockThrow,Rock,Opponent,50,90,15
+RockTomb,Rock,Opponent,50,80,10,StatModifier Spe -1 Opponent 100
+#Rollout,Rock,Opponent,30,90,20,User attacks for 5 turns with rising intensity.
+#Safeguard,Normal,User,0,100,25,User's party is protected from all status abnormalities.
+#SandTomb,Ground,Opponent,15,70,15,Target is trapped and attacked for two to six turns.
+#Sand-Attack,Ground,Opponent,0,100,15,StatModifier Acc -1 Opponent 100
+#Sandstorm,Rock,Opponent,0,100,10,"Creates a violent sandstorm that does 1/16th of max health damage every turn to all non Rock, steel, or ground pokemon."
+ScaryFace,Normal,Opponent,0,90,10,StatModifier Spe -2 Opponent 100
+Scratch,Normal,Opponent,40,100,35
+Screech,Normal,Opponent,0,85,40,StatModifier Def -2 Opponent 100
+#SecretPower,Normal,Opponent,70,100,20,Has 30% chance to cause a status effect on the target.
+#SeismicToss,Fighting,Opponent,0,100,20,Does damage points to target based on users level.
+SelfAttack,Normal,User,40,100,999
+SelfDestruct,Normal,Opponent,200,100,5,DamagePercent 100 User 100
+ShadowBall,Ghost,Opponent,80,100,15,StatModifier SpD -1 Opponent 10
+ShadowPunch,Ghost,Opponent,60,100,20
+#SheerCold,Ice,Opponent,0,30,5,An ice type one hit KO move.
+ShockWave,Electric,Opponent,60,100,20
+SignalBeam,Bug,Opponent,75,100,15,InflictStatus Confused Opponent 10
+SilverWind,Bug,Opponent,60,100,5,StatModifier Atk 1 StatModifier Def 1 StatModifier SpA 1 StatModifier SpD 1 StatModifier Spe 1 User 10
+Sing,Normal,Opponent,0,55,15,InflictStatus Asleep Opponent 100
+#SkillSwap,Psychic,Opponent,0,100,10,User trades special ability with target.
+#SkullBash,Normal,Opponent,100,100,15,User withdraws into shell and raises defence. On the next turn the user attacks.
+#SkyAttack,Flying,Opponent,140,90,5,Glows on the first turn and then attacks on the second.
+SkyUppercut,Fighting,Opponent,85,90,15
+SlackOff,Normal,Opponent,0,100,10,RecoverPercent 50 User 100
+Slam,Normal,Opponent,80,75,20
+Slash,Normal,Opponent,70,100,20
+SleepPowder,Grass,Opponent,0,75,15,InflictStatus Asleep Opponent 100
+#SleepTalk,Normal,Opponent,0,100,10,The user attacks randomly while asleep.
+Sludge,Poison,Opponent,65,100,20,InflictStatus Poisoned Opponent 30
+SludgeBomb,Poison,Opponent,90,100,10,InflictStatus Poisoned Opponent 10
+#Smellingsalt,Normal,Opponent,60,100,10,"Inflicts 200% damage if target is paralyzed, but cures paralasis."
+Smog,Poison,Opponent,20,70,20,InflictStatus Poisoned Opponent 30
+#Smokescreen,Normal,Opponent,0,100,20,StatModifier Acc -1 Opponent 100
+#Snatch,Dark,Opponent,0,100,10,"If the foe uses a move that has a positive effect, that effect is stolen by the user."
+#Snore,Normal,Opponent,40,100,15,Allows the user to attack while asleep.
+Softboiled,Normal,User,0,100,10,RecoverPercent 50 User 100
+#Solarbeam,Grass,Opponent,120,100,10,Charges up with sunlight and attacks with a powerful beam. No charge is needed when Sunny Day is in effect. Take two turns to charge it rain dance is in effect.
+#Sonicboom,Normal,Opponent,0,90,20,Does 20 damage.
+Spark,Electric,Opponent,65,100,20,InflictStatus Paralyzed Opponent 30
+#SpikeCannon,Normal,Opponent,20,100,15,Attacks 2 - 5 times.
+#Spikes,Ground,Opponent,0,100,20,Lays spikes on the battlefield that damage pokemon that are switched in.
+#SpitUp,Normal,Opponent,100,100,10,"The more the user stockpiles, the more powerful it is."
+#Spite,Ghost,Opponent,0,100,10,Lowers the PP of the last move the target used.
+Splash,Normal,User,0,100,40
+Spore,Grass,Opponent,0,100,15,InflictStatus Asleep Opponent 100
+SteelWing,Steel,Opponent,70,90,25,StatModifier Def 1 User 10
+#Stockpile,Normal,User,0,100,10,"Use consecutive times to power up ""swallow"""
+Stomp,Normal,Opponent,65,100,20
+Strength,Normal,Opponent,80,100,15
+StringShot,Bug,Opponent,0,95,40,StatModifier Spe -1 Opponent 100
+Struggle,Typeless,Opponent,50,100,999,Recoil 50 User 100
+StunSpore,Grass,Opponent,0,75,30,InflictStatus Paralyzed Opponent 100
+Submission,Fighting,Opponent,80,80,25,Recoil 25 User 100
+#Substitute,Normal,User,0,100,10,User loses 25% HP and creates a substitute to take damage.
+#SunnyDay,Fire,User,0,100,5,Makes the sun shine brightly adding 50% power to fire moves and taking 50% power from water moves.
+#SuperFang,Normal,Opponent,0,90,10,Does damage equal to 50% of the target's current HP. 
+Superpower,Fighting,Opponent,120,100,5,StatModifier Atk -1 StatModifier Def -1 User 100
+Supersonic,Normal,Opponent,0,55,20,InflictStatus Confused Opponent 100
+Surf,Water,Opponent,95,100,15
+Swagger,Normal,Opponent,0,90,15,InflictStatus Confused StatModifier Atk 2 Opponent 100
+#Swallow,Normal,User,0,100,10,Use stockpile to boost the healing power of this move.
+SweetKiss,Normal,Opponent,0,75,10,InflictStatus Confused Opponent 100
+#SweetScent,Normal,Opponent,0,100,20,StatModifier Eva -1 Opponent 100
+Swift,Normal,Opponent,60,100,20
+SwordsDance,Normal,User,0,100,30,StatModifier Atk 2 User 100
+Synthesis,Grass,User,0,100,5,RecoverPercent 50 User 100
+Tackle,Normal,Opponent,35,95,35
+TailGlow,Bug,User,0,100,20,StatModifier SpA 2 User 100
+TailWhip,Normal,Opponent,0,100,30,StatModifier Def -1 Opponent 100
+TakeDown,Normal,Opponent,90,85,20,Recoil 25 User 100
+#Taunt,Dark,Opponent,0,100,20,Target must use an attack move for the next 2 turns or the move will fail.
+TeeterDance,Normal,Opponent,0,100,20,InflictStatus Confused Opponent 100
+#Teleport,Psychic,Opponent,0,100,20,Teleports out of battle and to the last pokemon station in GBA games.
+#Thief,Dark,Opponent,40,100,10,User might steal the target's held item
+#Thrash,Normal,Opponent,90,100,20,User attacks for 2 or 3 turns but then becomes confused.
+Thunder,Electric,Opponent,120,70,10,InflictStatus Paralyzed Opponent 30
+ThunderWave,Electric,Opponent,0,100,20,InflictStatus Paralyzed Opponent 100
+Thunderbolt,Electric,Opponent,95,100,15,InflictStatus Paralyzed Opponent 10
+Thunderpunch,Electric,Opponent,75,100,15,InflictStatus Paralyzed Opponent 30
+Thundershock,Electric,Opponent,40,100,30,InflictStatus Paralyzed Opponent 10
+Tickle,Normal,Opponent,0,100,20,StatModifier Atk -1 StatModifier Def -1 Opponent 100
+#Torment,Dark,Opponent,0,100,15,Target can no longer use any move consecutively.
+Toxic,Poison,Opponent,0,85,10,InflictStatus Poisoned Opponent 100
+#TriAttack,Normal,Opponent,80,100,10,InflictStatus Burned Opponent 10 InflictStatus Frozen Opponent 10 InflictStatus Paralyzed Opponent 10 
+#Trick,Psychic,Opponent,0,100,10,User switches held items with target.
+#TripleKick,Fighting,Opponent,10,90,10,"Kicks the target three times, each strike doing more damage that the one before."
+Twister,Dragon,Opponent,40,100,20
+#Uproar,Normal,Opponent,50,100,10,Attacks for 2 to 5 consecutive turns while preventing sleep.
+ViceGrip,Normal,Opponent,55,100,30
+VineWhip,Grass,Opponent,35,100,10
+VitalThrow,Fighting,Opponent,70,100,10
+WaterGun,Water,Opponent,40,100,25
+WaterPulse,Water,Opponent,60,100,20,InflictStatus Confused Opponent 20
+#WaterSport,Water,User,0,100,15,Reduces the power of fire moves by 50%
+#WaterSpout,Water,Opponent,150,100,5,"The higher the user's HP, the more powerful the move."
+Waterfall,Water,Opponent,80,100,15
+#WeatherBall,Normal,Opponent,50,100,10,This move's power is doubled when a weather effect is in play and becomes the type of the weather effect.
+#Whirlpool,Water,Opponent,15,70,15,Does damage for 2 to 5 turns preventing the target's escape.
+#Whirlwind,Normal,Opponent,0,100,20,Forces foe to switch pokemon.
+Will-O-Wisp,Fire,Opponent,0,75,15,InflictStatus Burned Opponent 100
+WingAttack,Flying,Opponent,60,100,35
+#Wish,Normal,User,0,100,10,The pokemon in play at the end of the next turn will revive 50% HP.
+#Wrap,Normal,Opponent,15,85,20,Does continual damage for 2 to 5 turns preventing the target's escape.
+#Yawn,Normal,Opponent,0,100,10,At the end of the next turn the target will fall asleep.
+ZapCannon,Electric,Opponent,100,50,5,InflictStatus Paralyzed Opponent 50
